@@ -28,4 +28,9 @@ $smarty->assign("option_output", array("New York","Nebraska","Kansas","Iowa","Ok
 $smarty->assign("option_selected", "NE");
 
 $smarty->display('index.tpl');
+<<<<<<< HEAD
+=======
+
+// http://www.daveismyname.com/tutorials/php-tutorials/autocomplete-with-php-mysql-and-jquery-ui/
+>>>>>>> branch 'master' of https://github.com/roshanbhgt/buisinessdiary.git
 ?>
