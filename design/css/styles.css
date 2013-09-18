@@ -172,8 +172,7 @@ li {
 .main-content {
 	overflow: hidden;
 	position: relative;
-	width: 100%;
-	min-height: 650px;
+	width: 100%;	
 }
 
 .wrapper {
@@ -192,5 +191,5 @@ li {
 	position: relative;
 	height: inherit;
 	float: none;
-	padding: 10px 10px 0;
+	padding: 5px 10px 0;
 }
