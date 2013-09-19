@@ -15,7 +15,7 @@ body {
 	text-decoration: none;
 	background-attachment: scroll;
 	background-color: #FFF;
-	background-image: url('../images/body_bg.jpg');
+	background-image: url(images/body_bg.jpg);
 	background-repeat: repeat-x;
 }
 .inner-left {
@@ -39,13 +39,11 @@ body {
 }
 a {
 	color: #CCCCCC;
-	text-decoration: none;
-	font-weight: bold;
+	text-decoration:none;
 }
 a:hover {
 	color: #FFF;
 	text-decoration: none;
-	font-weight: bold;
 }
 
 
@@ -150,29 +148,31 @@ a:hover {
 	list-style-position: inside;
 	list-style-image: none;
 	list-style-type: none;
-	overflow: hidden;
 	position: relative;
 	margin: 5px 0;
 }
-ul {
-	overflow: hidden;
+.wrapper .nav ul {
 	width: 100%;
 }
-li {
+.wrapper .nav ul li {
 	float: left;
-	height: 30px;
-	padding-left: 5px;
 	list-style-image: none;
 	list-style-type: none;
-	overflow: hidden;
 	width: auto;
-	padding-top: 8px;
 	color: #FFF;
+	position: relative;
+	padding: 7px 7px 8px 14px;
 }
+.wrapper .nav ul li.over {
+	z-index: 99;
+	background-color: #36F;
+}
+
 .main-content {
 	overflow: hidden;
 	position: relative;
-	width: 100%;	
+	width: 100%;
+	min-height: 650px;
 }
 
 .wrapper {
@@ -191,5 +191,35 @@ li {
 	position: relative;
 	height: inherit;
 	float: none;
-	padding: 5px 10px 0;
+	padding: 10px 10px 0;
+}
+.wrapper .nav ul li a {
+	font-weight: bold;
+}
+.wrapper .nav ul li ul {
+	float: left;
+	width: 208px;
+	position: absolute;
+	margin-top: 7px;
+	display: block;
+	left: -1px;
+}
+.wrapper .nav ul #menu2 ul li a span {
+	display: block;
+	padding: 4px;
+}
+
+
+.wrapper .nav ul li ul li {
+	background-color: #36F;
+	clear: both;
+	height: 26px;
+	width: 190px;
+	position: relative;
+	float: left;
+	display: block;
+	padding: 0 12px;
+}
+.wrapper .nav ul li.over {
+	z-index: 99;
 }

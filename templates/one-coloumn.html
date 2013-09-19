@@ -4,6 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>One Coloumn</title>
 <link href="http://localhost/buisinessdiary/design/css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+function collapse(id,classname){	
+	$(id).removeClass(classname);
+		$('.wrapper .nav ul li ul').css('display', 'none');
+}
+function expand(id,classname){
+	$(id).addClass(classname);
+	$('.wrapper .nav ul li.over ul').css('display', 'block');
+}
+</script>
 </head>
 <body>
   <div class="wrapper">	
@@ -14,7 +25,22 @@
         <div class="searchbox">Search</div>
     </div>
     <div class="nav">
-    	<ul><li><a href="#">Menu1</a></li><li><a href="#">Menu2</a></li><li><a href="#">Menu3</a></li></ul>
+    	<ul>
+			<li id="menu1" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">Menu1</a>
+            </li>
+            <li id="menu2" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">Menu2</a>
+                <ul style="display:none">
+                	<li><a href="#"><span>Submenu 1</span></a></li>
+                    <li><a href="#"><span>Submenu 2</span></a></li>
+                    <li><a href="#"><span>Submenu 3</span></a></li>
+                </ul>
+            </li>
+            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">Menu3</a>
+            </li>
+		</ul>
     </div>
     <div class="main-content">Center</div>
     <div class="footer">
