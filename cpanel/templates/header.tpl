@@ -1,6 +1,6 @@
 <table width="100%" border="0" class="header">
   <tr>
-    <td width="270" valign="middle" align="center"><a href="{$BACKEND}" class="logo">Buisiness Diary</a></td>
+    <td width="280" valign="middle" align="center"><a href="{$BACKEND}" class="logo">Buisiness Diary</a></td>
     <td valign="top" align="right">
     	<ul class="topmenu">
     		<li>Loged in as {$admin}</li>
