@@ -15,7 +15,7 @@ if(isset($_POST) && $_POST['login'] == 'login' ){
 			$password = trim($_POST['password']);
 			if($objAdmin->login($username,$password)){
 				$variables['success'] = 'You have successfully login to admin panel.';
-				header('Location: '.BACKEND.'/index.php');
+				header('Location: '.BACKEND.'index.php');
 				exit;
 			} else {
 				$variables['loginError'] = 'Invalid login details .';

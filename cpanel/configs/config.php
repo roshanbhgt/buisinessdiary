@@ -32,7 +32,7 @@ $smarty = new Smarty;
 $smarty->force_compile = true;
 $smarty->debugging = true;
 $smarty->caching = true;
-$smarty->cache_lifetime = 120;
+$smarty->cache_lifetime = 30;
 
 // Loading captcha library
 require_once("../libs/Recaptcha/recaptchalib.php");
@@ -43,6 +43,7 @@ $privkey = "6LdTMuYSAAAAAL25lUALp8xFCNF9x7lW_DiyArze";
 $rsp = null;
 
 require('classes/Admin.class.php');
+require('classes/Categries.class.php');
 require('classes/System.class.php');
 require('includes/functions.php');
 

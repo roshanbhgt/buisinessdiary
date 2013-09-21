@@ -48,30 +48,28 @@ label{
     background: transparent;
     color: #333;
 }
-.selectbox {    
-    width: 256px;
-    padding: 2px 5px;
-    font-size: 11px;
-    line-height: 5;
-    border: 1px solid #BDBDBD;    
-    height: 25px;
+.iselect-small {
+    width: 125px;
     margin-bottom: 5px;
+    border: 1px solid #BDBDBD;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
     border-radius:4px;
+    padding: 2px 5px;
     background: transparent;
     color: #333;
-    vertical-align: middle;    
-    overflow: hidden;
-}
-.selectbox option {   
-    padding: 2px 5px;
-    font-size: 11px;
-    border: 1px solid #BDBDBD;    
-}    
-textarea{
-	width: 250px;
+}   
+.inputtextarea {
+	width: 350px;
 	height: 150px;
+    margin-bottom: 5px;
+    border: 1px solid #BDBDBD;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    padding: 2px 5px;
+    background: transparent;
+    color: #333;
 }
 p {margin-left:20px;}
 .left {text-align: left;}
@@ -341,9 +339,7 @@ button {
 }
 .grid tr:nth-child(odd){ background-color:#e5e5e5; }
 .grid tr:nth-child(even)    { background-color:#ffffff; }.grid td{
-	vertical-align:middle;
-	
-	
+	vertical-align:top;
 	border:1px solid #ddd9d9;
 	border-width:0px 1px 1px 0px;
 	text-align:left;

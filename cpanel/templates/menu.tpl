@@ -4,10 +4,10 @@
   			<ul id ="navmenu" class="navmenu level0" >
   				<li {If $filename == 'index' } class="active" {/If} ><a href="{$BACKEND}">Dashbord</a></li>  				
   				<li {If $filename == 'managecat' } class="active" {/If} >
-  					<a href="{$BACKEND}">Categories</a>
+  					<a href="{$BACKEND}managecat.php">Categories</a>
   					<ul>
   						<li><a href="{$BACKEND}managecat.php?action=addparent">Add Parent Category</a></li>
-  						<li><a href="{$BACKEND}managecat.php?action=addparent">Add Sub Category</a></li>
+  						<li><a href="{$BACKEND}managecat.php?action=addsubcat">Add Sub Category</a></li>
   						<li><a href="{$BACKEND}managecat.php?action=viewparent">Manage Parent Categories</a></li>
   						<li class="last"><a href="{$BACKEND}managecat.php?action=viewsub">Manage Sub Categories</a></li>
   					</ul>

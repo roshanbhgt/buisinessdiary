@@ -1,7 +1,7 @@
 <ul>
 	<li class="menu">
 		<a href="javascript:void(0);" onclick="showHide('mymenu1')">Manage Admin</a>
-		<ul id="mymenu1" class="hide">
+		<ul id="mymenu1" class="show">
 			<li class="submenu"><a href="{$BACKEND}manageadmin.php?action=viewall" >Manage accounts</a></li>
 			<li class="submenu"><a href="{$BACKEND}manageadmin.php?action=add" >Add new account</a></li>			
 		</ul>

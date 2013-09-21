@@ -38,7 +38,7 @@ function validateEmail($email){
 function checkAuthentication(){
 	if(empty($_SESSION['adminId']) && empty($_SESSION['adminType']) ){
 		if($_SESSION['adminType'] != 'administrator'){
-			header('Location: http://localhost/industrialdiary/cpanel/login.php/');
+			header('Location: http://localhost/buisinessdiary/cpanel/login.php/');
 			exit;
 		}
 	}
