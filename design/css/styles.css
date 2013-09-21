@@ -15,7 +15,7 @@ body {
 	text-decoration: none;
 	background-attachment: scroll;
 	background-color: #FFF;
-	background-image: url(images/body_bg.jpg);
+	background-image: url('../images/body_bg.jpg');
 	background-repeat: repeat-x;
 }
 .inner-left {
@@ -114,7 +114,7 @@ a:hover {
 	padding-top:5px;
 }
 .twt-feed {
-	padding: 5px;
+	padding: 5px 0;
 	float: left;
 	height: 20px;
 	width: 79%;
@@ -171,8 +171,7 @@ a:hover {
 .main-content {
 	overflow: hidden;
 	position: relative;
-	width: 100%;
-	min-height: 650px;
+	width: 100%;	
 }
 
 .wrapper {
@@ -191,7 +190,7 @@ a:hover {
 	position: relative;
 	height: inherit;
 	float: none;
-	padding: 10px 10px 0;
+	padding: 5px 10px 0;
 }
 .wrapper .nav ul li a {
 	font-weight: bold;
@@ -220,6 +219,17 @@ a:hover {
 	display: block;
 	padding: 0 12px;
 }
-.wrapper .nav ul li.over {
+.wrapper .nav ul li.over {	
 	z-index: 99;
+}
+.wrapper .nav ul li.over a{
+	color: #FFF;
+}
+.wrapper .nav ul li.over ul li a{
+	color: #CCCCCC;
+	text-decoration: none;
+}
+.wrapper .nav ul li.over ul li a:hover{
+	color: #FFF;
+	text-decoration: none;
 }

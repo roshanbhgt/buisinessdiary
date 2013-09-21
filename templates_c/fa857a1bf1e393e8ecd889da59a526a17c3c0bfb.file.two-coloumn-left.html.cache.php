@@ -1,4 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php /* Smarty version Smarty-3.1.14, created on 2013-09-19 20:26:17
+         compiled from ".\templates\two-coloumn-left.html" */ ?>
+<?php /*%%SmartyHeaderCode:65239dd6c615728-93903215%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'fa857a1bf1e393e8ecd889da59a526a17c3c0bfb' => 
+    array (
+      0 => '.\\templates\\two-coloumn-left.html',
+      1 => 1379615172,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '65239dd6c615728-93903215',
+  'function' => 
+  array (
+  ),
+  'cache_lifetime' => 120,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5239dd6c6d4dd1_92331850',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5239dd6c6d4dd1_92331850')) {function content_5239dd6c6d4dd1_92331850($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -60,3 +82,4 @@
   </div>  
 </body>
 </html>
+<?php }} ?>
