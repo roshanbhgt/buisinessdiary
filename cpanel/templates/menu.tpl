@@ -6,8 +6,10 @@
   				<li {If $filename == 'managecat' } class="active" {/If} >
   					<a href="{$BACKEND}">Categories</a>
   					<ul>
-  						<li><a href="{$BACKEND}">Add Category</a></li>
-  						<li class="last"><a href="{$BACKEND}">Manage Categories</a></li>
+  						<li><a href="{$BACKEND}managecat.php?action=addparent">Add Parent Category</a></li>
+  						<li><a href="{$BACKEND}managecat.php?action=addparent">Add Sub Category</a></li>
+  						<li class="last"><a href="{$BACKEND}managecat.php?action=viewparent">Manage Parent Categories</a></li>
+  						<li class="last"><a href="{$BACKEND}managecat.php?action=viewsub">Manage Sub Categories</a></li>
   					</ul>
   				</li>  				
   				<li {If $filename == 'managelist' } class="active" {/If} >
