@@ -8,7 +8,7 @@
   					<ul>
   						<li><a href="{$BACKEND}managecat.php?action=addparent">Add Parent Category</a></li>
   						<li><a href="{$BACKEND}managecat.php?action=addparent">Add Sub Category</a></li>
-  						<li class="last"><a href="{$BACKEND}managecat.php?action=viewparent">Manage Parent Categories</a></li>
+  						<li><a href="{$BACKEND}managecat.php?action=viewparent">Manage Parent Categories</a></li>
   						<li class="last"><a href="{$BACKEND}managecat.php?action=viewsub">Manage Sub Categories</a></li>
   					</ul>
   				</li>  				
