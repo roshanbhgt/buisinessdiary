@@ -30,7 +30,7 @@ require_once ('../libs/Smarty/Smarty.class.php');
 $smarty = new Smarty;
 
 $smarty->force_compile = true;
-$smarty->debugging = false;
+$smarty->debugging = true;
 $smarty->caching = true;
 $smarty->cache_lifetime = 120;
 
