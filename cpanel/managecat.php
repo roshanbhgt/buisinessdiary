@@ -8,9 +8,12 @@ $smarty->assign("title","Buisiness Diary - Manage categories");
 
 $objCat = new Categries();
 
-if(isset($_POST) && $_POST['addparentcat'] == 'addparentcat' ){
+if(isset($_POST) && $_POST['addparentcat'] == 'addparentcat' || $_POST['addsubcat'] == 'addsubcat' ){
 	$data = $_POST;	
 	if ( isset($data['title'])	) {
+		if ($_POST['addparentcat'] == 'addparentcat') {
+			$data['parent_id'] = 0;
+		}
 		if ($objCat->addCategory($data)) {
 			$variables['success'] = 'Category added successfully.';
 			header('Location: '.BACKEND.'managecat.php');
@@ -23,24 +26,29 @@ if(isset($_POST) && $_POST['addparentcat'] == 'addparentcat' ){
 	}
 }
 
-if(isset($_POST) && $_POST['updateuser'] == 'updateuser'){
+if(isset($_POST) && $_POST['updateparentcat'] == 'updateparentcat' || $_POST['updatesubcat'] == 'updatesubcat'){
 	$data = $_POST;
 	$id = intval($_POST['id']);
-	if(
-		!empty($data['firstname']) && !empty($data['lastname']) 
-		&& !empty($data['email']) && !empty($data['username'])
-	){
-		if($objAdmin->updateAcount($data)){
-			$variables['success'] = "Account information updated successfully.";
+	if(	!empty($data['title']) && $id != 0	){		
+		if ($_POST['updateparentcat'] == 'updateparentcat') {
+			$data['parent_id'] = 0;			
+		}
+		if($objCat->updateCategory($data)){
+			$variables['success'] = "Category information updated successfully.";
 		} else {
-			$variables['error'] = "Unable to save record.";
+			$variables['updatecaterror'] = "Unable to save record.";
 		}	
 	} else {
-		$variables['error'] = "All the field are compulsory ";
+		$variables['updatecaterror'] = "All the field are compulsory ";
 	}
-	
-	$adminAcct = $objAdmin->getAcount($id);	
-	$smarty->assign("admin",$adminAcct);
+	if ($_POST['updatesubcat'] == 'updatesubcat') {
+		$category = $objCat->getSubcat($id);
+		$smarty->assign("edit",'editsubcat');
+	} else {
+		$category = $objCat->getParentcat($id);
+		$smarty->assign("edit",'editparentcat');
+	}	
+	$smarty->assign("category",$category);
 	$smarty->assign("centercontent",$smarty->fetch("category/editcat.tpl"));
 }
 
@@ -56,10 +64,16 @@ if(isset($_GET) && $_GET['action'] == 'viewparent' || $_GET['action'] == '' || $
 	$smarty->assign("centercontent",$smarty->fetch("category/viewall.tpl"));
 }
 
-if(isset($_GET) && $_GET['action'] == 'edit'){
+if(isset($_GET) && $_GET['action'] == 'editparentcat' || $_GET['action'] == 'editsubcat'){
 	$id = intval($_GET['id']);
-	$adminAcct = $objAdmin->getAcount($id);
-	$smarty->assign("admin",$adminAcct);
+	if ($_GET['action'] == 'editsubcat') {
+		$category = $objCat->getSubcat($id);
+		$smarty->assign("edit",'editsubcat');
+	} else {
+		$category = $objCat->getParentcat($id);
+		$smarty->assign("edit",'editparentcat');
+	}	
+	$smarty->assign("category",$category);
 	$smarty->assign("centercontent",$smarty->fetch("category/editcat.tpl"));
 }
 
@@ -69,7 +83,6 @@ if(isset($_GET) && $_GET['action'] == 'addparent' || $_GET['action'] == 'addsubc
 	} else {		
 		$smarty->assign("add",'parentcat');
 	}
-    $smarty->assign("captcha",recaptcha_get_html($pubkey));
 	$smarty->assign("centercontent",$smarty->fetch("category/addcat.tpl"));
 }
 

@@ -58,6 +58,7 @@ label{
     padding: 2px 5px;
     background: transparent;
     color: #333;
+    text-align: center;
 }   
 .inputtextarea {
 	width: 350px;

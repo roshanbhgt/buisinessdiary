@@ -19,11 +19,11 @@
   						<li class="last"><a href="{$BACKEND}">Manage Buisiness</a></li>
   					</ul>
   				</li>  				
-  				<li {If $filename == 'managegal' } class="active" {/If} >
-  					<a href="{$BACKEND}">Gallery</a>
+  				<li {If $filename == 'managegallery' } class="active" {/If} >
+  					<a href="{$BACKEND}managegallery.php">Gallery</a>
   					<ul>
-  						<li><a href="{$BACKEND}">Add gallery</a></li>
-  						<li class="last"><a href="{$BACKEND}">Manage galleries</a></li>
+  						<li><a href="{$BACKEND}managegallery.php?action=add">Add gallery</a></li>
+  						<li class="last"><a href="{$BACKEND}managegallery.php?action=view">Manage galleries</a></li>
   					</ul>
   				</li>  				
   				<li {If $filename == 'manageuser' } class="active" {/If} >

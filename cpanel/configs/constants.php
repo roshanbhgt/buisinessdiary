@@ -11,5 +11,6 @@ define ('SESSION_BACKEND_PATH','C:\xampp\htdocs\buisinessdiary\cpanel\session');
 define ('ADMIN','admin');
 define ('CATEGORIES','buisiness_category');
 define ('LIST','buisiness_list');
+define ('GALLERY','gallery');
 define ('COUNTRY','country');
 define ('STATE','state');

@@ -1,4 +1,6 @@
+{if $variables.success != ""}
 <div class="success">{$variables.success}</div>
+{/If}
 <h2 class="content-header">Cache Management</h2>
 <form method="post" id="cache_grid_massaction-form" action="{$BACKEND}cachemgmt.php">
 <div style="height:25px;">
