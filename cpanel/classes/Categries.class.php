@@ -93,6 +93,7 @@ class Categries {
 		$banner = $data['banner'];
 		$status = $data['status'];
 		$parentCatId = $data['parent_id'];
+		$id = $data['id'];
 		$sql = "UPDATE
 					".CATEGORIES."
 				SET
@@ -102,7 +103,8 @@ class Categries {
 					banner = '".$banner."',
 					status = '".$status."',
 					update_date = NOW()
-				";
+				WHERE
+					cat_id = ".$id ;
 		if($dbObj->query($sql)){
 			return true;
 		} else {
@@ -110,4 +112,16 @@ class Categries {
 		}
 	}
 	
+	public function getDeletecat($id){
+		global $dbObj;
+		$sql = "DELETE FROM 
+					".CATEGORIES."
+				WHERE
+					cat_id = ".$id ;
+		if($dbObj->query($sql)){
+			return true;
+		} else {
+			return false;
+		}
+	}	
 }

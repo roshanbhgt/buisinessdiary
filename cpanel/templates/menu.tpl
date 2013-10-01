@@ -34,10 +34,10 @@
   					</ul>
   				</li>  				
   				<li {If $filename == 'managepages' } class="active" {/If} >
-  					<a href="{$BACKEND}">Pages</a>
+  					<a href="{$BACKEND}managepages.php">Pages</a>
   					<ul>
-  						<li><a href="{$BACKEND}">Add page</a></li>
-  						<li class="last"><a href="{$BACKEND}">Manage page</a></li>
+  						<li><a href="{$BACKEND}managepages.php?action=addpage">Add page</a></li>
+  						<li class="last"><a href="{$BACKEND}managepages.php?action=viewall">Manage page</a></li>
   					</ul>
   				</li>  				
   				<li {If $filename == 'managewebforms' } class="active" {/If} >

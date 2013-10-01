@@ -86,6 +86,30 @@ if(isset($_GET) && $_GET['action'] == 'addparent' || $_GET['action'] == 'addsubc
 	$smarty->assign("centercontent",$smarty->fetch("category/addcat.tpl"));
 }
 
+if(isset($_GET) && $_GET['action'] == 'deleteparentcat' || $_GET['action'] == 'deletesubcat' ){
+	$id = intval($_GET['id']);
+	if(isset($_GET['id']) &&  $id != 0){
+		if($objCat->getDeletecat($id)){
+			$variables['success'] = 'Category deleted successfully.';
+		} else {
+			$variables['success'] = 'Unable to delete category.';
+		}
+	} else {
+		$variables['success'] = 'Category not exist.';
+	}
+	
+	if ($_GET['action'] == 'deletesubcat') {
+		$catAll = $objCat->getAllSubcat();
+		$smarty->assign("view",'viewsub');
+	} else {
+		$catAll = $objCat->getAllParentcat();
+		$smarty->assign("view",'viewparent');
+	}
+	$smarty->assign("catall",$catAll);
+	$smarty->assign("centercontent",$smarty->fetch("category/viewall.tpl"));
+	
+}
+
 $smarty->assign("variables", $variables);
 $smarty->assign("left",$smarty->fetch("category/leftmenu.tpl"));
 $smarty->assign("contentheading","Manage Categories");
