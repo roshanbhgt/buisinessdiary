@@ -6,7 +6,7 @@
 <form name="adduser" method="post" id="adduserform" >
     <fieldset>
   	<legend>Add gallery</legend>
-        <table class="left" width="50%">                
+        <table class="left" width="75%">                
         <tr>
                 <td align="left" valign="middle" width="200"><label>Title</label><span
 					class="required">*</span></td>
@@ -14,12 +14,18 @@
 					name="title" value="{$smarty.post.title}"></td>	
         </tr>
         <tr>
-            <tr>
-				<td align="left" valign="top"><label>Description</label></td>
-				<td align="left" valign="middle"><textarea class="inputtextarea" 
-					name="description">{$smarty.post.description}</textarea></td>
-			</tr>	
-        </tr>
+			<td align="left" valign="top"><label>Description</label></td>
+			<td align="left" valign="middle"><textarea class="inputtextarea" 
+			name="description">{$smarty.post.description}</textarea></td>
+		</tr>	
+        <tr>
+			<td align="left" valign="top"><label>Banners</label></td>
+			<td align="left" valign="middle">
+				<div id="banners">
+					<input type="file" name="banner[1]" class="inputbox">
+				</div>
+			</td>
+		</tr>
         <tr>
 			<td align="left" valign="middle"><label>Status</label><span
 				class="required">*</span></td>

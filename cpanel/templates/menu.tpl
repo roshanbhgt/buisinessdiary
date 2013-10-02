@@ -23,7 +23,7 @@
   					<a href="{$BACKEND}managegallery.php">Gallery</a>
   					<ul>
   						<li><a href="{$BACKEND}managegallery.php?action=add">Add gallery</a></li>
-  						<li class="last"><a href="{$BACKEND}managegallery.php?action=view">Manage galleries</a></li>
+  						<li class="last"><a href="{$BACKEND}managegallery.php?action=viewall">Manage galleries</a></li>
   					</ul>
   				</li>  				
   				<li {If $filename == 'manageuser' } class="active" {/If} >

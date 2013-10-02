@@ -7,7 +7,7 @@
     <fieldset>
     <input type="hidden" name="id" value="{$gallery.galleryId}">
   	<legend>Edit gallery</legend>
-        <table class="left" width="50%">                
+        <table class="left" width="75%">                
         <tr>
                 <td align="left" valign="middle" width="200"><label>Title</label><span
 					class="required">*</span></td>

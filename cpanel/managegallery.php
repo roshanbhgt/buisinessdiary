@@ -58,7 +58,7 @@ if(isset($_GET) && $_GET['action'] == 'add'){
 	$smarty->assign("centercontent",$smarty->fetch("gallery/addgallery.tpl"));
 }
 
-if(isset($_GET) && $_GET['action'] == 'delete' || $_GET['action'] == ''){
+if(isset($_GET) && $_GET['action'] == 'delete'){
 	$id = intval($_GET['id']);
 	if ($objGallery->deleteGallery($id)) {
 		$variables['success'] = "Gallery deleted successfully.";

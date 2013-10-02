@@ -18,6 +18,7 @@
 	<tr>
 		<td class="center"></td>
 		<td>Title</td>
+		<td>Identifier</td>
 		<td>Description</td>
 		<td>Created At</td>		
 		<td>Updated At</td>
@@ -28,6 +29,7 @@
 	<tr>
 		<td width="30" class="center" valign="top"><input type="checkbox" name="parentcat" value="{$page.cat_id}"></td>
 		<td width="150" align="justify" valign="top">{$page.title}</td>
+		<td width="150" align="justify" valign="top">{$page.identifier}</td>
 		<td align="justify" valign="top">{$page.description|truncate:200:'...'}</td>
 		<td width="100"align="justify" valign="top">{$page.created_date}</td>
 		<td width="100" valign="top">{$page.update_date}</td>
