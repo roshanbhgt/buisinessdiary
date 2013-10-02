@@ -182,7 +182,7 @@ a:hover {
 	margin: 5px 0;
 }
 .wrapper .nav ul {
-	width: 100%;
+	width: 100%;	
 }
 .wrapper .nav ul li {
 	float: left;
@@ -221,6 +221,7 @@ a:hover {
 	height: inherit;
 	float: none;
 	padding: 5px 10px 0;
+	box-shadow: 0 0 5px #00AFFD;
 }
 .wrapper .nav ul li a {
 	font-weight: bold;
