@@ -20,6 +20,7 @@
 		<td>Title</td>
 		<td>Description</td>				
 		<td>Created Date</td>
+		<td>Updated Date</td>
 		<td>Status</td>
 		<td></td>
 	</tr>
@@ -29,10 +30,11 @@
 		<td width="150">{$gal.gallery_title}</td>
 		<td>{$gal.gallery_description|truncate:200:'...'}</td>
 		<td>{$gal.created_date}</td>
+		<td>{$gal.updated_date}</td>
 		<td width="100">{$gal.status|capitalize}</td>
 		<td width="100">
-			<a href="{$BACKEND}managegallery.php?action=edit&id={$gal.gallery_id}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>
-			<a href="{$BACKEND}managegallery.php?action=delete&id={$gal.gallery_id}"><img src="{$BACKEND}design/images/delete.png" alt="D" title="Delete"></a>
+			<a href="{$BACKEND}managegallery.php?action=edit&id={$gal.galleryId}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>
+			<a href="{$BACKEND}managegallery.php?action=delete&id={$gal.galleryId}"><img src="{$BACKEND}design/images/delete.png" alt="D" title="Delete"></a>
 		</td>
 	</tr>
 	{foreachelse}

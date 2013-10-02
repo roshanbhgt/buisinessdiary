@@ -23,15 +23,12 @@ if(isset($_POST) && $_POST['addgallery'] == 'addgallery' ){
 	}	
 }
 
-if(isset($_POST) && $_POST['updateuser'] == 'updateuser'){
+if(isset($_POST) && $_POST['updategallery'] == 'updategallery'){
 	$data = $_POST;
 	$id = intval($_POST['id']);
-	if(
-		!empty($data['firstname']) && !empty($data['lastname']) 
-		&& !empty($data['email']) && !empty($data['username'])
-	){
-		if($objAdmin->updateAcount($data)){
-			$variables['success'] = "Account information updated successfully.";
+	if( isset($data['title']) ){
+		if($objGallery->updateGallery($data)){
+			$variables['success'] = "Gallery information updated successfully.";
 		} else {
 			$variables['error'] = "Unable to save record.";
 		}	
@@ -39,9 +36,9 @@ if(isset($_POST) && $_POST['updateuser'] == 'updateuser'){
 		$variables['error'] = "All the field are compulsory ";
 	}
 	
-	$adminAcct = $objAdmin->getAcount($id);	
-	$smarty->assign("admin",$adminAcct);
-	$smarty->assign("centercontent",$smarty->fetch("admin/edituser.tpl"));
+	$adminGallery = $objGallery->getGallery($id);
+	$smarty->assign("gallery",$adminGallery);
+	$smarty->assign("centercontent",$smarty->fetch("gallery/editgallery.tpl"));
 }
 
 if(isset($_GET) && $_GET['action'] == 'viewall' || $_GET['action'] == ''){
@@ -52,13 +49,25 @@ if(isset($_GET) && $_GET['action'] == 'viewall' || $_GET['action'] == ''){
 
 if(isset($_GET) && $_GET['action'] == 'edit'){
 	$id = intval($_GET['id']);
-	$adminAcct = $objAdmin->getAcount($id);
-	$smarty->assign("admin",$adminAcct);
-	$smarty->assign("centercontent",$smarty->fetch("admin/edituser.tpl"));
+	$adminGallery = $objGallery->getGallery($id);
+	$smarty->assign("gallery",$adminGallery);
+	$smarty->assign("centercontent",$smarty->fetch("gallery/editgallery.tpl"));
 }
 
 if(isset($_GET) && $_GET['action'] == 'add'){
 	$smarty->assign("centercontent",$smarty->fetch("gallery/addgallery.tpl"));
+}
+
+if(isset($_GET) && $_GET['action'] == 'delete' || $_GET['action'] == ''){
+	$id = intval($_GET['id']);
+	if ($objGallery->deleteGallery($id)) {
+		$variables['success'] = "Gallery deleted successfully.";
+	} else {
+		$variables['error'] = "Unable to delete gallery.";
+	}
+	$adminGallery = $objGallery->getAllGalleries();
+	$smarty->assign("gallery",$adminGallery);
+	$smarty->assign("centercontent",$smarty->fetch("gallery/viewall.tpl"));
 }
 
 $smarty->assign("variables", $variables);

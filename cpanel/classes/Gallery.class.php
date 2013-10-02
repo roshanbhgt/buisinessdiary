@@ -28,9 +28,9 @@ class Gallery {
 	 * @return boolean
 	 *
 	 */
-	public function getAcount($id){
+	public function getGallery($id){
 		global $dbObj;
-		$sql = "SELECT * FROM ".ADMIN." WHERE adminId = $id";
+		$sql = "SELECT * FROM ".GALLERY." WHERE galleryId = $id";
 		$res = $dbObj->query($sql);
 		if($dbObj->num_rows($res) > 0){
 			$res = $dbObj->fetch_array_assoc($res);
@@ -68,28 +68,44 @@ class Gallery {
 	 * @param Array $data
 	 * @return boolean
 	 */
-	public function updateAcount($data = array()){
+	public function updateGallery($data){
 		global $dbObj;
-		$firstname = $data['firstname'];
-		$lastname = $data['lastname'];
-		$email = $data['email'];
-		$username = $data['username'];
-		// $password = $data['password'];
+		$title = addslashes(trim($data['title']));
+		$description = addslashes(trim($data['description']));
+		$status = $data['status'];
+		$id = intval($data['id']);
 		$sql = "UPDATE
-					".ADMIN."
+					".GALLERY."
 				SET
-					firstname = '".$firstname."',
-					lastname = '".$lastname."',
-					email = '".$email."',
-					username = '".$username."',					
+					gallery_title = '".$title."',
+					gallery_description = '".$description."',
+					status = '".$status."',
 					updated_date = NOW()
 				WHERE 
-					adminId = ".$data['id'];
+					galleryId = ".$id."					
+				";
 		if($dbObj->query($sql)){
 			return true;
 		} else {
 			return false;
 		}
+	}
+	
+	/**
+	 * Function is used to delete gallery data
+	 * @param integer $id
+	 * @return boolean
+	 */
+	public function deleteGallery($id){
+		global $dbObj;		
+		$sql = "DELETE FROM 
+					".GALLERY."
+				WHERE galleryId = ".$id ;		
+		if($dbObj->query($sql)){
+			return true;
+		} else {
+			return false;
+		} 			
 	}
 	
 }
