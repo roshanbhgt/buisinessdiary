@@ -275,17 +275,19 @@ button {
 	background: none repeat scroll 0 0 #E6E6E6;
 	display: block;
 	height: 19px;
-	padding-top: 2px;
-	padding-left: 7px;
+	padding: 2px 7px;
 	color: #333333;
 }
 .submenu a {
 	color:#666;
-	text-decoration: none;
+	text-decoration: none;	 
 }
 .submenu a:hover {
 	color:#333;
-	text-decoration: none;
+	text-decoration: none;	 
+}
+.submenu:hover{
+	background: url("../images/arrow-right.png") no-repeat scroll left center #E6E6E6;	
 }
 .hide {
 	display: none;

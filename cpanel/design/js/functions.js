@@ -12,3 +12,4 @@ function uncheck(){
 	        allInputs[i].checked = false;
 	}
 }
+

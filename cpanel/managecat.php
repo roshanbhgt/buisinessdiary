@@ -9,10 +9,17 @@ $smarty->assign("title","Buisiness Diary - Manage categories");
 $objCat = new Categries();
 
 if(isset($_POST) && $_POST['addparentcat'] == 'addparentcat' || $_POST['addsubcat'] == 'addsubcat' ){
-	$data = $_POST;	
+	$data = $_POST;		
 	if ( isset($data['title'])	) {
 		if ($_POST['addparentcat'] == 'addparentcat') {
 			$data['parent_id'] = 0;
+		} elseif($_POST['addsubcat'] == 'addsubcat') {
+			if(intval($data['parentcat'])>0){
+				$data['parent_id'] = $data['parentcat'];
+			} else {
+				$variables['addcaterror'] = 'Please select subcategory from available options.';
+				return ;
+			}
 		}
 		if ($objCat->addCategory($data)) {
 			$variables['success'] = 'Category added successfully.';
@@ -78,8 +85,10 @@ if(isset($_GET) && $_GET['action'] == 'editparentcat' || $_GET['action'] == 'edi
 }
 
 if(isset($_GET) && $_GET['action'] == 'addparent' || $_GET['action'] == 'addsubcat' ){
-	if ($_GET['action'] == 'viewsub') {		
+	if ($_GET['action'] == 'addsubcat') {		
 		$smarty->assign("add",'subcat');
+		$catAll = $objCat->getAllParentcat();
+		$smarty->assign("parentCat",$catAll);
 	} else {		
 		$smarty->assign("add",'parentcat');
 	}

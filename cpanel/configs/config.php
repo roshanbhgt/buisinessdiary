@@ -9,7 +9,7 @@ $sessionpath = SESSION_BACKEND_PATH;
 ini_set('session.save_path', $sessionpath);
 if(!isset($_SESSION) && !headers_sent()){
 	session_start();	
-	ini_set('session.gc_probability', 1);
+	ini_set('session.gc_probability', 1); 
 }
 ini_set('session.gc_maxlifetime', 50*30*60);
 
@@ -17,24 +17,25 @@ ini_set('session.gc_maxlifetime', 50*30*60);
 set_time_limit(0);
 date_default_timezone_set("Asia/Calcutta");
 ini_set('display_errors', '1');
-error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL ^ ~E_NOTICE ^ ~E_WARNING);
 
 // Loading smarty library
 require_once ('../libs/Database/Database.class.php');
-$dbObj = new Database('localhost', 'root', '', 'buisiness_diary');
+$dbObj = new Database('localhost', 'root', '', 'buisinessdiary');
 
 
 // Loading smarty library
 require_once ('../libs/Smarty/Smarty.class.php');
+require_once ('../libs/Upload/Upload.class.php');
 
-$smarty = new Smarty;
+$smarty = new Smarty();
 
 $smarty->force_compile = true;
-$smarty->debugging = true;
+$smarty->debugging = false;
 $smarty->caching = true;
 $smarty->cache_lifetime = 30;
 
-// Loading captcha library
+// Loading captcha library and captcha settings
 require_once("../libs/Recaptcha/recaptchalib.php");
 
 $pubkey  = "6LdTMuYSAAAAANfuXQDkdpNRHVqa11dTMPrQQdxt";

@@ -7,20 +7,34 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 <link href="design/css/styles.css" rel="stylesheet" type="text/css" />
 <link href="design/css/slider.css" rel="stylesheet" type="text/css" />  
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="http://localhost/buisinessdiary/design/js/jquery.slides.min.js"></script>
+<script type="text/javascript" src="design/js/jquery.min.js"></script>
+<script type="text/javascript" src="design/js/jquery.slides.min.js"></script>
+<script type="text/javascript" src="design/js/jquery-scroller.min.js"></script>
 <script type="text/javascript">
-	$(function() {
-      $('#slides').slidesjs({
-        width: 940,
-        height: 350,
-        play: {
-          active: true,
-          auto: true,
-          interval: 4000,
-          swap: true
-        }
-      });
+	$(document).ready(function() {
+		$('#slides').slidesjs({
+			width: 940,
+			height: 350,
+			play: {
+			  active: true,
+			  auto: true,
+			  interval: 4000,
+			  swap: true
+			}
+		});
+	  
+		// create scroller for each element with "horizontal_scroller" class...
+		$('.horizontal_scroller').SetScroller({	
+			velocity: 	 60,
+			direction: 	 'horizontal',
+			startfrom: 	 'right',
+			loop:		 'infinite',
+			movetype: 	 'linear',
+			onmouseover: 'pause',
+			onmouseout:  'play',
+			onstartup: 	 'play',
+			cursor: 	 'pointer'
+		});
     });
 	
 	function collapse(id,classname){	
@@ -90,13 +104,11 @@
 		</ul>	
 `	</div>
 	<div align="center" style="padding:0 0 5px 0;">
-		<marquee bgcolor="#FFF" direction="left" loop="true" >
-			<center>
-				<font size="+1" >
-					<strong>Enter text that you wish to scroll here</strong>
-				</font>
-			</center>
-		</marquee>
+		<div class="horizontal_scroller">
+			<div class="scrollingtext">
+				This is a simple scrolling text!
+			</div>
+		</div>
 	</div>
     <div class="main-content">        	
     <div class="inner-left">

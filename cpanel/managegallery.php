@@ -10,7 +10,8 @@ $objGallery = new Gallery();
 
 if(isset($_POST) && $_POST['addgallery'] == 'addgallery' ){
 	$data = $_POST;	
-	if ( isset($data['title']) ) {
+	$objGallery->uploadImage($count);
+	if ( isset($data['title']) && !empty($data['title']) ) {
 		if ($objGallery->addGallery($data)) {
 			$variables['success'] = 'Gallery successfully added.';
 			header('Location: '.BACKEND.'managegallery.php');

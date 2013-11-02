@@ -17,6 +17,7 @@ body {
 	background-color: #FFF;
 	background-image: url('../images/body_bg.jpg');
 	background-repeat: repeat-x;
+	background-attachment: fixed;
 }
 .inner-left {
 	float: left;
@@ -289,3 +290,21 @@ a:hover {
 	width:700px;
 	float:left;
 }
+
+/*** Start of scrolling text ***/
+div.horizontal_scroller{
+	position:relative;
+	height:24px;
+	width:auto;
+	display:block;
+	overflow:hidden;	
+}
+div.scrollingtext{
+	position:absolute;
+	white-space:nowrap;
+	font-family:'Trebuchet MS',Arial;
+	font-size:18px;
+	font-weight:bold;
+	color:#000000;
+}
+/*** End of scrolling text ***/

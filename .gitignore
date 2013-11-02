@@ -1,1 +1,8 @@
 /.project
+/cache
+/templates_c
+/session
+/cpanel/cache
+/cpanel/session
+/cpanel/templates_c
+

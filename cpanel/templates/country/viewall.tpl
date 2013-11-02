@@ -5,9 +5,9 @@
         | 
         <a href="javascript:void(1);" onclick="uncheck(this)">Unselect All</a>
     </div>		
-    <div align="right" style="width:185px;float:right;padding:2px 0px;">		
+    <div align="right" style="width:240px;float:right;padding:2px 0px;">		
         <label>Actions</label>
-        <select class="select" id="country_grid_massaction-select">
+        <select class="iselect-small" id="country_grid_massaction-select">
             <option value=""></option>          
             <option selected="selected" value="refresh">Refresh</option>
         </select>

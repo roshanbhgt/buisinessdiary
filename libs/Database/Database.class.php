@@ -99,6 +99,14 @@ class Database {
             return false;
         }
     }
+    
+    public function num_fields($qid) {
+    	if ($num = mysql_num_fields($qid)) {
+    		return $num;
+    	} else {
+    		return false;
+    	}
+    }
  
     private function exception($message) {
         if ($this->link) {

@@ -49,12 +49,14 @@
   				<li {If 
   						$filename == 'manageadmin' 
   						|| $filename == 'managecountries' 
+  						|| $filename == 'managebackup'
   						|| $filename == 'cachemgmt'} class="active" {/If} >
   					<a href="{$BACKEND}">System</a>
   					<ul>
   						<li><a href="{$BACKEND}manageadmin.php?action=edit&id={$smarty.session.adminId}">Manage Admin</a></li>
   						<li><a href="{$BACKEND}managecountries.php?type=country">Manage Country</a></li>  						
-  						<li class="last"><a href="{$BACKEND}cachemgmt.php">Manage Cache</a></li>
+  						<li><a href="{$BACKEND}cachemgmt.php">Manage Cache</a></li>
+  						<li class="last"><a href="{$BACKEND}managebackup.php">Backup Databse</a></li>
   					</ul>
   				</li>
   		</ul>

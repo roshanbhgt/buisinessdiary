@@ -6,9 +6,9 @@
 		| 
 		<a href="javascript:void(1);" onclick="uncheck(this)">Unselect All</a>
 	</div>		
-	<div align="right" style="width:180px;float:right;padding:2px 0px;">		
+	<div align="right" style="width:240px;float:right;padding:2px 0px;">		
             <label>Actions</label>
-            <select class="select" id="admin_grid_massaction-select">
+            <select class="iselect-small" id="admin_grid_massaction-select">
                 <option value=""></option>          
                 <option selected="selected" value="refresh">Refresh</option>
             </select>
@@ -73,10 +73,12 @@
 	</tr>
 	{foreach from=$catall item=cat}	
 	<tr>
-		<td width="30" class="center"><input type="checkbox" name="admin" value="{$cat.adminId}"></td>
-		<td width="150">{$cat.firstname}</td>
+		<td width="30" class="center"><input type="checkbox" name="admin" value="{$cat.cat_id}"></td>
+		<td width="150">{$cat.title}</td>
 		<td>{$cat.email}</td>
-		<td>{$cat.usertype}</td>
+		<td>{$cat.description}</td>
+		<td>{$cat.created_date}</td>
+		<td>{$cat.update_date}</td>
 		<td width="100">{$cat.status|capitalize}</td>
 		<td width="100">
 			<a href="{$BACKEND}managecat.php?action=editsubcat&id={$cat.adminId}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>

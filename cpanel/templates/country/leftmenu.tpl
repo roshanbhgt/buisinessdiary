@@ -1,7 +1,7 @@
 <ul>
 	<li class="menu">
             <a href="javascript:void(0);" onclick="showHide('mymenu1')">Manage Countries</a>
-            <ul id="mymenu1" class="hide">
+            <ul id="mymenu1" class="show">
                 <li class="submenu"><a href="{$BACKEND}managecountries.php?type=country&action=viewall" >Manage countries</a></li>
                 <li class="submenu"><a href="{$BACKEND}managecountries.php?type=country&action=add" >Add new country</a></li>			
                 <li class="submenu"><a href="{$BACKEND}managecountries.php?type=state&action=viewall" >Manage states</a></li>			

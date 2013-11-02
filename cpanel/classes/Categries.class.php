@@ -27,7 +27,7 @@ class Categries {
 	public function getAllSubcat(){
 		global $dbObj;
 		$sql = "SELECT * FROM ".CATEGORIES." WHERE parentcat_id != 0;";
-		$res = $dbObj->fetch_all_array($sql);
+		$res = $dbObj->fetch_all_array($sql);		
 		return $res;
 	}
 	
@@ -74,7 +74,7 @@ class Categries {
 				SET
 					title = '".$title."',
 					description = '".$description."',					
-					parentcat_id = 0 ,					
+					parentcat_id = ".$data['parent_id'].",					
 					banner = '".$banner."',
 					status = '".$status."',
 					created_date = NOW()
