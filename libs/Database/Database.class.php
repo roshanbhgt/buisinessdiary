@@ -19,25 +19,19 @@ class Database {
     }
  
     function __destruct() {
-        @mysql_close($this->link);
+        @mysqli_close($this->link);
     }
  
-    public function connect() {
-        if ($this -> link = mysql_connect($this -> host, $this -> user, $this -> pass)) {
-            if (!empty($this -> name)) {
-                if (!mysql_select_db($this -> name)) $this -> exception("Could not connect to the database!");
-            }
-        } else {
-            $this -> exception("Could not create database connection!");
-        }
+    public function connect() {        
+    	$this -> link = mysqli_connect($this -> host, $this -> user, $this -> pass, $this -> name) or die(mysqli_error());
     }
  
     public function close() {
-        @mysql_close($this->link);
+        @mysqli_close($this->link);
     }
  
     public function query($sql) {
-        if ($this->query = @mysql_query($sql)) {
+        if ($this->query = @mysqli_query($this -> link, $sql)) {
             return $this->query;
         } else {
             $this->exception("Could not query database!");
@@ -50,7 +44,7 @@ class Database {
             $this->exception("Could not get number of rows because no query id was supplied!");
             return false;
         } else {
-            return mysql_num_rows($qid);
+            return mysqli_num_rows($qid);
         }
     }
  
@@ -59,7 +53,7 @@ class Database {
             $this->exception("Could not fetch array because no query id was supplied!");
             return false;
         } else {
-            $data = mysql_fetch_array($qid);
+            $data = mysqli_fetch_array($qid);
         }
         return $data;
     }
@@ -69,7 +63,7 @@ class Database {
             $this->exception("Could not fetch array assoc because no query id was supplied!");
             return false;
         } else {
-            $data = mysql_fetch_array($qid, MYSQL_ASSOC);
+            $data = mysqli_fetch_array($qid, MYSQL_ASSOC);
         }
         return $data;
     }
@@ -93,7 +87,7 @@ class Database {
     }
  
     public function last_id() {
-        if ($id = mysql_insert_id()) {
+        if ($id = mysqli_insert_id()) {
             return $id;
         } else {
             return false;
@@ -101,7 +95,7 @@ class Database {
     }
     
     public function num_fields($qid) {
-    	if ($num = mysql_num_fields($qid)) {
+    	if ($num = mysqli_num_fields($qid)) {
     		return $num;
     	} else {
     		return false;
@@ -110,11 +104,11 @@ class Database {
  
     private function exception($message) {
         if ($this->link) {
-            $this->error = mysql_error($this->link);
-            $this->errno = mysql_errno($this->link);
+            $this->error = mysqli_error($this->link);
+            $this->errno = mysqli_errno($this->link);
         } else {
-            $this->error = mysql_error();
-            $this->errno = mysql_errno();
+            $this->error = mysqli_error();
+            $this->errno = mysqli_errno();
         }
         if (PHP_SAPI !== 'cli') {
         ?>
