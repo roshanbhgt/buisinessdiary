@@ -46,12 +46,15 @@ $rsp = null;
 require('classes/Admin.class.php');
 require('classes/Categries.class.php');
 require('classes/Pages.class.php');
+require('classes/Webforms.class.php');
 require('classes/Gallery.class.php');
 require('classes/System.class.php');
 require('includes/functions.php');
 
 $smarty->assign('BACKEND',BACKEND);
 $smarty->assign('FRONTEND',FRONTEND);
+$smarty->assign('GALLERYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/gallery');
+$smarty->assign('CATEGORYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/category');
 $smarty->assign('date',date("F j, Y, g:i a"));
 $smarty->assign('admin',$_SESSION['admin']);
  

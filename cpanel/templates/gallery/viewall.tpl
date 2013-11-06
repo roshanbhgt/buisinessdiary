@@ -33,6 +33,7 @@
 		<td>{$gal.updated_date}</td>
 		<td width="100">{$gal.status|capitalize}</td>
 		<td width="100">
+			<a href="{$BACKEND}managegallery.php?action=viewgal&id={$gal.galleryId}"><img src="{$BACKEND}design/images/gallery_icon.png" alt="G" title="View Gal"></a>
 			<a href="{$BACKEND}managegallery.php?action=edit&id={$gal.galleryId}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>
 			<a href="{$BACKEND}managegallery.php?action=delete&id={$gal.galleryId}"><img src="{$BACKEND}design/images/delete.png" alt="D" title="Delete"></a>
 		</td>

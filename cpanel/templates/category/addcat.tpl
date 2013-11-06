@@ -44,7 +44,7 @@
 	</fieldset>
 </form>
 {ElseIf $add == "subcat"}
-<form name="addsubcat" method="post" id="addsubcatform">
+<form name="addsubcat" method="post" id="addsubcatform" enctype="multipart/form-data">
 	<fieldset>
 		<legend>Add subcategory</legend>
 		<table class="left" width="75%">

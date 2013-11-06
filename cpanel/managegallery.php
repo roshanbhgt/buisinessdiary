@@ -9,8 +9,12 @@ $smarty->assign("title","Buisiness Diary - Manage gallery");
 $objGallery = new Gallery();
 
 if(isset($_POST) && $_POST['addgallery'] == 'addgallery' ){
-	$data = $_POST;	
-	$objGallery->uploadImage($count);
+	$data = $_POST;
+	$count = count($_FILES);
+	if($count){
+		$data = $objGallery->uploadImage($count, $data);
+	}
+	$data['bcount'] = $count; 
 	if ( isset($data['title']) && !empty($data['title']) ) {
 		if ($objGallery->addGallery($data)) {
 			$variables['success'] = 'Gallery successfully added.';
@@ -26,6 +30,8 @@ if(isset($_POST) && $_POST['addgallery'] == 'addgallery' ){
 
 if(isset($_POST) && $_POST['updategallery'] == 'updategallery'){
 	$data = $_POST;
+	$count = count($_FILES);
+	$data = $objGallery->uploadImage($count, $data);
 	$id = intval($_POST['id']);
 	if( isset($data['title']) ){
 		if($objGallery->updateGallery($data)){
@@ -40,6 +46,15 @@ if(isset($_POST) && $_POST['updategallery'] == 'updategallery'){
 	$adminGallery = $objGallery->getGallery($id);
 	$smarty->assign("gallery",$adminGallery);
 	$smarty->assign("centercontent",$smarty->fetch("gallery/editgallery.tpl"));
+}
+
+if(isset($_GET) && $_GET['action'] == 'viewgal' || isset($_GET['id']) != ''){
+	$id = intval($_GET['id']);
+	$adminGalleryImages = $objGallery->getGalleryImages($id);
+	$adminGallery = $objGallery->getGallery($id);
+	$smarty->assign("gallery",$adminGallery);
+	$smarty->assign("galleryimages",$adminGalleryImages);
+	$smarty->assign("centercontent",$smarty->fetch("gallery/viewgalimages.tpl"));
 }
 
 if(isset($_GET) && $_GET['action'] == 'viewall' || $_GET['action'] == ''){
@@ -70,6 +85,21 @@ if(isset($_GET) && $_GET['action'] == 'delete'){
 	$smarty->assign("gallery",$adminGallery);
 	$smarty->assign("centercontent",$smarty->fetch("gallery/viewall.tpl"));
 }
+
+if(isset($_GET) && $_GET['action'] == 'deleteGalImg'){
+	$id = intval($_GET['id']);
+	if ($objGallery->deleteGalImg($id)) {
+		$variables['success'] = "Image deleted successfully.";
+	} else {
+		$variables['error'] = "Unable to delete image from gallery.";
+	}
+	$adminGalleryImages = $objGallery->getGalleryImages($id);
+	$adminGallery = $objGallery->getGallery($id);
+	$smarty->assign("gallery",$adminGallery);
+	$smarty->assign("galleryimages",$adminGalleryImages);
+	$smarty->assign("centercontent",$smarty->fetch("gallery/viewgalimages.tpl"));
+}
+
 
 $smarty->assign("variables", $variables);
 $smarty->assign("left",$smarty->fetch("gallery/leftmenu.tpl"));

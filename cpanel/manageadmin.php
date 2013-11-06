@@ -73,11 +73,8 @@ if(isset($_GET) && $_GET['action'] == 'edit'){
 	$smarty->assign("centercontent",$smarty->fetch("admin/edituser.tpl"));
 }
 
-if(isset($_GET) && $_GET['action'] == 'add'){
-	// $id = intval($_GET['id']);
-	// $adminAcct = $objAdmin->getAcount($id);
-	// $smarty->assign("admin",$adminAcct);
-        $smarty->assign("captcha",recaptcha_get_html($pubkey));
+if(isset($_GET) && $_GET['action'] == 'add'){	
+    $smarty->assign("captcha",recaptcha_get_html($pubkey));
 	$smarty->assign("centercontent",$smarty->fetch("admin/adduser.tpl"));
 }
 

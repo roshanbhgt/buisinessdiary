@@ -9,7 +9,13 @@ $smarty->assign("title","Buisiness Diary - Manage categories");
 $objCat = new Categries();
 
 if(isset($_POST) && $_POST['addparentcat'] == 'addparentcat' || $_POST['addsubcat'] == 'addsubcat' ){
-	$data = $_POST;		
+	$data = $_POST;
+	if(isset($_FILES)){
+		$count = count($_FILES);
+		if($count>0){
+			$data = $objCat->uploadImage($data);
+		}	
+	}	
 	if ( isset($data['title'])	) {
 		if ($_POST['addparentcat'] == 'addparentcat') {
 			$data['parent_id'] = 0;
@@ -35,8 +41,14 @@ if(isset($_POST) && $_POST['addparentcat'] == 'addparentcat' || $_POST['addsubca
 
 if(isset($_POST) && $_POST['updateparentcat'] == 'updateparentcat' || $_POST['updatesubcat'] == 'updatesubcat'){
 	$data = $_POST;
+	
+	$count = count($_FILES);
+	if($count){
+		$data = $objCat->uploadImage($data);
+	}	
+	
 	$id = intval($_POST['id']);
-	if(	!empty($data['title']) && $id != 0	){		
+	if(	!empty($data['title']) && $id != 0	){				
 		if ($_POST['updateparentcat'] == 'updateparentcat') {
 			$data['parent_id'] = 0;			
 		}
@@ -49,6 +61,8 @@ if(isset($_POST) && $_POST['updateparentcat'] == 'updateparentcat' || $_POST['up
 		$variables['updatecaterror'] = "All the field are compulsory ";
 	}
 	if ($_POST['updatesubcat'] == 'updatesubcat') {
+		$catAll = $objCat->getAllParentcat();
+		$smarty->assign("parentCat",$catAll);
 		$category = $objCat->getSubcat($id);
 		$smarty->assign("edit",'editsubcat');
 	} else {
@@ -61,6 +75,8 @@ if(isset($_POST) && $_POST['updateparentcat'] == 'updateparentcat' || $_POST['up
 
 if(isset($_GET) && $_GET['action'] == 'viewparent' || $_GET['action'] == '' || $_GET['action'] == 'viewsub'){
 	if ($_GET['action'] == 'viewsub') {
+		$catAll = $objCat->getAllParentcat();		
+		$smarty->assign("parentCat",$catAll);
 		$catAll = $objCat->getAllSubcat();
 		$smarty->assign("view",'viewsub');
 	} else {
@@ -74,6 +90,8 @@ if(isset($_GET) && $_GET['action'] == 'viewparent' || $_GET['action'] == '' || $
 if(isset($_GET) && $_GET['action'] == 'editparentcat' || $_GET['action'] == 'editsubcat'){
 	$id = intval($_GET['id']);
 	if ($_GET['action'] == 'editsubcat') {
+		$catAll = $objCat->getAllParentcat();
+		$smarty->assign("parentCat",$catAll);
 		$category = $objCat->getSubcat($id);
 		$smarty->assign("edit",'editsubcat');
 	} else {

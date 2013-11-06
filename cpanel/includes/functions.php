@@ -61,3 +61,17 @@ function generateSeoUrl($identifier) {
 	$identifier = trim(preg_replace('/ +/', '-', preg_replace('/[^A-Za-z0-9 ]/', '', urldecode(html_entity_decode(strip_tags($identifier))))));;
 	return $identifier;
 }
+
+/**
+ * Function to generate pageination
+ * 
+ * 
+ */
+function getPagination($count){
+	$paginationCount= floor($count / REC_PER_PAGE);
+	$paginationModCount= $count % PAGE_PER_NO;
+	if(!empty($paginationModCount)){
+		$paginationCount++;
+	}
+	return $paginationCount;
+}

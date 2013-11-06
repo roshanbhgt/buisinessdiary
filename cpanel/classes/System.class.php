@@ -6,18 +6,48 @@
  */
 class System {
 	
-    /**
-	 *
-	 * @param null
-	 * @return boolean
-	 *
-	 */
-	public function getAllCountries(){
-            global $dbObj;
+	    /**
+		 *
+		 * @param null
+		 * @return boolean
+		 *
+		 */
+		public function getAllCountries(){
+        	global $dbObj;
             $sql = "SELECT * FROM ".COUNTRY;
             $res = $dbObj->fetch_all_array($sql);		
             return $res; 
-	}
+		}
+		
+		/**
+		 * 
+		 * 
+		 */
+		public function getAllStates($pageId){
+			global $dbObj;
+			$sql = "SELECT st.*, ct.title AS ctitle FROM ".STATE." AS st 
+					INNER JOIN ".COUNTRY." AS ct ON st.countryId=ct.countryId LIMIT ".($pageId*30).", 30";
+			$res = $dbObj->fetch_all_array($sql);
+			return $res;
+		}
+		
+		/**
+		 *
+		 *
+		 */
+		public function getAllRegions($pageId){
+			global $dbObj;			
+			$sql = "SELECT rt.*, ct.title AS ctitle, st.title AS stitle FROM ".REGIONS." AS rt 
+					INNER JOIN ".STATE." AS st ON st.stateId=rt.stateId 
+					INNER JOIN ".COUNTRY." AS ct ON st.countryId=ct.countryId ";
+			$count = $dbObj->num_rows($dbObj->query($sql));
+			$pageNumCount = getPagination($count);			
+			if($pageId != '' || $count > REC_PER_PAGE){
+				$sql .= "LIMIT ".($pageId*30).", ".REC_PER_PAGE;
+			}						
+			$res = $dbObj->fetch_all_array($sql);
+			return array("regions"=>$res, "pagecount"=>$pageNumCount);
+		}
         
         public function getCountry($id){
             global $dbObj;
@@ -27,7 +57,7 @@ class System {
                 $res = $dbObj->fetch_array_assoc($res);
             }
             return $res;	
-	}
+		}
 
         /**
          * 
@@ -142,9 +172,9 @@ class System {
 			}
 		}
 		
-		// $handle = fopen(SESSION_BACKEND_PATH.'db-backup-'.date('Y-m-d h:m:s').'.sql','a+');
-		// fwrite($handle,$return);
-		// fclose($handle);
+		$handle = fopen(SESSION_BACKEND_PATH.'\db-backup-'.date('Y-m-d h:m:s').'.sql','a+');
+		fwrite($handle,$return);
+		fclose($handle);
 				
 		return true;
 	} 

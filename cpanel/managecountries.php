@@ -67,14 +67,26 @@
     }
     
     if(isset($_GET) && $_GET['type'] == 'state' && $_GET['action'] == 'edit'){
-        $countryAll = $objSystem->getAllCountries();            
+    	$id = intval($_GET['id']);
+        $state = $objSystem->getStates();        
+        $countryAll = $objSystem->getAllCountries();
         $smarty->assign("countryies",$countryAll);
         $smarty->assign("centercontent",$smarty->fetch("country/edit.tpl"));
     }
     
+    if(isset($_GET) && $_GET['type'] == 'region' && $_GET['action'] == 'viewall' || $_GET['action'] == ''){
+    	$pageId = intval($_GET['page']);
+    	$result = $objSystem->getAllRegions($pageId);    	
+    	$regionsAll = $result['regions']; 
+    	$pageCount = $result['pagecount'];
+    	$smarty->assign("regions", $regionsAll);
+    	$smarty->assign("pages", $pageCount);
+    	$smarty->assign("centercontent",$smarty->fetch("country/viewall.tpl"));
+    }
+    
     if(isset($_GET) && $_GET['type'] == 'state' && $_GET['action'] == 'viewall' || $_GET['action'] == ''){
-        $countryAll = $objSystem->getAllCountries();            
-        $smarty->assign("countryies",$countryAll);
+        $stateAll = $objSystem->getAllStates();            
+        $smarty->assign("states", $stateAll);
         $smarty->assign("centercontent",$smarty->fetch("country/viewall.tpl"));
     }
 

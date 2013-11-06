@@ -41,9 +41,12 @@
   					</ul>
   				</li>  				
   				<li {If $filename == 'managewebforms' } class="active" {/If} >
-  					<a href="{$BACKEND}">Webforms</a>
+  					<a href="{$BACKEND}managewebforms.php">Webforms</a>
   					<ul>
-  						<li class="last"><a href="{$BACKEND}">Manage webforms</a></li>
+  						<li><a href="{$BACKEND}managewebforms.php?action=listRlist">Request Listing</a></li>
+  						<li><a href="{$BACKEND}managewebforms.php?action=listSlist">Suggest Listing</a></li>
+  						<li><a href="{$BACKEND}managewebforms.php?action=listFlist">Feedback</a></li>
+  						<li class="last"><a href="{$BACKEND}managewebforms.php?action=listClist">Contact Us</a></li>
   					</ul>
   				</li>  				
   				<li {If 

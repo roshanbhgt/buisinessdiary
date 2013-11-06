@@ -57,6 +57,20 @@ class Gallery {
 					created_date = NOW()
 				";
 		if($dbObj->query($sql)){
+			$galleryId = $dbObj->last_id();
+			if($data['bcount']>0){					
+				for ($i=1;$i <= $data['bcount'];$i++){
+					$banner = $data['banner'.$i];
+					$sql = "INSERT INTO
+								".GALLERYIMAGES."
+							SET
+								banner = '".$banner."',								
+								galleryId = '".$galleryId."',
+								created_date = NOW()
+							";
+					$dbObj->query($sql);
+				}
+			}
 			return true;
 		} else {
 			return false;
@@ -100,33 +114,111 @@ class Gallery {
 		global $dbObj;		
 		$sql = "DELETE FROM 
 					".GALLERY."
-				WHERE galleryId = ".$id ;		
+				WHERE galleryId = ".$id ;
+				
 		if($dbObj->query($sql)){
+			
+			$sql = "SELECT banner FROM
+						".GALLERYIMAGES."
+					WHERE galleryId = ".$id." LIMIT 1" ;			
+			$res = $dbObj->fetch_all_array($sql);
+			
+			$sql = "DELETE FROM
+						".GALLERYIMAGES."
+					WHERE galleryId = ".$id ;
+			$dbObj->query($sql);
+			
+			foreach ($res as $val){
+				unlink(GALLERYIMAGE."/base/".$val);
+				unlink(GALLERYIMAGE."/small/".$val);
+				unlink(GALLERYIMAGE."/thumb/".$val);
+			}
+			
 			return true;
 		} else {
 			return false;
 		} 			
 	}
 	
+	public function getGalleryImages($id){
+		global $dbObj;
+		$sql = "SELECT * FROM
+					".GALLERYIMAGES."
+				WHERE galleryId = ".$id ;
+		$res = $dbObj->fetch_all_array($sql);		
+		return $res;
+	} 
+	
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	public function deleteGalImg($id){
+		global $dbObj;
+		$sql = "SELECT banner FROM
+					".GALLERYIMAGES."
+				WHERE galleryImageId = ".$id." LIMIT 1" ;
+		$res = $dbObj->query($sql);
+		$res = $dbObj->fetch_array_assoc($res);		
+		if($dbObj->query($sql)){			
+			$sql = "DELETE FROM
+						".GALLERYIMAGES."
+					WHERE galleryImageId = ".$id ;
+			$dbObj->query($sql);
+			unlink(GALLERYIMAGE."/base/".$res['banner']);
+			unlink(GALLERYIMAGE."/small/".$res['banner']);
+			unlink(GALLERYIMAGE."/thumb/".$res['banner']);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	
 	/**
 	 * 
 	 * 
 	 */
-	public function uploadImage($count){
-		$handle = new Upload($_FILES['banner1']);
-		if ($handle->uploaded) {
-		   $handle->file_new_name_body   = 'image_resized';
-	       $handle->image_resize         = true;
-	       $handle->image_x              = 100;
-	       $handle->image_ratio_y        = true;
-	       $handle->process(GALLERYIMAGE);
-	       if ($handle->processed) {
-		          echo 'image resized';
-		          $handle->clean();
-		   } else {
-		          echo 'error : ' . $handle->error;
-		   }
+	public function uploadImage($count, $data = array()){
+		
+		for ($i=1;$i<=$count;$i++){
+			$handle = new Upload($_FILES['banner'.$i]);
+			if ($handle->uploaded) {
+			   $handle->file_auto_rename 	 = false;
+		       $handle->image_resize         = true;
+		       $handle->auto_create_dir 	 = true;
+		       $handle->dir_auto_chmod 		 = true;
+		       $handle->dir_chmod 			 = 0777;
+		       $handle->image_x              = 700;
+		       $handle->image_y              = 261;
+		       $handle->image_ratio_y        = false;
+		       $handle->process(GALLERYIMAGE."/base");
+		       if (!$handle->processed) {		          
+			      	echo "Unable to upload base image";
+			   }
+			   
+			   $handle->image_resize         = true;
+			   $handle->image_x              = 261;			   
+			   $handle->image_y              = 261;
+		       $handle->image_ratio_y        = false;
+			   $handle->process(GALLERYIMAGE."/small");
+			   if (!$handle->processed) {
+			   		echo "Unable to upload small image";
+			   }
+			   $handle->image_resize         = true;
+			   $handle->image_x              = 100;			   
+			   $handle->image_y              = 100;
+		       $handle->image_ratio_y        = false;
+			   $handle->process(GALLERYIMAGE."/thumb");
+			   if (!$handle->processed) {
+			   	echo "Unable to upload thumb image";
+			   }
+			   $handle->clean();
+			   $data['banner'.$i] = $handle->file_dst_name;
+			}
 		}
+		return $data;
 	}
 	
 }

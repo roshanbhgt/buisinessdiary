@@ -87,11 +87,7 @@ class Database {
     }
  
     public function last_id() {
-        if ($id = mysqli_insert_id()) {
-            return $id;
-        } else {
-            return false;
-        }
+        return mysqli_insert_id($this -> link);
     }
     
     public function num_fields($qid) {

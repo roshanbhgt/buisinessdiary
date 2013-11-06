@@ -12,4 +12,11 @@ function uncheck(){
 	        allInputs[i].checked = false;
 	}
 }
-
+function showmore(showdiv,hidediv){
+	document.getElementById(showdiv).style.display = 'block';
+	document.getElementById(hidediv).style.display = 'none';
+}
+function hidemore(showdiv,hidediv){
+	document.getElementById(showdiv).style.display = 'block';
+	document.getElementById(hidediv).style.display = 'none';
+}

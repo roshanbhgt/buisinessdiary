@@ -4,7 +4,7 @@
 <div class="error">{$variables.updatecaterror}</div>
 {/If}
 {If $edit == "editparentcat"}
-<form name="updatecat" method="post" id="updatecatform" >
+<form name="updatecat" method="post" id="updatecatform" enctype="multipart/form-data">
 <fieldset>
   	<legend>Edit parent category</legend>
 	<input type="hidden" name="id" value="{$category.cat_id}" />
@@ -43,7 +43,7 @@
 </fieldset>
 </form>
 {ElseIf $edit == "editsubcat"}
-<form name="updatecat" method="post" id="updatecatform" >
+<form name="updatecat" method="post" id="updatecatform" enctype="multipart/form-data">
 <fieldset>
   	<legend>Edit subcategory</legend>
 	<input type="hidden" name="id" value="{$category.cat_id}" />
@@ -51,6 +51,18 @@
 		<tr>
 			<td align="left" valign="middle" width="200"><label>Title</label><span class="required">*</span></td>
 			<td align="left" valign="middle"><input class="inputbox" type="text" name="title" value="{$category.title}"></td>	
+		</tr>
+		<tr>
+			<td align="left" valign="middle" width="200"><label>Parent category</label><span
+				class="required">*</span></td>
+			<td align="left" valign="middle">
+				<select name="parent_id" class="iselect-small">
+					<option value="" >--- Select from options ---</option>
+					{foreach from=$parentCat item=cat}						
+					<option value="{$cat.cat_id}" {If $category.parentcat_id == $cat.cat_id } selected="selected" {/If} >{$cat.title}</option>
+					{/foreach}
+				</select>
+			</td>
 		</tr>
 		<tr>
 			<td align="left" valign="top"><label>Description</label></td>
@@ -67,8 +79,8 @@
 				class="required">*</span></td>
 			<td align="left" valign="middle">
 				<select name="status" class="iselect-small">
-					<option value="active" {If $category.status == "active"} select="select" {/If}>Active</option>
-					<option value="inactive" {If $category.status == "inactive"} select="select" {/If}>Inactive</option>
+					<option value="active" {If $category.status == "active"} selected="selected" {/If}>Active</option>
+					<option value="inactive" {If $category.status == "inactive"} selected="selected" {/If}>Inactive</option>
 				</select>
 			</td>
 		</tr>

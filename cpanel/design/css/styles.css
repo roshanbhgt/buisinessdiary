@@ -187,6 +187,7 @@ button {
     font-size: 0.95em;
 } 
 /** End of top menu **/
+
 /** start of navigation menu css */
 .navbar {
 	background: url("../images/nav_bg.gif") repeat-x scroll 0 100% #666E73;
@@ -407,3 +408,69 @@ button {
 	padding: 10px; */
 }
 /** end of create user form css */
+
+/** start of css for pageination **/
+.pagecontainer {
+	width: 100%;
+	position: relative;
+}
+.pageiteminfo {
+	padding-top:10px;
+	padding-bottom:10px;
+	background-color:#E6E6E6;
+	float:left;
+	text-align: right;
+}
+.pagination {
+	width:100%;
+	background-color: #E6E6E6;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 2px;
+    float:right;
+    padding: 2px 5px;	
+    text-align:right;
+}
+.pagination ul{
+	list-style-type: none;
+}
+.pagination li{
+	float:left;	
+}
+.pagination li a{
+	padding: 0 3px !important;	
+}
+/** End of css for pageinaion **/
+/** Start of gallery image css **/
+.gallerycontent{
+	width: 100%;
+}
+.gallery {    
+    position: relative;    
+}
+.gallery td{
+	padding:5px;
+}
+.gallery td a.galimganc {    
+    height: 100px;
+    padding: 0 !important;
+    position: relative;
+    width: 100px;
+    border: 4px solid #5E5E5E;
+    border-radius: 4px 4px 4px 4px;
+    display: inline-block;
+    line-height: 0;    
+    transition: all 0.1s ease-out 0s;
+}
+.gallery td a.galimganc:hover {    
+    border: 4px solid #00BFAB;
+}
+#desc {
+	display:none;
+}
+#desc p{
+	margin: 0 5px !important;
+}
+#shortdesc p{
+	margin: 0 5px !important;
+}
