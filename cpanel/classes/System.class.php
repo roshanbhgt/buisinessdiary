@@ -104,7 +104,7 @@ class System {
     */
     public function isDuplicateCountry($country){
             global $dbObj;
-            $sql = "SELECT * FROM ".COUNTRY." title= '".$country."' ";            
+            $sql = "SELECT * FROM ".COUNTRY." WHERE title= '".$country."' ";            
             $res = $dbObj->query($sql);
             if($dbObj->num_rows($res) > 0){
                     return true;
@@ -113,6 +113,14 @@ class System {
             }
 	}
 	
+	
+	
+	public function getBackupList(){
+		global $dbObj;
+		$sql = "SELECT * FROM ".BACKUP."; ";
+		$res = $dbObj->fetch_all_array($sql);
+		return $res;
+	}
 	
 	public function backuupDatabase(){
 		
@@ -131,15 +139,17 @@ class System {
 		
 		$return = "";
 		$return .= "SET foreign_key_checks = 0;";
+		$return.= "\n";
 		// cycle through the database tables
 		if(is_array($tables)){			
 			foreach($tables as $table){
 				// Adding drop table query...
-				$return.= 'DROP TABLE '.$table.';';
+				$return.= "\n";
+				$return.= "DROP TABLE ".$table.";";
 				
 				// Selecting data to be back up from database...
 				$sql = 'SELECT * FROM '.$table;
-				$result = $dbObj->fetch_all_array($sql);
+				$result = $dbObj->fetch_all_array($sql, false);
 				
 				$res = $dbObj->query($sql);
 				$num_fields = $dbObj->num_fields($res);
@@ -149,34 +159,41 @@ class System {
 				$res = $dbObj->query($sql);
 				$row = $dbObj->fetch_array($res);
 				$return.= "\n\n".$row[1].";\n\n";
-				
-				for ($i = 0; $i < $num_fields; $i++)
-				{
-					foreach ($result as $row)
+				foreach ($result as $row)
+				{	
+					$return.= 'INSERT INTO '.$table.' VALUES(';
+					for($j=0; $j<$num_fields; $j++)
 					{
-						$return.= 'INSERT INTO '.$table.' VALUES(';
-						for($j=0; $j<$num_fields; $j++)
-						{
-							$row[$j] = addslashes($row[$j]);
-							$row[$j] = str_replace("\n","\\n",$row[$j]);
-							if (isset($row[$j])) { $return.= '"'.$row[$j].'"' ; } else { $return.= '""'; }
-							if ($j<($num_fields-1)) { $return.= ','; }
-						}
-						$return.= ");\n";
+						$row[$j] = addslashes($row[$j]);
+						$row[$j] = str_replace("\n","\\n",$row[$j]);
+						if (isset($row[$j])) { $return.= '"'.$row[$j].'"' ; } else { $return.= '""'; }
+						if ($j<($num_fields-1)) { $return.= ','; }
 					}
+					$return.= ");\n";
 				}
-				
-				$return .= 'SET foreign_key_checks = 1;';
-				$return.="\n\n\n";
-				
 			}
+			$return .= 'SET foreign_key_checks = 1;';
+			$return.="\n\n\n";
 		}
 		
-		$handle = fopen(SESSION_BACKEND_PATH.'\db-backup-'.date('Y-m-d h:m:s').'.sql','a+');
+		$pathtobackup = DB_BACKUP_PATH.'/db-backup-'.date('Ymdhms').'.sql';
+		$handle = fopen($pathtobackup,'w');
 		fwrite($handle,$return);
 		fclose($handle);
-				
-		return true;
+
+		$sql = "INSERT INTO
+                        ".BACKUP."
+                    SET
+                        username = '".$_SESSION['admin']."',
+                        bakupfile = '".$pathtobackup."',
+                        backupsize = '".filesize($pathtobackup)." bytes',
+                        backup_date = NOW()
+                    ";
+		if($dbObj->query($sql)){
+			return true;
+		} else {
+			return false;
+		}
 	} 
         
 }

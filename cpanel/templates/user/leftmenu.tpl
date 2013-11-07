@@ -1,11 +1,11 @@
 <ul>
 	<li class="menu">
-		<a href="javascript:void(0);" onclick="showHide('mymenu1')">System</a>
+		<a href="javascript:void(0);" onclick="showHide('mymenu1')">Manage User</a>
 		<ul id="mymenu1" class="show">
-			<li class="submenu"><a href="{$BACKEND}manageadmin.php?action=edit&id={$smarty.session.adminId}">Manage Admin</a></li>			
-			<li class="submenu"><a href="{$BACKEND}managecountries.php?type=country">Manage Country</a></li>
-			<li class="submenu"><a href="{$BACKEND}cachemgmt.php">Manage Cache</a></li>
-			<li class="submenu"><a href="{$BACKEND}managebackup.php">Backup Database</a></li>			  	
+			<li class="submenu"><a href="{$BACKEND}manageuser.php?action=viewall">Manage user type</a></li>			
+			<li class="submenu"><a href="{$BACKEND}manageuser.php?action=adduser">Add new user type</a></li>
+			<li class="submenu"><a href="{$BACKEND}manageuser.php?action=viewall">Manage users</a></li>			
+			<li class="submenu"><a href="{$BACKEND}manageuser.php?action=adduser">Add new user</a></li>			  	
 		</ul>
 	</li>
 </ul>
