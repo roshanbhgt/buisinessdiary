@@ -17,26 +17,20 @@
 <table width="100%" align="left" class="grid">	
 	<tr>
 		<td class="center"></td>
-		<td>Title</td>
-		<td>Identifier</td>
-		<td>Description</td>
+		<td>Role</td>		
 		<td>Created At</td>		
-		<td>Updated At</td>
-		<td>Status</td>
+		<td>Updated At</td>		
 		<td></td>
 	</tr>
-	{foreach from=$pages item=page}	
+	{foreach from=$usertypes item=usertype}	
 	<tr>
-		<td width="30" class="center" valign="top"><input type="checkbox" name="parentcat" value="{$page.cat_id}"></td>
-		<td width="150" align="justify" valign="top">{$page.title}</td>
-		<td width="150" align="justify" valign="top">{$page.identifier}</td>
-		<td align="justify" valign="top">{$page.description|truncate:200:'...'}</td>
-		<td width="100"align="justify" valign="top">{$page.created_date}</td>
-		<td width="100" valign="top">{$page.update_date}</td>
-		<td width="50" valign="top">{$page.status|capitalize}</td>
+		<td width="30" class="center" valign="top"><input type="checkbox" name="usrtype" value="{$usertype.roleId}"></td>
+		<td width="150" align="justify" valign="top">{$usertype.role}</td>		
+		<td width="100"align="justify" valign="top">{$usertype.created_date}</td>
+		<td width="100" valign="top">{$usertype.update_date}</td>		
 		<td width="100">
-			<a href="{$BACKEND}managepages.php?action=editpage&id={$page.pageId}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>
-			<a href="{$BACKEND}managepages.php?action=deletepage&id={$page.pageId}"><img src="{$BACKEND}design/images/delete.png" alt="D" title="Delete"></a>
+			<a href="{$BACKEND}manageusertype.php?action=editusertype&id={$usertype.roleId}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>
+			<a href="{$BACKEND}manageusertype.php?action=deleteusertype&id={$usertype.roleId}"><img src="{$BACKEND}design/images/delete.png" alt="D" title="Delete"></a>
 		</td>
 	</tr>
 	{foreachelse}

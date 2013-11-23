@@ -23,3 +23,5 @@ define ('STATE','state');
 define ('REGIONS','regions');
 define ('CONTACTUS','contactus');
 define ('BACKUP','dbbackup');
+define ('USERTYPE','usertype');
+define ('USER','user');
