@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>404 page not found...</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="http://localhost/buisinessdiary/favicon.ico" type="image/x-icon"/>
+<link href="http://localhost/buisinessdiary/design/css/styles.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost/buisinessdiary/design/css/slider.css" rel="stylesheet" type="text/css" />  
+<script type="text/javascript" src="http://localhost/buisinessdiary/design/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://localhost/buisinessdiary/design/js/jquery.slides.min.js"></script>
+<script type="text/javascript" src="http://localhost/buisinessdiary/design/js/jquery-scroller.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#slides').slidesjs({
+			width: 940,
+			height: 350,
+			play: {
+			  active: true,
+			  auto: true,
+			  interval: 4000,
+			  swap: true
+			}
+		});
+	  
+		// create scroller for each element with "horizontal_scroller" class...
+		$('.horizontal_scroller').SetScroller({	
+			velocity: 	 60,
+			direction: 	 'horizontal',
+			startfrom: 	 'right',
+			loop:		 'infinite',
+			movetype: 	 'linear',
+			onmouseover: 'pause',
+			onmouseout:  'play',
+			onstartup: 	 'play',
+			cursor: 	 'pointer'
+		});
+    });
+	
+	function collapse(id,classname){	
+		$(id).removeClass(classname);
+			$('.wrapper .nav ul li ul').css('display', 'none');
+	}
+	function expand(id,classname){
+		$(id).addClass(classname);
+		$('.wrapper .nav ul li.over ul').css('display', 'block');
+	}
+</script>
+<style type="text/css">
+.std{
+	min-height: 350px;
+}
+.page-title {
+	border-bottom: 1px solid #CCCCCC;
+    margin: 5px 0 15px;
+    overflow: hidden;
+    width: 100%;
+}
+.page-title h1{
+    color: #666;
+    font-size: 20px;
+    margin: 0;
+	font-weight: normal;
+}
+.std dl dt{
+    font-weight: bold;
+	padding-left: 20px;
+}
+.std dl dd{
+    font-weight: normal;
+	padding-left: 20px;
+}
+.std ul.disc {
+    list-style: disc outside none;
+    margin: 0 0 10px;
+    padding-left: 50px;
+}
+.std a {
+    color: #1E7EC8;
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div class="wrapper">	
+    <div class="header">
+        <div class="logo">
+			<img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/>
+		</div>
+        <div class="top-links">        
+        	<ul>
+        		<li>Welcome Guest</li><li>|</li>
+        		<li>Login</li><li>|</li>
+        		<li>Register</li><li>|</li>
+        		<li>My Account</li><li>|</li>
+        		<li>My Places</li>
+        	</ul>
+        </div>
+        <div class="lang-whether"></div>
+        <div class="searchbox">
+        	<form method="post" action="">
+        		<input class="searchinput" type="text" name="q" value="" />
+                <button class="searchbtn" type="submit" name="submit">Go</button>
+            </form>
+        </div>
+    </div>
+    <div class="nav">
+    	<ul>
+			<li id="menu1" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">Home</a>
+            </li>
+            <li id="menu1" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">About Us</a>
+            </li>
+            <li id="menu2" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">Categories</a>
+                <ul style="display:none">
+                	<li><a href="#"><span>Category 1</span></a></li>
+                    <li><a href="#"><span>Category 2</span></a></li>
+                    <li><a href="#"><span>Category 3</span></a></li>
+                    <li><a href="#"><span>Category 4</span></a></li>
+                    <li><a href="#"><span>Category 5</span></a></li>
+                    <li><a href="#"><span>Category 6</span></a></li>
+                </ul>
+            </li>
+            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">Services</a>
+            </li>
+            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">Suggest buisiness</a>
+            </li>
+            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">Faq</a>
+            </li>
+            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="#">Feedback</a>
+            </li>
+		</ul>	
+`	</div>
+<div class="main-content">
+	<div class="col-main">
+		<div class="std"><div class="page-title"><h1>Whoops, our bad...</h1></div>
+		<dl>
+			<dt>The page you requested was not found, and we have a fine guess why.</dt>			
+			<ul class="disc">
+				<li>If you typed the URL directly, please make sure the spelling is correct.</li>
+				<li>If you clicked on a link to get here, the link is outdated.</li>
+			</ul>
+		</dl>
+		<dl>
+			<dt>What can you do?</dt>
+			<dd>Have no fear, help is near! There are many ways you can get back on track with Magento Store.</dd>
+		<dl>
+		<ul class="disc">
+			<li><a onclick="history.go(-1); return false;" href="#">Go back</a> to the previous page.</li>
+			<li>Use the search bar at the top of the page to search for your products.</li>
+			<li>Follow these links to get you back on track!<br><a href="http://localhost/buisinessdiary/">Home</a> <span class="separator">|</span> <a href="http://localhost/buisinessdiary/customer/account/">My Account</a></li>
+		</ul>
+		</dd>
+		</dl>
+		</div>
+		</div>		
+	</div>
+	<div class="footer">
+        <div class="twt-feed">Twitter Feed</div>
+        <div class="follow-btn">Follow Buttons</div>
+        <div class="copyright">Copyrights</div>
+    </div>
+  </div>
+<div class="copyright">Copyright &copy; 2013 Buisiness Diary. All rights reserved.</div>  
+</body>
+</html>
