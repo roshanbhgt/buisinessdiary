@@ -46,6 +46,7 @@ $rsp = null;
 require('classes/Admin.class.php');
 require('classes/User.class.php');
 require('classes/Categries.class.php');
+require('classes/Buisiness.class.php');
 require('classes/Pages.class.php');
 require('classes/Webforms.class.php');
 require('classes/Gallery.class.php');

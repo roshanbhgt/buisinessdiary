@@ -12,11 +12,11 @@
   						<li class="last"><a href="{$BACKEND}/managecat.php?action=viewsub">Manage Sub Categories</a></li>
   					</ul>
   				</li>  				
-  				<li {If $filename == 'managelist' } class="active" {/If} >
+  				<li {If $filename == 'manageblist' } class="active" {/If} >
   					<a href="{$BACKEND}">Buisiness Listing</a>
   					<ul>
-  						<li><a href="{$BACKEND}">Add buisiness</a></li>
-  						<li class="last"><a href="{$BACKEND}">Manage Buisiness</a></li>
+  						<li><a href="{$BACKEND}manageblist.php?action=addbuisiness">Add buisiness</a></li>
+  						<li class="last"><a href="{$BACKEND}manageblist.php?action=viewbuisiness">Manage Buisiness</a></li>
   					</ul>
   				</li>  				
   				<li {If $filename == 'managegallery' } class="active" {/If} >
