@@ -230,7 +230,7 @@ a:hover {
 }
 .wrapper .nav ul li ul {
 	float: left;
-	width: 208px;
+	width: 750px;
 	position: absolute;
 	margin-top: 7px;
 	display: block;
@@ -238,15 +238,14 @@ a:hover {
 }
 .wrapper .nav ul #menu2 ul li a span {
 	display: block;
-	padding: 4px;
+	padding: 7px;
 }
 
 
 .wrapper .nav ul li ul li {
-	background-color: #CC0A0B;
-	clear: both;
+	background-color: #CC0A0B;	
 	height: 26px;
-	width: 190px;
+	width: 226px;
 	position: relative;
 	float: left;
 	display: block;
@@ -267,15 +266,15 @@ a:hover {
 	text-decoration: none;
 }
 .page-head {
-	background: url("../images/content-main-heading.png") repeat-x scroll left bottom #FFFFFF;
-	border: 1px solid #CCCCCC;
+	/* background: url("../images/content-main-heading.png") repeat-x scroll left bottom #FFFFFF;
+	padding: 6px 0 6px 10px; 
+	border: 1px solid #CCCCCC; */
     color: #0451BD;
     font-family: 'Segoe UI',Tahoma,Arial,Helvetica,Sans-Serif;
     font-size: 1.5em;
     font-weight: bold;
     letter-spacing: normal;
-    margin: 5px 0 3px;
-    padding: 6px 0 6px 10px;
+    margin: 5px 0 3px;    
     text-transform: capitalize;
     clear:both;
 }
@@ -287,14 +286,14 @@ a:hover {
 	margin: 10px 0;
 }
 .home-category h2{
-    color: #0451BD;
+    /*color: #0451BD;*/
     font-family: 'Segoe UI',Tahoma,Arial,Helvetica,Sans-Serif;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
     letter-spacing: normal;
     margin: 0 0 3px;
-    padding: 6px 0 6px 10px;
-    text-transform: capitalize;
+    /* padding: 6px 0 6px 10px;
+    text-transform: capitalize; */
 }
 .home-category ul{
 	position: relative;
@@ -306,16 +305,16 @@ a:hover {
 .home-category ul li{	
 	float: left;
 	display: block;
-	width:44%;
-	style-type:none;
-	padding:5px 20px 0;
+	width: 31%;
+	style-type: none;
+	padding: 5px 5px 0;
 }	
 .home-category ul li h3 {
 	background: none repeat scroll 0 0 #E2E2E2;
     border-left: 5px solid #4163C4;
     color: #4D4D4D;
     font-family: 'Segoe UI',Tahoma,Arial,Helvetica,Sans-Serif;
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: normal;
     letter-spacing: normal;
     margin: 0px 0 5px;
