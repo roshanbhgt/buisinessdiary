@@ -56,16 +56,17 @@
         <div class="top-links">        
         	<ul>
         		<li>Welcome Guest</li><li>|</li>
-        		<li>Login</li><li>|</li>
-        		<li>Register</li><li>|</li>
-        		<li>My Account</li><li>|</li>
-        		<li>My Places</li>
+        		<li><a href="#">Login</a></li><li>|</li>
+        		<li><a href="#">Register</a></li><li>|</li>
+        		<li><a href="#">My Account</a></li><li>|</li>
+        		<li><a href="#">My Places</a></li>
         	</ul>
         </div>
         <div class="lang-whether"></div>
         <div class="searchbox">
         	<form method="post" action="">
-        		<input class="searchinput" type="text" name="q" value="" />
+        		<input class="searchinput" type="text" name="postcode" value="Enter your postcode or state or city" onfocus="if(this.value=='Enter your postcode or state or city')this.value='';" onblur="if(this.value=='')this.value='Enter your postcode or state or city';" />
+        		<input class="searchinput" type="text" name="keyword" value="Enter keyword looking for" onfocus="if(this.value=='Enter keyword looking for')this.value='';" onblur="if(this.value=='')this.value='Enter keyword looking for';"/>
                 <button class="searchbtn" type="submit" name="submit">Go</button>
             </form>
         </div>
@@ -145,7 +146,7 @@
 		 	Idea behind buiiness diary is to help the samll and medium level buisiness to help them to grow and makes them available to each small and large doors.<br/> <br/>There is lot of information available online so we have categories and formulated the information in easily understandable format and makes it available to you. 
 		</p>
         <div class="home-category">
-        	<h2>Browse by categories</h2>
+        	<h2>Browse by category</h2>
         	<ul>
         		<li><h3>Accomodation</h3></li>
         		<li><h3>Adult</h3></li>
@@ -176,10 +177,57 @@
     </div>
     <div cl class="inner-right">Promotions</div>
     </div>
-    <div class="footer">
-        <div class="twt-feed">Twitter feeds</div>
-        <div class="follow-btn">Follow Buttons</div>        
-    </div>
+    <div class="twt-feed">Twitter feeds</div>
+    <div class="follow-btn">Follow Buttons</div>    
+  </div>
+  <div class="footer">
+  	<div class="footer-block">
+  		<h3>Local Services</h3>
+  		<ul>  			
+  			<li>Automotive</li>
+  			<li>Doctors</li>
+  			<li>Electricians</li>
+  			<li>Schools</li>
+  			<li>Beauty Saloons</li>
+  			<li>Resturants</li>
+  			<li>Movers and Packers</li>
+  			<li>Tours and Travels</li>
+  			<li>Events and Entertainments</li>
+  		</ul>
+  	</div>
+  	<div class="footer-block">
+  		<h3>Customer Services</h3>
+  		<ul>
+  			<li>Add listing</li>
+  			<li>Suggest Listing</li>
+  			<li>Promotoe Buisiness</li>
+  			<li>Review Management</li>  			
+  		</ul>
+  	</div>
+  	<div class="footer-block">
+  		<h3>Account / Places</h3>
+  		<ul>
+  			<li>Login / Register</li>
+  			<li>My Account</li>
+  			<li>My Places</li>
+  			<li>My Reviews</li>
+  			<li>Recent History</li>
+  		</ul>
+  	</div>
+  	<div class="footer-block">
+  		<h3>Follow Us</h3>
+  		<ul>
+  			<li>Facebook</li>
+  			<li>Twitter</li>
+  			<li>Linked In</li>
+  		</ul>
+  		<h3>Contact Us</h3>
+  		<ul>	
+  			<li>Address</li>
+  			<li>Mail</li>
+  			<li>Phone/Fax</li>
+  		</ul>
+  	</div>            
   </div>
   <div class="copyright">Copyright &copy; 2013 Buisiness Diary. All rights reserved.</div>  
 </body>

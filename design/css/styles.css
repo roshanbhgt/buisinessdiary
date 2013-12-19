@@ -65,7 +65,7 @@ a:hover {
 }
 .searchbox {
 	float: right;
-	width: 300px;
+	width: 560px;
 	overflow: hidden;
 	position: relative;
 	background-color: #248EE9;
@@ -86,6 +86,7 @@ a:hover {
 	margin-bottom: 5px;
 	margin-left: 5px;
 	padding-left: 5px;
+	color: #666;
 }
 .searchbtn {
 	color: #FFF;
@@ -94,7 +95,7 @@ a:hover {
 	position: relative;
 	height: 27px;
 	width: 30px;
-	top: 1px;
+	top: 0px;
 	border: none;
 	font-weight: bold;
 	font-size: 16px;
@@ -123,6 +124,12 @@ a:hover {
 	list-style-type: none;
 	padding: 0 5px; 
 }
+.top-links ul li a{
+	color: #248EE9; 
+}
+.top-links ul li a:hover{
+	color: #003366; 
+}
 .copyright {
 	overflow: hidden;
 	position: relative;
@@ -150,24 +157,30 @@ a:hover {
 	position: relative;
 }
 .footer {
-	float: left;
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: dotted;
-	border-right-style: none;
-	border-bottom-style: none;
-	border-left-style: none;
-	border-top-color: #999;
-	border-right-color: #999;
-	border-bottom-color: #999;
-	border-left-color: #999;
+	background-color: #ADC4EA;
+    background-position: center top;
+    border-style: none;    
+    clear: both;
+    float: none;
+    height: inherit;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 5px 10px 0;
+    position: relative;
+    text-decoration: none;
+    text-transform: none;
+    width: 1000px;
+	height: 170px
 }
-
+.footer .footer-block{		
+	float: left;
+    width: 248px;
+}
+.footer .footer-block ul li{
+	list-style-type: none;
+	float:left;
+	width:100%;
+}
 .nav {
 	text-transform: capitalize;
 	background-color: #248EE9;
@@ -197,7 +210,9 @@ a:hover {
 }
 .wrapper .nav ul li.over {
 	z-index: 99;
-	background-color: #CC0A0B;
+	background-color: #FFF;
+	border-left:5px solid #FF0000;
+	border-right:5px solid #FF0000;
 }
 
 .main-content {
@@ -230,45 +245,42 @@ a:hover {
 }
 .wrapper .nav ul li ul {
 	float: left;
-	width: 750px;
+	width: 726px;
 	position: absolute;
-	margin-top: 7px;
+	margin-top: 8px;
 	display: block;
-	left: 0px;
+	left: -5px;
+	border:5px solid #FF0000;
+	border-top: none;
 }
 .wrapper .nav ul #menu2 ul li a span {
 	display: block;
 	padding: 7px;
 }
-
-
 .wrapper .nav ul li ul li {
-	background-color: #CC0A0B;	
+	background-color: #FFF;	
 	height: 26px;
 	width: 226px;
 	position: relative;
 	float: left;
 	display: block;
-	padding: 0 12px;
+	padding: 0 8px;
 }
 .wrapper .nav ul li.over {	
 	z-index: 99;
 }
 .wrapper .nav ul li.over a{
-	color: #FFF;
+	color: #003366;
 }
 .wrapper .nav ul li.over ul li a{
-	color: #CCCCCC;
+	color: #248EE9;
 	text-decoration: none;
 }
 .wrapper .nav ul li.over ul li a:hover{
-	color: #FFF;
+	color: #003366;
 	text-decoration: none;
 }
-.page-head {
-	/* background: url("../images/content-main-heading.png") repeat-x scroll left bottom #FFFFFF;
-	padding: 6px 0 6px 10px; 
-	border: 1px solid #CCCCCC; */
+.page-head {	
     color: #0451BD;
     font-family: 'Segoe UI',Tahoma,Arial,Helvetica,Sans-Serif;
     font-size: 1.5em;
@@ -285,8 +297,7 @@ a:hover {
 	width:100%;
 	margin: 10px 0;
 }
-.home-category h2{
-    /*color: #0451BD;*/
+.home-category h2{ 
     font-family: 'Segoe UI',Tahoma,Arial,Helvetica,Sans-Serif;
     font-size: 1.2em;
     font-weight: bold;
@@ -311,7 +322,8 @@ a:hover {
 }	
 .home-category ul li h3 {
 	background: none repeat scroll 0 0 #E2E2E2;
-    border-left: 5px solid #4163C4;
+    border-left: 2px solid #4163C4;
+	border-top: 2px solid #4163C4;
     color: #4D4D4D;
     font-family: 'Segoe UI',Tahoma,Arial,Helvetica,Sans-Serif;
     font-size: 1.2em;
