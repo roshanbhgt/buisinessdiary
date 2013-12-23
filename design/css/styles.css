@@ -19,6 +19,59 @@ body {
 	background-repeat: repeat-x;
 	background-attachment: fixed;
 }
+input, textarea {
+	border:1px solid #ADC4EA;
+	width:200px;
+}
+.button-blue {
+	background: -moz-linear-gradient(center top , #3E779D, #65A9D7) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    border-radius: 10px;
+    border-top: 1px solid #96D1F8;
+    box-shadow: 0 0 0 #000000;
+    color: #FFFFFF;
+    font-family: Helvetica,Arial,Sans-Serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 2px 10px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    vertical-align: middle;
+}
+.button-blue:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #fff;
+}
+.button-blue:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+}
+.button-red {
+	background: -moz-linear-gradient(center top , #CC3300, #990134) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    border-radius: 10px;
+    border-top: 1px solid #96D1F8;
+    box-shadow: 0 0 0 #000000;
+    color: #FFFFFF;
+    font-family: Helvetica,Arial,Sans-Serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 2px 10px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    vertical-align: middle;
+}
+.button-red:hover {
+   border-top-color: #28597a;
+   background: #990134;
+   color: #fff;
+}
+.button-red:active {
+   border-top-color: #1b435e;
+   background: #990134;
+}
+
 .inner-left {
 	float: left;
 	width: 69.5%;
@@ -89,17 +142,16 @@ a:hover {
 	color: #666;
 }
 .searchbtn {
-	color: #FFF;
-	background-color: #CC0A0B;
+	color: #FFF;	
 	overflow: hidden;
 	position: relative;
-	height: 27px;
+	height: 29px;
 	width: 30px;
-	top: 0px;
+	top: -2px;
 	border: none;
 	font-weight: bold;
-	font-size: 16px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 

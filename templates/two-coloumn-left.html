@@ -67,7 +67,7 @@
         	<form method="post" action="">
         		<input class="searchinput" type="text" name="postcode" value="Enter your postcode or state or city" onfocus="if(this.value=='Enter your postcode or state or city')this.value='';" onblur="if(this.value=='')this.value='Enter your postcode or state or city';" />
         		<input class="searchinput" type="text" name="keyword" value="Enter keyword looking for" onfocus="if(this.value=='Enter keyword looking for')this.value='';" onblur="if(this.value=='')this.value='Enter keyword looking for';"/>
-                <button class="searchbtn" type="submit" name="submit">Go</button>
+                <button class="searchbtn button-red" type="submit" name="submit">Go</button>
             </form>
         </div>
     </div>
@@ -178,35 +178,41 @@
 	    </div>
 	    <div class="inner-right">
 	    	<div class="ads-promotion">
-	    		<h2>Hurry, Get Address by People</h2>
+	    		<h2>Hurry, Promote your buisiness</h2>
 	    		Get more buisiness online by promoting and dvertiding with us.
 	    		For quick quote <a href="http://localhost/buisinessdiary/quikquote">clik here</a>.
 	    	</div>
 	    	<div class="ads-promotion">
 	    		<h2>Quick add listing</h2>
+	    		<p>You can quikly show your buisiness online. Fill the form below give us some information regarding your buisiness.</p>
 	    		<form action="" method="post">
 		    		<table>
-			    		<tr><td>Company</td><td><input type="text" name="comapnyname" value=""/></td></tr>
-			    		<tr><td>Information</td><td><textarea name="moreinfo"> </textarea></td></tr>
-			    		<tr><td>Address</td><td><textarea name="address"> </textarea></td></tr>
-			    		<tr><td>City</td><td><input type="text" name="city" value=""/></td></tr>
-			    		<tr><td>State</td><td><input type="text" name="state" value=""/></td></tr>
-			    		<tr><td>Country</td><td><input type="text" name="country" value=""/></td></tr>
-			    		<tr><td>Postcode</td><td><input type="text" name="state" value=""/></td></tr>
-			    		<tr><td>Telephone</td><td><input type="text" name="state" value=""/></td></tr>
-			    		<tr><td>Fax</td><td><input type="text" name="state" value=""/></td></tr>
-			    		<tr><td></td><td><button>Submit</button></td></tr>
+			    		<tr><td align="left" valign="top" width="135px">Company</td><td><input type="text" name="comapnyname" value=""/></td></tr>
+			    		<tr><td align="left" valign="top">Information</td><td><textarea name="moreinfo"> </textarea></td></tr>
+			    		<tr><td align="left" valign="top">Address</td><td><textarea name="address"> </textarea></td></tr>
+			    		<tr><td align="left" valign="top">City</td><td><input type="text" name="city" value=""/></td></tr>
+			    		<tr><td align="left" valign="top">State</td><td><input type="text" name="state" value=""/></td></tr>
+			    		<tr><td align="left" valign="top">Country</td><td><input type="text" name="country" value=""/></td></tr>
+			    		<tr><td align="left" valign="top">Postcode</td><td><input type="text" name="state" value=""/></td></tr>
+			    		<tr><td align="left" valign="top">Telephone</td><td><input type="text" name="state" value=""/></td></tr>
+			    		<tr><td align="left" valign="top">Fax</td><td><input type="text" name="state" value=""/></td></tr>
+			    		<tr><td align="right" valign="top" colspan="2"><button class="button-blue"><span>Submit</span></button></td></tr>
 		    		</table>		    		 
 	    		</form>
 	    	</div>
 	    	<div class="newsletter">
+				<h2>Newsletter Signup</h2>	    		
 	    		Sign up for newsletter to get information about latest news and offer.
 	    		<form action="" method="post">
-	    			<label>Email</label><input type="text" name="email" value=""/>
-	    			<button>Submit</button>
+	    			<table>
+	    				<tr><td align="left" valign="top" width="135px">Name</td><td><input type="text" name="name" value=""/></td></tr>
+	    				<tr><td align="left" valign="top">Email</td><td><input type="text" name="email" value=""/></td></tr>
+	    				<tr><td align="right" valign="top" colspan="2"><button class="button-blue"><span>Submit</span></button></td></tr>
+	    			</table>
 	    		</form> 
 	    	</div>
 	    	<div class="facebook-like-box">
+	    		<h2>Find us on Facebook</h2>
 	    		<div id="fb-root"></div>
 				<script>(function(d, s, id) {
 				  var js, fjs = d.getElementsByTagName(s)[0];
@@ -215,7 +221,7 @@
 				  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=106386496121584";
 				  fjs.parentNode.insertBefore(js, fjs);
 				}(document, 'script', 'facebook-jssdk'));</script>
-				<div class="fb-like-box" data-href="https://www.facebook.com/businessdiaryin" data-width="295" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+				<div class="fb-like-box" data-href="https://www.facebook.com/businessdiaryin" data-width="295" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="flase"></div>
 	    	</div>	
 	    </div>
     </div>    
