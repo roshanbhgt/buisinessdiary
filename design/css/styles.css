@@ -21,13 +21,13 @@ body {
 }
 .inner-left {
 	float: left;
-	width: 70%;
+	width: 69.5%;
 	overflow: hidden;
-	position: relative;
+	position: relative	
 }
 .inner-right {
 	float: right;
-	width: 20%;
+	width: 29.5%;
 	overflow: hidden;
 	position: relative;
 }
@@ -139,22 +139,6 @@ a:hover {
 	float: left;
 	padding-top:5px;
 	color: #FFFFFF;
-}
-.twt-feed {
-	padding: 5px 0;
-	float: left;
-	height: 20px;
-	width: 79%;
-	overflow: hidden;
-	position: relative;
-}
-.follow-btn {
-	padding: 5px;
-	float: right;
-	height: 15px;
-	width: 19%;
-	overflow: hidden;
-	position: relative;
 }
 .footer {
 	background-color: #ADC4EA;
