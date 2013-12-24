@@ -20,8 +20,9 @@ body {
 	background-attachment: fixed;
 }
 input, textarea {
-	border:1px solid #ADC4EA;
-	width:200px;
+	border: 1px solid #ADC4EA;
+	width: 200px;	
+	color: #8D8B85;
 }
 .button-blue {
 	background: -moz-linear-gradient(center top , #3E779D, #65A9D7) repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -55,11 +56,11 @@ input, textarea {
     box-shadow: 0 0 0 #000000;
     color: #FFFFFF;
     font-family: Helvetica,Arial,Sans-Serif;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
     font-size: 15px;
     font-weight: bold;
     padding: 2px 10px;
-    text-decoration: none;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    text-decoration: none;    
     vertical-align: middle;
 }
 .button-red:hover {
@@ -74,8 +75,7 @@ input, textarea {
 
 .inner-left {
 	float: left;
-	width: 69.5%;
-	overflow: hidden;
+	width: 69.5%;	
 	position: relative	
 }
 .inner-right {
@@ -91,11 +91,11 @@ input, textarea {
 	clear:both;
 }
 a {
-	color: #CCCCCC;
+	color: #248EE9;
 	text-decoration:none;
 }
 a:hover {
-	color: #FFF;
+	color: #003366;
 	text-decoration: none;
 }
 .header {
@@ -150,11 +150,10 @@ a:hover {
 	top: -2px;
 	border: none;
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 13px;
 	font-family: Helvetica, Arial, sans-serif;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
-
-
 .top-links {
 	float: right;
 	height: auto;
@@ -227,14 +226,14 @@ a:hover {
 	margin: 5px 10px;
 }
 .footer .footer-block ul li a{
-	color: #336633;	
+	color: #666;	
 }
 .footer .footer-block ul li a:hover{
 	color: #003366;	
 }
 .nav {
 	text-transform: capitalize;
-	background-color: #248EE9;
+	background: -moz-linear-gradient(center top , #3E779D, #65A9D7) repeat scroll 0 0 rgba(0, 0, 0, 0);
 	vertical-align: middle;
 	word-spacing: normal;
 	white-space: nowrap;
@@ -256,14 +255,16 @@ a:hover {
 	list-style-type: none;
 	width: auto;
 	color: #FFF;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 	position: relative;
-	padding: 7px 7px 8px 14px;
+	padding: 6px 6px 8px 14px;
 }
 .wrapper .nav ul li.over {
 	z-index: 99;
 	background-color: #FFF;
 	border-left:5px solid #FF0000;
 	border-right:5px solid #FF0000;
+	text-shadow: none;
 }
 
 .main-content {
@@ -293,20 +294,25 @@ a:hover {
 }
 .wrapper .nav ul li a {
 	font-weight: bold;
+	color: #FFF;
+	font-family: Helvetica,Arial,Sans-Serif;
+	font-size: 13px;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 .wrapper .nav ul li ul {
 	float: left;
 	width: 726px;
 	position: absolute;
-	margin-top: 8px;
+	margin-top: 7px;
 	display: block;
 	left: -5px;
 	border:5px solid #FF0000;
 	border-top: none;
 }
-.wrapper .nav ul #menu2 ul li a span {
+.wrapper .nav ul li ul li a span {
 	display: block;
 	padding: 7px;
+	font-size: 12px
 }
 .wrapper .nav ul li ul li {
 	background-color: #FFF;	
@@ -319,17 +325,20 @@ a:hover {
 }
 .wrapper .nav ul li.over {	
 	z-index: 99;
+	text-shadow: none;
 }
 .wrapper .nav ul li.over a{
-	color: #003366;
+	color: #003366;	
 }
 .wrapper .nav ul li.over ul li a{
-	color: #248EE9;
+	color: #248EE9;	
 	text-decoration: none;
+	text-shadow: none;
 }
 .wrapper .nav ul li.over ul li a:hover{
 	color: #003366;
 	text-decoration: none;
+	text-shadow: none;
 }
 .page-head {	
     color: #0451BD;
@@ -353,9 +362,7 @@ a:hover {
     font-size: 1.2em;
     font-weight: bold;
     letter-spacing: normal;
-    margin: 0 0 3px;
-    /* padding: 6px 0 6px 10px;
-    text-transform: capitalize; */
+    margin: 0 0 3px;    
 }
 .home-category ul{
 	position: relative;
@@ -370,6 +377,7 @@ a:hover {
 	width: 31%;
 	style-type: none;
 	padding: 5px 5px 0;
+	margin: 0 3px;
 }	
 .home-category ul li h3 {
 	background: none repeat scroll 0 0 #E2E2E2;
@@ -406,3 +414,61 @@ div.scrollingtext{
 	color:#000000;
 }
 /*** End of scrolling text ***/
+.inner-right .content {
+	border : 1px solid #3E779D;
+	border-radius: 5px 5px 0 0;
+	margin: 0 auto 10px;
+}
+.inner-right .content h2{
+	background: -moz-linear-gradient(center top , #3E779D, #65A9D7) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color: #FFFFFF;
+    font-family: Helvetica, Arial, Sans-Serif;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+	padding: 5px;
+	font-size: 13px;
+}
+.inner-right .content p {
+	padding:5px;
+}
+.inner-right .content form{
+	padding:5px;
+}
+.inner-right .content form input, textarea {
+	padding: 3px;
+}
+
+/** Start of css for Latest on buisiness diary **/
+.latest-buisiness{	
+	float: left;
+    height: 162px;
+    position: relative;
+    width: 100%;
+	border: 1px solid #3E779D;
+    border-radius: 5px 5px 0 0;
+    margin: 0 auto 10px;
+}
+.latest-buisiness h3{
+	background: -moz-linear-gradient(center top , #3E779D, #65A9D7) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    font-family: Helvetica,Arial,Sans-Serif;
+    font-size: 13px;
+    padding: 5px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+.latest-buisiness ul li{
+	width: 170px;
+	float: left;
+	list-style-type: none;
+	text-align: center;
+	padding: 5px;	
+}
+.latest-buisiness ul li img{
+	width: 85px;
+	height: 80px;
+	padding-top: 2px;
+}
+.latest-buisiness ul li p{
+	text-align: left;
+	font-size: 11px;
+}
+/** End of css for Latest on buisiness diary **/
