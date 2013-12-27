@@ -11,7 +11,7 @@
 <script type="text/javascript" src="design/js/jquery.slides.min.js"></script>
 <script type="text/javascript" src="design/js/jquery-scroller.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document).ready(function() {		
 		$('#slides').slidesjs({
 			width: 940,
 			height: 350,
@@ -43,33 +43,18 @@
 	// 
 	// javascript whether code 
 	$(function(){
-	
-	    // Specify the ZIP/location code and units (f or c)
-	    var loc = 'SPXX0050'; // or e.g. SPXX0050
-	    var u = 'f';
-	
-	    var query = "SELECT item.condition FROM weather.forecast WHERE location='" + loc + "' AND u='" + u + "'";
-	    var cacheBuster = Math.floor((new Date().getTime()) / 1200 / 1000);
-	    var url = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + '&format=json&_nocache=' + cacheBuster;
-	
-	    window['wxCallback'] = function(data) {
-	        var info = data.query.results.channel.item.condition;
-	        $('#wxIcon').css({
-	            backgroundPosition: '-' + (61 * info.code) + 'px 0'
-	        }).attr({
-	            title: info.text
-	        });
-	        $('#wxIcon2').append('<img src="http://l.yimg.com/a/i/us/we/52/' + info.code + '.gif" width="34" height="34" title="' + info.text + '" />');
-	        $('#wxTemp').html(info.temp + '&deg;' + (u.toUpperCase()));
-	    };
-	
-	    $.ajax({
-	        url: url,
-	        dataType: 'jsonp',
-	        cache: true,
-	        jsonpCallback: 'wxCallback'
-	    });
-	    
+		(function request() {
+			$.ajax({
+	           type: "GET",
+	            url: "weather.php",            
+	            cache: false,
+	            success: function(response) {
+	            	$('#wxWrap').html(response);
+	            }
+			});
+		//calling the anonymous function after 10000 milli seconds
+        setTimeout(request, 5000);
+		})();
 	});
 	
 	function collapse(id,classname){	
