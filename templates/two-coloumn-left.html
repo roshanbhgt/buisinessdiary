@@ -18,22 +18,25 @@
 			play: {
 			  active: true,
 			  auto: true,
+			  effect: "fade",
 			  interval: 4000,
-			  swap: true
+			  swap: true,
+			  pauseOnHover: false,
+			  restartDelay: 2500
+			},
+			effect: {
+		      slide: {
+		        // Slide effect settings.
+		        speed: 1500
+		          // [number] Speed in milliseconds of the slide animation.
+		      },
+		      fade: {
+		        speed: 1500,
+		          // [number] Speed in milliseconds of the fade animation.
+		        crossfade: true
+		          // [boolean] Cross-fade the transition.
+		      }
 			}
-		});
-	  
-		// create scroller for each element with "horizontal_scroller" class...
-		$('.horizontal_scroller').SetScroller({	
-			velocity: 	 60,
-			direction: 	 'horizontal',
-			startfrom: 	 'right',
-			loop:		 'infinite',
-			movetype: 	 'linear',
-			onmouseover: 'pause',
-			onmouseout:  'play',
-			onstartup: 	 'play',
-			cursor: 	 'pointer'
 		});
     });
 	
@@ -161,12 +164,8 @@
             </li>
 		</ul>	
 `	</div>
-	<div align="center" style="padding:0 0 5px 0;">
-		<div class="horizontal_scroller">
-			<div class="scrollingtext">
-				This is a simple scrolling text!
-			</div>
-		</div>
+	<div align="center">
+		<iframe src="http://www.beatthenifty.com/widget/widgetTwo" width="100%" height="42" frameborder="0" target="_blank"></iframe>
 	</div>
     <div class="main-content">        	
 	    <div class="inner-left">

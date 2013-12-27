@@ -1,4 +1,28 @@
 <?php
+
+/** Start of error log managment setting **/
+require_once ('../libs/Error/Errorhandler.class.php');
+
+// Report simple running errors
+ErrorHandler::Init(E_ERROR | E_WARNING | E_PARSE);
+
+// Display Errors
+ErrorHandler::$displayErrors = TRUE;
+
+// Log file path
+// ErrorHandler::Init(E_ALL, 'error.log');
+ErrorHandler::$logFile = $_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/cpanel/error/error.log';
+
+// Notice
+$a = CONSTANT_IS_NOT_DEFINED;
+
+// Mail on E_USER_ERROR
+ErrorHandler::$mailOnErrorType = E_USER_ERROR; // any type of error eg E_ALL
+ErrorHandler::$mail = 'roshanbhgt@gmail.com';
+ErrorHandler::$mailSub = 'Critical error.';
+
+/** End of error log managment setting **/
+
 // Loding constant
 require_once ('configs/constants.php');
 
@@ -16,8 +40,6 @@ ini_set('session.gc_maxlifetime', 50*30*60);
 
 set_time_limit(0);
 date_default_timezone_set("Asia/Calcutta");
-ini_set('display_errors', '1');
-error_reporting(E_ALL ^ ~E_NOTICE ^ ~E_WARNING);
 
 // Loading smarty library
 require_once ('../libs/Database/Database.class.php');
