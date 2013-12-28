@@ -440,23 +440,7 @@ a:hover {
 }
 
 /** End of whether css box **/
-/*** Start of scrolling text ***/
-div.horizontal_scroller{
-	position:relative;
-	height:24px;
-	width:auto;
-	display:block;
-	overflow:hidden;	
-}
-div.scrollingtext{
-	position:absolute;
-	white-space:nowrap;
-	font-family:'Trebuchet MS',Arial;
-	font-size:18px;
-	font-weight:bold;
-	color:#000000;
-}
-/*** End of scrolling text ***/
+
 .inner-right .content {
 	border : 1px solid #3E779D;
 	border-radius: 5px 5px 0 0;

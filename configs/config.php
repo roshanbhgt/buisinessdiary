@@ -7,14 +7,11 @@ require_once ('libs/Error/Errorhandler.class.php');
 ErrorHandler::Init(E_ERROR | E_WARNING | E_PARSE);
 
 // Display Errors
-ErrorHandler::$displayErrors = TRUE;
+ErrorHandler::$displayErrors = False;
 
 // Log file path
 // ErrorHandler::Init(E_ALL, 'error.log');
 ErrorHandler::$logFile = $_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/error/error.log';
-
-// Notice
-$a = CONSTANT_IS_NOT_DEFINED;
 
 // Mail on E_USER_ERROR
 ErrorHandler::$mailOnErrorType = E_USER_ERROR; // any type of error eg E_ALL

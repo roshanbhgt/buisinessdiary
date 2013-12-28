@@ -51,10 +51,46 @@
 	            }
 			});
 		//calling the anonymous function after 10000 milli seconds
-        setTimeout(request, 5000);
+        setTimeout(request, 10000);
 		})();
 	});
 	
+	
+	
+	
+	function submitnewsletter(){
+		var form = $('#newsletterform'); // contact form
+		var submit = $('#newsletter');	// submit button
+		var alert = $('#success'); // alert div for show alert message
+
+		// form submit event
+		form.on('submit', function(e) {
+			e.preventDefault(); // prevent default form submit
+			// sending ajax request through jQuery
+			$.ajax({
+				url: 'emailnewsletter.php', // form action url
+				type: 'POST', // form submit method get/post
+				dataType: 'html', // request type html/json/xml
+				data: form.serialize(), // serialize form data 
+				beforeSend: function() {
+					alert.fadeOut();
+					submit.html('Submitting...'); // change submit button text
+				},
+				success: function(data) {
+					alert.css('display', 'block');
+					alert.css('padding', '5px');
+					alert.html(data).fadeIn(); // fade in response data
+					form.trigger('reset'); // reset form
+					submit.html('Submit'); // reset submit button text
+				},
+				error: function(e) {
+					console.log(e)
+				}
+			});
+		});
+	
+	}
+		
 	function collapse(id,classname){	
 		$(id).removeClass(classname);
 			$('.wrapper .nav ul li ul').css('display', 'none');
