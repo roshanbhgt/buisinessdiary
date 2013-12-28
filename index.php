@@ -1,14 +1,9 @@
 <?php
- /**
- * Example Application
-
- * @package Example-application
- */
-
-require('libs/Smarty/Smarty.class.php');
-
-$smarty = new Smarty;
-
+// Includng configuration file
+include 'configs/config.php';
+ 
+ 
+ 
 $smarty->force_compile = false;
 $smarty->debugging = false;
 $smarty->caching = true;

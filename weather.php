@@ -17,15 +17,22 @@ e.g.: u=c
 
 */
 
+/*
 
+if (getenv('HTTP_X_FORWARDED_FOR')) {
+	$pipaddress = getenv('HTTP_X_FORWARDED_FOR');
+	$ipaddress = getenv('REMOTE_ADDR');
+	echo "Your Proxy IP address is : ".$pipaddress. "(via $ipaddress)" ;
+} else {
+	$ipaddress = getenv('REMOTE_ADDR');
+	echo "Your IP address is : $ipaddress";
+}
 
+$country = getenv('GEOIP_COUNTRY_NAME');
+echo "Your country : $country";
 
+*/
 
-// $city = file_get_contents('http://api.hostip.info/get_html.php?ip='.$_SERVER['HOST']);
-// Reformat the data returned (Keep only country and country abbr.)
-// $city = explode (" ", $city);
-// $city = $city[0];
-// echo "Country : ".$only_country[1]." ".substr($only_country[2],0,4);
 
 $city = "nagpur";
 

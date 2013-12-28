@@ -1,153 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Buisiness Diary - Search, find anything in the heart of the city</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-<link href="design/css/styles.css" rel="stylesheet" type="text/css" />
-<link href="design/css/slider.css" rel="stylesheet" type="text/css" />  
-<script type="text/javascript" src="design/js/jquery.min.js"></script>
-<script type="text/javascript" src="design/js/jquery.slides.min.js"></script>
-<script type="text/javascript" src="design/js/jquery-scroller.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {		
-		$('#slides').slidesjs({
-			width: 940,
-			height: 350,
-			play: {
-			  active: true,
-			  auto: true,
-			  effect: "fade",
-			  interval: 4000,
-			  swap: true,
-			  pauseOnHover: false,
-			  restartDelay: 2500
-			},
-			effect: {
-		      slide: {
-		        // Slide effect settings.
-		        speed: 1500
-		          // [number] Speed in milliseconds of the slide animation.
-		      },
-		      fade: {
-		        speed: 1500,
-		          // [number] Speed in milliseconds of the fade animation.
-		        crossfade: true
-		          // [boolean] Cross-fade the transition.
-		      }
-			}
-		});
-    });
-	
-	// 
-	// javascript whether code 
-	$(function(){
-		(function request() {
-			$.ajax({
-	           type: "GET",
-	            url: "weather.php",            
-	            cache: false,
-	            success: function(response) {
-	            	$('#wxWrap').html(response);
-	            }
-			});
-		//calling the anonymous function after 10000 milli seconds
-        setTimeout(request, 5000);
-		})();
-	});
-	
-	function collapse(id,classname){	
-		$(id).removeClass(classname);
-			$('.wrapper .nav ul li ul').css('display', 'none');
-	}
-	function expand(id,classname){
-		$(id).addClass(classname);
-		$('.wrapper .nav ul li.over ul').css('display', 'block');
-	}
-</script>
+	{include file='head.tpl'}
 </head>
 <body>
   <div class="wrapper">	
     <div class="header">
-        <div class="logo">
-			<img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/>
-		</div>
-        <div class="top-links">        
-        	<ul>
-        		<li><b style="color:#000">Welcome</b> Guest</li><li>|</li>
-        		<li><a href="#">Login</a> or <a href="#">Register</a></li><li>|</li>        		
-        		<li><a href="#">My Account</a></li><li>|</li>
-        		<li><a href="#">My Places</a></li>
-        	</ul>
-        </div>
-        <div class="lang-whether">
-        	<div id="wxWrap">
-			    <span id="wxIntro">
-			        Nagpur, Maharashtra, India 
-			    </span>
-			    <span id="wxIcon2"></span>
-			    <span id="wxTemp"></span>
-			</div>        	
-        </div>
-        <div class="searchbox">
-        	<form method="post" action="">
-        		<input class="searchinput" type="text" name="postcode" value="Enter your postcode or state or city" onfocus="if(this.value=='Enter your postcode or state or city')this.value='';" onblur="if(this.value=='')this.value='Enter your postcode or state or city';" />
-        		<input class="searchinput" type="text" name="keyword" value="Enter keyword looking for" onfocus="if(this.value=='Enter keyword looking for')this.value='';" onblur="if(this.value=='')this.value='Enter keyword looking for';"/>
-                <button class="searchbtn button-red" type="submit" name="submit">Go</button>
-            </form>
-        </div>
-    </div>
-    <div class="nav">
-    	<ul>
-			<li id="menu1" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Home</a>
-            </li>
-            <li id="menu1" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">About Us</a>
-            </li>
-            <li id="menu2" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Categories</a>            	
-                <ul style="display:none;">                	
-	                <li><a href="#"><span>Accomodation</span></a></li>
-	        		<li><a href="#"><span>Adult</span></a></li>
-	        		<li><a href="#"><span>Automotive</span></a></li>
-	        		<li><a href="#"><span>Domestic Services</span></a></li>
-	        		<li><a href="#"><span>Education & Learning</span></a></li>
-	        		<li><a href="#"><span>Entertainment</span></a></li>
-	        		<li><a href="#"><span>Event Organisation</span></a></li>
-	        		<li><a href="#"><span>Financial Services</span></a></li>
-	        		<li><a href="#"><span>Food & Beverages</span></a></li>
-	        		<li><a href="#"><span>Government</span></a></li>
-	        		<li><a href="#"><span>Hair & Beauty</span></a></li>
-	        		<li><a href="#"><span>Manufacturing & Agriculture</span></a></li>
-	        		<li><a href="#"><span>Media & Communication</span></a></li>
-	        		<li><a href="#"><span>Medical</span></a></li>
-	        		<li><a href="#"><span>Pets</span></a></li>
-	        		<li><a href="#"><span>Professional Services</span></a></li>
-	        		<li><a href="#"><span>Religion</span></a></li>
-	        		<li><a href="#"><span>Restaurants</span></a></li>
-	        		<li><a href="#"><span>Retail Shopping</span></a></li>
-	        		<li><a href="#"><span>Sports & Recreation</span></a></li>
-	        		<li><a href="#"><span>Trades</span></a></li>
-	        		<li><a href="#"><span>Travel & Transport</span></a></li>
-	        		<li><a href="#"><span>Retail Shopping</span></a></li>
-	        		<li><a href="#"><span>Utilities</span></a></li>
-                </ul>
-            </li>
-            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Services</a>
-            </li>
-            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Suggest buisiness</a>
-            </li>
-            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Faq</a>
-            </li>
-            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Feedback</a>
-            </li>
-		</ul>	
+        {include file='header.tpl'}	
 `	</div>
 	<div align="center">
 		<iframe src="http://www.beatthenifty.com/widget/widgetTwo" width="100%" height="42" frameborder="0" target="_blank"></iframe>
@@ -227,7 +86,7 @@
 	    		<form action="" method="post">
 		    		<table>
 			    		<tr><td align="left" valign="top" width="135px">Company</td><td><input type="text" name="comapnyname" value=""/></td></tr>
-			    		<tr><td align="left" valign="top">Information</td><td><textarea name="moreinfo"> </textarea></td></tr>
+			    		<tr><td align="left" valign="top">Description</td><td><textarea name="moreinfo"> </textarea></td></tr>
 			    		<tr><td align="left" valign="top">Address</td><td><textarea name="address"> </textarea></td></tr>
 			    		<tr><td align="left" valign="top">City</td><td><input type="text" name="city" value=""/></td></tr>
 			    		<tr><td align="left" valign="top">State</td><td><input type="text" name="state" value=""/></td></tr>
@@ -266,65 +125,7 @@
     </div>    
   </div>
   <div class="footer">
-  	<div class="footer-block">
-  		<h3>Local Services</h3>
-  		<ul>  			
-  			<li><a>Automotive</a></li>
-  			<li><a>Doctors</a></li>
-  			<li><a>Electricians</a></li>
-  			<li><a>Entertainments</a></li>
-  			<li><a>Hairdressers</a></li>
-  			<li><a>Pharmacy</a></li>
-  			<li><a>Resturants</a></li>
-  			<li><a>Schools</a></li>
-  		</ul>
-  	</div>
-  	<div class="footer-block">
-  		<h3>Going Out</h3>
-  		<ul>
-  			<li><a>Accomodation</a></li>
-  			<li><a>Banks / ATM</a></li>
-  			<li><a>Tours and Travels</a></li>
-  			<li><a>Movers and Packers</a></li>
-  			<li><a>Beauty Salons</a></li>  			
-  		</ul>
-  	</div>
-  	<div class="footer-block">
-  		<h3>Account / Places</h3>
-  		<ul>
-  			<li><a>Login / Register</a></li>
-  			<li><a>My Account</a></li>
-  			<li><a>My Places</a></li>
-  			<li><a>My Reviews</a></li>
-  			<li><a>Recent History</a></li>
-  		</ul>
-  	</div>
-  	<div class="footer-block">
-  		<h3>Customer Services</h3>
-  		<ul>
-  			<li><a>Add Listing</a></li>
-  			<li><a>Suggest Listing</a></li>
-  			<li><a>Promote Buisiness</a></li>
-  			<li><a>Review Management</a></li>  			
-  		</ul>
-  	</div>  	
-  	<div class="footer-block">
-  		<h3>Follow Us On</h3>
-  		<ul>
-  			<li>
-  				<a href="https://www.facebook.com/businessdiaryin" target="_blank"><img src="design/images/facebook.png"/></a>
-  				<img src="design/images/twitter.png" />
-  				<img src="design/images/googleplus.png" />
-  				<img src="design/images/linkedin.png" />
-  			</li>  			
-  		</ul>
-  		<h3>Contact Us</h3>
-  		<ul>	
-  			<li>H/N 118A, Indira Nagar<br>Behind T. B. Ward Hospital</br>Nagpur, Maharashtra, India - 440003</li>
-  			<li>M: help@buisinessdiary.in</li>
-  			<li>P: 0712-2742728 &nbsp; F: 0712-2742728</li>  			
-  		</ul>
-  	</div>            
+  	{include file='footer.tpl'}            
   </div>
   <div class="copyright">Copyright &copy; 2013 Buisiness Diary. All rights reserved.</div>  
 </body>
