@@ -55,9 +55,6 @@
 		})();
 	});
 	
-	
-	
-	
 	function submitnewsletter(){
 		var form = $('#newsletterform'); // contact form
 		var submit = $('#newsletter');	// submit button

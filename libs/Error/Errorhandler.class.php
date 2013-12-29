@@ -144,6 +144,11 @@ class ErrorHandler {
 			echo '<pre>', $err, '</pre>';
 		}
 		
+		if(!ErrorHandler::$displayErrors && !empty($errNo) ){
+			header('Location: http://localhost/buisinessdiary/503.html');
+			exit;
+		}
+		
 		// Save to the error log
 		error_log($err, ErrorHandler::$logMessageType, ErrorHandler::$logFile);
 		

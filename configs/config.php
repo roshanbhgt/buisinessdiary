@@ -7,7 +7,7 @@ require_once ('libs/Error/Errorhandler.class.php');
 ErrorHandler::Init(E_ERROR | E_WARNING | E_PARSE);
 
 // Display Errors
-ErrorHandler::$displayErrors = False;
+ErrorHandler::$displayErrors = FALSE;
 
 // Log file path
 // ErrorHandler::Init(E_ALL, 'error.log');
