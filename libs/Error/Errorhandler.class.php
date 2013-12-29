@@ -100,7 +100,7 @@ class ErrorHandler {
 			ErrorHandler::$logFile = $logFile;
 		}
 		set_error_handler('ErrorHandler::Log', ErrorHandler::$logTypes);
-		register_shutdown_function('ErrorHandler::Shutdown');
+		// register_shutdown_function('ErrorHandler::Shutdown');
 	}
 	
 	/** Shutdown handler

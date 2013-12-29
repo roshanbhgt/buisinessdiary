@@ -34,6 +34,7 @@
   	<div class="footer-block">
   		<h3>Customer Services</h3>
   		<ul>
+  			<li><a href="contactus.php">Contact Us</a></li>
   			<li><a>Add Listing</a></li>
   			<li><a>Suggest Listing</a></li>
   			<li><a>Promote Buisiness</a></li>
