@@ -166,7 +166,7 @@
 ## rewrite everything else to index.php
 
     RewriteRule .* 404.html [L]
-
+    
 </IfModule>
 
 

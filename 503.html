@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Down for maintenance...</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="http://localhost/buisinessdiary/favicon.ico" type="image/x-icon"/>
+<link href="http://localhost/buisinessdiary/design/css/styles.css" rel="stylesheet" type="text/css" />  
+<script type="text/javascript" src="http://localhost/buisinessdiary/design/js/jquery.min.js"></script>
+<script type="text/javascript">
+function submitquery(){
+	var form = $('#errormsgform'); // contact form
+	var submit = $('#errorsubmit');	// submit button
+	var alert = $('#message'); // alert div for show alert message
+
+	// form submit event
+	form.on('submit', function(e) {
+		e.preventDefault(); // prevent default form submit
+		// sending ajax request through jQuery
+		$.ajax({
+			url: 'errormsg.php', // form action url
+			type: 'POST', // form submit method get/post
+			dataType: 'html', // request type html/json/xml
+			data: form.serialize(), // serialize form data 
+			beforeSend: function() {
+				alert.fadeOut();
+				submit.html('Submitting...'); // change submit button text
+			},
+			success: function(data) {
+				alert.css('display', 'block');
+				alert.css('padding', '5px');
+				alert.html(data).fadeIn(); // fade in response data
+				form.trigger('reset'); // reset form
+				submit.html('Submit'); // reset submit button text
+			},
+			error: function(e) {
+				console.log(e)
+			}
+		});
+	});
+}
+</script>
+<style type="text/css">
+.std{
+	min-height: 350px;
+}
+.page-title {
+	border-bottom: 1px solid #CCCCCC;
+    margin: 5px 0 15px;
+    overflow: hidden;
+    width: 100%;
+}
+.page-title h1{
+    color: #666;
+    font-size: 20px;
+    margin: 0;
+	font-weight: normal;
+}
+#msgform{
+	margin:0 auto;
+}
+#msgform tr td textarea{
+	height: 100px;
+	width: 350px;	
+}
+</style>
+</head>
+<body>
+  <div class="wrapper">	
+    <div class="header">
+        <div class="logo">
+			<img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/>
+		</div>
+    </div>    
+	<div class="main-content">
+		<div class="col-main">
+			<div class="std">
+				<div class="page-title"><h1>Temporarily site is down for maintenance. Please try again later in sometime.</h1></div>
+				<p align="center">For any information needed please contact our support team.</p>
+				<form action="" method="post" id="errormsgform">
+					<table border="0" width="400" id="msgform">
+						<tr>
+							<td align="left" colspan="2"><div id="message" style="dispaly:none;"></div></td>							
+						</tr>
+						<tr>
+							<td align="left" valign="top"><lable>Name</lable></td>
+							<td><input type="text" name="name" value="" /></td>
+						</tr>
+						<tr>
+							<td align="left" valign="top"><label>Phone</label></td>
+							<td><input type="text" name="name" value=""/></td>
+						</tr>
+						<tr>
+							<td align="left" valign="top"><lable>Email</lable></td>
+							<td><input type="text" name="name" value=""/></td>
+						</tr>
+						<tr>
+							<td align="left" valign="top"><label>Message</label></td>
+							<td><textarea name="messge" row="5" col="50"></textarea></td>
+						</tr>
+						<tr>
+							<td align="right" colspan="2"><button class="button-blue" id="errorsubmit" name="errorsubmit" onclick="submitquery()"><span>Submit</span></button></td>
+						</tr>
+					</table>
+				</form>
+			</div>		
+		</div>
+	</div>
+  </div>
+<div class="copyright">Copyright &copy; 2013 Buisiness Diary. All rights reserved.</div>  
+</body>
+</html>
