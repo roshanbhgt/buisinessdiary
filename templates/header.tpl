@@ -1,5 +1,7 @@
 <div class="logo">
-			<img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/>
+			<a href="http://localhost/buisinessdiary">
+				<img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/>
+			</a>
 		</div>
         <div class="top-links">        
         	<ul>
