@@ -1,5 +1,5 @@
 <div class="logo">
-			<a href="http://localhost/buisinessdiary">
+			<a href="{$FRONTEND}">
 				<img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/>
 			</a>
 		</div>
@@ -31,39 +31,18 @@
     <div class="nav">
     	<ul>
 			<li id="menu1" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Home</a>
+            	<a href="{$FRONTEND}">Home</a>
             </li>
             <li id="menu1" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">About Us</a>
+            	<a href="{$FRONTEND}/page.php?identifier=about-us">About Us</a>
             </li>
             <li id="menu2" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
             	<a href="#">Categories</a>            	
-                <ul style="display:none;">                	
-	                <li><a href="#"><span>Accomodation</span></a></li>
-	        		<li><a href="#"><span>Adult</span></a></li>
-	        		<li><a href="#"><span>Automotive</span></a></li>
-	        		<li><a href="#"><span>Domestic Services</span></a></li>
-	        		<li><a href="#"><span>Education & Learning</span></a></li>
-	        		<li><a href="#"><span>Entertainment</span></a></li>
-	        		<li><a href="#"><span>Event Organisation</span></a></li>
-	        		<li><a href="#"><span>Financial Services</span></a></li>
-	        		<li><a href="#"><span>Food & Beverages</span></a></li>
-	        		<li><a href="#"><span>Government</span></a></li>
-	        		<li><a href="#"><span>Hair & Beauty</span></a></li>
-	        		<li><a href="#"><span>Manufacturing & Agriculture</span></a></li>
-	        		<li><a href="#"><span>Media & Communication</span></a></li>
-	        		<li><a href="#"><span>Medical</span></a></li>
-	        		<li><a href="#"><span>Pets</span></a></li>
-	        		<li><a href="#"><span>Professional Services</span></a></li>
-	        		<li><a href="#"><span>Religion</span></a></li>
-	        		<li><a href="#"><span>Restaurants</span></a></li>
-	        		<li><a href="#"><span>Retail Shopping</span></a></li>
-	        		<li><a href="#"><span>Sports & Recreation</span></a></li>
-	        		<li><a href="#"><span>Trades</span></a></li>
-	        		<li><a href="#"><span>Travel & Transport</span></a></li>
-	        		<li><a href="#"><span>Retail Shopping</span></a></li>
-	        		<li><a href="#"><span>Utilities</span></a></li>
-                </ul>
+                <ul style="display:none;">
+	                {foreach from=$catall item=cat key=i}
+					<li><a href="#"><span>{$cat.title}</span></a></li>
+					{/foreach}                	
+	            </ul>
             </li>
             <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
             	<a href="#">Services</a>
