@@ -8,16 +8,16 @@
 		<p>Quikly show your buisiness online. Fill the form below give us some information regarding your buisiness.</p>
 		<form action="" method="post">
     		<table>
-	    		<tr><td align="left" valign="top" width="135px">Company</td><td><input type="text" name="comapnyname" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Description</td><td><textarea name="moreinfo"> </textarea></td></tr>
-	    		<tr><td align="left" valign="top">Address</td><td><textarea name="address"> </textarea></td></tr>
-	    		<tr><td align="left" valign="top">City</td><td><input type="text" name="city" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">State</td><td><input type="text" name="state" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Country</td><td><input type="text" name="country" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Postcode</td><td><input type="text" name="state" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Telephone</td><td><input type="text" name="state" value=""/></td></tr>
+	    		<tr><td align="left" valign="top" width="135px">Company<em>*</em></td><td><input type="text" name="comapnyname" value=""/></td></tr>
+	    		<tr><td align="left" valign="top">Description<em>*</em></td><td><textarea name="moreinfo"> </textarea></td></tr>
+	    		<tr><td align="left" valign="top">Address<em>*</em></td><td><textarea name="address"> </textarea></td></tr>
+	    		<tr><td align="left" valign="top">City<em>*</em></td><td><input type="text" name="city" value=""/></td></tr>
+	    		<tr><td align="left" valign="top">State<em>*</em></td><td><input type="text" name="state" value=""/></td></tr>
+	    		<tr><td align="left" valign="top">Country<em>*</em></td><td><input type="text" name="country" value=""/></td></tr>
+	    		<tr><td align="left" valign="top">Postcode<em>*</em></td><td><input type="text" name="state" value=""/></td></tr>
+	    		<tr><td align="left" valign="top">Telephone<em>*</em></td><td><input type="text" name="state" value=""/></td></tr>
 	    		<tr><td align="left" valign="top">Fax</td><td><input type="text" name="state" value=""/></td></tr>
-	    		<tr><td align="right" valign="top" colspan="2"><button class="button-blue"><span>Submit</span></button></td></tr>
+	    		<tr><td align="right" valign="top" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue"><span>Submit</span></button></td></tr>
     		</table>		    		 
 		</form>
 	</div>
@@ -27,9 +27,9 @@
 		<div id="success" style="display:none"></div>
 		<form id="newsletterform" action="" method="post">
 			<table>	    				
-				<tr><td align="left" valign="top" width="135px">Name</td><td><input type="text" name="name" value="Enter first name" onfocus="if(this.value=='Enter first name')this.value='';" onblur="if(this.value=='')this.value='Enter first name';" /></td></tr>
-				<tr><td align="left" valign="top">Email</td><td><input type="text" name="email" value="Enter your email" onfocus="if(this.value=='Enter your email')this.value='';" onblur="if(this.value=='')this.value='Enter your email';" /></td></tr>
-				<tr><td align="right" valign="top" colspan="2"><button class="button-blue" name="submit" type="submit" id="newsletter" onclick="submitnewsletter()"><span>Submit</span></button></td></tr>
+				<tr><td align="left" valign="top" width="135px">Name<em>*</em></td><td><input type="text" name="name" value="Enter first name" onfocus="if(this.value=='Enter first name')this.value='';" onblur="if(this.value=='')this.value='Enter first name';" /></td></tr>
+				<tr><td align="left" valign="top">Email<em>*</em></td><td><input type="text" name="email" value="Enter your email" onfocus="if(this.value=='Enter your email')this.value='';" onblur="if(this.value=='')this.value='Enter your email';" /></td></tr>
+				<tr><td align="right" valign="top" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue" name="submit" type="submit" id="newsletter" onclick="submitnewsletter()"><span>Submit</span></button></td></tr>
 			</table>
 		</form> 
 	</div>
