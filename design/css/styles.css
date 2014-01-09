@@ -404,8 +404,7 @@ a:hover {
 }
 
 /* CSS goes here */
-#wxWrap {
-    background: -moz-linear-gradient(center top , #F0F0F0 0%, #FFFFFF 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+#wxWrap {    
     border-radius: 4px;
     padding: 2px 5px 2px 5px;
     width: 270px;

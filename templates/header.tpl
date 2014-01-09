@@ -6,7 +6,7 @@
         <div class="top-links">        
         	<ul>
         		<li><b style="color:#000">Welcome</b> Guest</li><li>|</li>
-        		<li><a href="#">Login</a> or <a href="#">Register</a></li><li>|</li>        		
+        		<li><a href="{$FRONTEND}/login.php">Login</a> or <a href="{$FRONTEND}/register.php">Register</a></li><li>|</li>        		
         		<li><a href="#">My Account</a></li><li>|</li>
         		<li><a href="#">My Places</a></li>
         	</ul>
@@ -55,5 +55,8 @@
             </li>
             <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
             	<a href="#">Feedback</a>
+            </li>
+            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
+            	<a href="{$FRONTEND}/contactus.php">Contact Us</a>
             </li>
 		</ul>
