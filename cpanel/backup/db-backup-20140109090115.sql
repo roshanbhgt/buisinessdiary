@@ -16,7 +16,7 @@ CREATE TABLE `admin` (
   PRIMARY KEY (`adminId`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-INSERT INTO admin VALUES("1","Roshan","Bhagat","roshanbhgt@gmail.com","admin","YWRtaW5AMTIz","administrator","active","2013-09-07 21:45:46","2013-11-05 22:07:51");
+INSERT INTO admin VALUES("1","Roshan","Bhagat","roshanbhgt@gmail.com","admin","YWRtaW5AMTIz","administrator","active","2013-09-07 21:45:46","2014-01-09 21:19:47");
 
 DROP TABLE buisiness_category;
 
@@ -106,7 +106,7 @@ CREATE TABLE `dbbackup` (
   `backupsize` varchar(255) NOT NULL,
   `backup_date` datetime NOT NULL,
   PRIMARY KEY (`backupid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 INSERT INTO dbbackup VALUES("6","admin","C:/xampp/htdocs/buisinessdiary/cpanel/backup/db-backup-20131107111159.sql","164391 bytes","2013-11-07 23:21:59");
 INSERT INTO dbbackup VALUES("7","admin","C:/xampp/htdocs/buisinessdiary/cpanel/backup/db-backup-20131113091156.sql","164546 bytes","2013-11-13 09:22:56");
@@ -114,6 +114,8 @@ INSERT INTO dbbackup VALUES("8","admin","C:/xampp/htdocs/buisinessdiary/cpanel/b
 INSERT INTO dbbackup VALUES("9","admin","D:/UwAmp/www//buisinessdiary/cpanel/backup/db-backup-20131230111233.sql"," bytes","2013-12-30 23:55:33");
 INSERT INTO dbbackup VALUES("10","admin","D:/UwAmp/www//buisinessdiary/cpanel/backup/db-backup-20131230111252.sql"," bytes","2013-12-30 23:55:52");
 INSERT INTO dbbackup VALUES("11","admin","D:/UwAmp/www//buisinessdiary/cpanel/backup/db-backup-20131230111256.sql"," bytes","2013-12-30 23:55:56");
+INSERT INTO dbbackup VALUES("12","admin","D:/UwAmp/www//buisinessdiary/cpanel/backup/db-backup-20140109090153.sql","162066 bytes","2014-01-09 21:19:53");
+INSERT INTO dbbackup VALUES("13","admin","D:/UwAmp/www//buisinessdiary/cpanel/backup/db-backup-20140109090153.sql","162220 bytes","2014-01-09 21:21:53");
 
 DROP TABLE emailnewsletter;
 
@@ -135,13 +137,15 @@ CREATE TABLE `gallery` (
   `gallery_title` varchar(255) NOT NULL,
   `gallery_description` text NOT NULL,
   `status` varchar(255) NOT NULL,
-  `created_date` datetime NOT NULL,
-  `updated_date` datetime NOT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `updated_date` datetime DEFAULT NULL,
   PRIMARY KEY (`galleryId`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
-INSERT INTO gallery VALUES("1","Maharashtra","<p><a href=\"http://en.wikipedia.org/wiki/Marathi_language\" title=\"Marathi language\">Marathi</a>: <span style=\"font-family: Lohit Marathi,sans-serif;\" lang=\"mr\">महाराष्ट्र</span>&nbsp; is a state in the <a href=\"http://en.wikipedia.org/wiki/West_India\" title=\"West India\">western</a> region of <a href=\"http://en.wikipedia.org/wiki/India\" title=\"India\">India</a>. It is the <a href=\"http://en.wikipedia.org/wiki/List_of_states_and_union_territories_of_India_by_population\" title=\"List of states and union territories of India by population\">second most populous</a> state after <a href=\"http://en.wikipedia.org/wiki/Uttar_Pradesh\" title=\"Uttar Pradesh\">Uttar Pradesh</a> and <a href=\"http://en.wikipedia.org/wiki/List_of_states_and_territories_of_India_by_area\" title=\"List of states and territories of India by area\">third largest state by area</a> in India. Maharashtra is the wealthiest state in India, contributing 15% of the country\'s industrial output and 13.3% of its GDP (2006–2007 <br>\nfigures).<sup id=\"cite_ref-5\" class=\"reference\"><a href=\"http://en.wikipedia.org/wiki/Maharashtra#cite_note-5\"><span></span></a></sup><br>\n</p><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote>Maharashtra is bordered by the <a href=\"http://en.wikipedia.org/wiki/Arabian_Sea\" title=\"Arabian Sea\">Arabian Sea</a> to the west, <a href=\"http://en.wikipedia.org/wiki/Gujarat\" title=\"Gujarat\">Gujarat</a> and the <a href=\"http://en.wikipedia.org/wiki/Union_territory\" title=\"Union territory\">Union territory</a> of <a href=\"http://en.wikipedia.org/wiki/Dadra_and_Nagar_Haveli\" title=\"Dadra and Nagar Haveli\">Dadra and Nagar Haveli</a> to the northwest, <a href=\"http://en.wikipedia.org/wiki/Madhya_Pradesh\" title=\"Madhya Pradesh\">Madhya Pradesh</a> to the north and northeast, <a href=\"http://en.wikipedia.org/wiki/Chhattisgarh\" title=\"Chhattisgarh\">Chhattisgarh</a> to the east, <a href=\"http://en.wikipedia.org/wiki/Karnataka\" title=\"Karnataka\">Karnataka</a> to the south, <a href=\"http://en.wikipedia.org/wiki/Andhra_Pradesh\" title=\"Andhra Pradesh\">Andhra Pradesh</a> to the southeast and <a href=\"http://en.wikipedia.org/wiki/Goa\" title=\"Goa\">Goa</a> to the southwest. The state covers an area of 307,731 km<sup>2</sup> (118,816&nbsp;sq&nbsp;mi) or 9.84% of the total geographical area of India. <a href=\"http://en.wikipedia.org/wiki/Mumbai\" title=\"Mumbai\">Mumbai</a>, the capital city of the state, is India\'s largest city and the financial capital of the nation. <a href=\"http://en.wikipedia.org/wiki/Nagpur\" title=\"Nagpur\">Nagpur</a> is the second (Winter) capital of the state. <a href=\"http://en.wikipedia.org/wiki/Marathi_language\" title=\"Marathi language\">Marathi</a> is the state\'s official language.<br>\n</blockquote></blockquote></blockquote></blockquote></blockquote></blockquote><p>Maharashtra is the world\'s <a href=\"http://en.wikipedia.org/wiki/List_of_country_subdivisions_by_population\" title=\"List of country subdivisions by population\">second most populous first-level administrative country sub-division</a>. Were it a nation in its own right, Maharashtra would be the <a href=\"http://en.wikipedia.org/wiki/List_of_countries_by_population\" title=\"List of countries by population\">world\'s twelfth most populous country</a> ahead of <a href=\"http://en.wikipedia.org/wiki/Philippines\" title=\"Philippines\">Philippines</a>.<br>\n</p>In the 16th century, the <a href=\"http://en.wikipedia.org/wiki/Marathas\" title=\"Marathas\" class=\"mw-redirect\">Marathas</a> rose under the leadership of <a href=\"http://en.wikipedia.org/wiki/Shivaji\" title=\"Shivaji\">Chhatrapati Shivaji Maharaj</a> against the <a href=\"http://en.wikipedia.org/wiki/Mughal_Empire\" title=\"Mughal Empire\">Mughals</a>, who ruled a large part of <a href=\"http://en.wikipedia.org/wiki/India\" title=\"India\">India</a>. By 1760, <a href=\"http://en.wikipedia.org/wiki/Maratha_Empire\" title=\"Maratha Empire\">Maratha power</a> had reached its zenith with a territory of over 250 million acres (1 million km²) or one-third of the <a href=\"http://en.wikipedia.org/wiki/Indian_sub-continent\" title=\"Indian sub-continent\" class=\"mw-redirect\">Indian sub-continent</a>. After the <a href=\"http://en.wikipedia.org/wiki/Third_Anglo-Maratha_War\" title=\"Third Anglo-Maratha War\">Third Anglo-Maratha War</a>, the empire ended and most of Maharashtra became part of <a href=\"http://en.wikipedia.org/wiki/Bombay_State\" title=\"Bombay State\">Bombay State</a> under a <a href=\"http://en.wikipedia.org/wiki/British_Raj\" title=\"British Raj\">British Raj</a>. After <a href=\"http://en.wikipedia.org/wiki/Indian_independence\" title=\"Indian independence\" class=\"mw-redirect\">Indian independence</a>, <a href=\"http://en.wikipedia.org/wiki/Samyukta_Maharashtra_Samiti\" title=\"Samyukta Maharashtra Samiti\" class=\"mw-redirect\">Samyukta Maharashtra Samiti</a> demanded unification of all Marathi-speaking regions under one state. At that time, <a href=\"http://en.wikipedia.org/wiki/B._R._Ambedkar\" title=\"B. R. Ambedkar\">Dr. Babasaheb Ambedkar</a>was of the opinion that linguistic reorganisation of states should be done on a \"One state – One language\" principle and not on a \"One <br><p>\nlanguage – One state\" principle. He submitted a memorandum to the reorganisation commission stating that a \"single government can not administer such a huge state as United Maharashtra\".<sup id=\"cite_ref-6\" class=\"reference\"><a href=\"http://en.wikipedia.org/wiki/Maharashtra#cite_note-6\"><span></span><span></span></a></sup> The first state reorganisation committee created the current Maharashtra state on 1 May 1960 (known as <a href=\"http://en.wikipedia.org/wiki/Maharashtra_Day\" title=\"Maharashtra Day\">Maharashtra Day</a>). The Marathi-speaking areas of <a href=\"http://en.wikipedia.org/wiki/Bombay_State\" title=\"Bombay State\">Bombay State</a>, <a href=\"http://en.wikipedia.org/wiki/Deccan_states\" title=\"Deccan states\" class=\"mw-redirect\">Deccan states</a> and <a href=\"http://en.wikipedia.org/wiki/Vidarbha\" title=\"Vidarbha\">Vidarbha</a> (which was part of <a href=\"http://en.wikipedia.org/wiki/Central_Provinces_and_Berar\" title=\"Central Provinces and Berar\">Central Provinces and Berar</a>) united, under the agreement known as <a href=\"http://en.wikipedia.org/wiki/Nagpur_Pact\" title=\"Nagpur Pact\">Nagpur Pact</a>, to form the current state. <br></p><p><br></p><p>For the more information about the state you can visit the link <a target=\"_blank\" title=\"Maharashtra\" href=\"http://en.wikipedia.org/wiki/Maharashtra\">http://en.wikipedia.org/wiki/Maharashtra</a><br></p>","active","2013-11-04 17:00:48","2013-11-05 12:45:01");
-INSERT INTO gallery VALUES("2","Hyderabad","Testing Purpose<br>","active","2013-11-30 13:27:26","0000-00-00 00:00:00");
+INSERT INTO gallery VALUES("10","Gallery 4","<br>","active","2014-01-09 21:17:38","");
+INSERT INTO gallery VALUES("9","Gallery 3","<br>","active","2014-01-09 21:17:21","");
+INSERT INTO gallery VALUES("8","Gallery 2","<br>","active","2014-01-09 21:17:03","");
+INSERT INTO gallery VALUES("7","Gallery 1","<br>","active","2014-01-09 21:16:44","");
 
 DROP TABLE gallery_image;
 
@@ -151,13 +155,16 @@ CREATE TABLE `gallery_image` (
   `banner` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL,
   PRIMARY KEY (`galleryImageId`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
-INSERT INTO gallery_image VALUES("6","2","Lighthouse.jpg","2013-11-30 13:27:26");
 INSERT INTO gallery_image VALUES("2","1","Desert.jpg","2013-11-04 17:00:48");
 INSERT INTO gallery_image VALUES("3","1","Hydrangeas.jpg","2013-11-04 17:00:48");
 INSERT INTO gallery_image VALUES("4","1","Jellyfish.jpg","2013-11-04 17:00:48");
 INSERT INTO gallery_image VALUES("5","1","Tulips.jpg","2013-11-04 17:00:48");
+INSERT INTO gallery_image VALUES("14","10","example_slide_4.jpg","2014-01-09 21:17:38");
+INSERT INTO gallery_image VALUES("13","9","example_slide_3.jpg","2014-01-09 21:17:21");
+INSERT INTO gallery_image VALUES("12","8","example_slide_2.jpg","2014-01-09 21:17:03");
+INSERT INTO gallery_image VALUES("11","7","example_slide_1.jpg","2014-01-09 21:16:44");
 
 DROP TABLE pages;
 

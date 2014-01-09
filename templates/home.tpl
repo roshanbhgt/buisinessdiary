@@ -1,9 +1,8 @@
 <div class="slides">
 	<ul class="slider">
-		 <li><img src="design/images/example-slide-1.jpg" /></li>
-		 <li><img src="design/images/example-slide-2.jpg" /></li>
-		 <li><img src="design/images/example-slide-3.jpg" /></li>
-		 <li><img src="design/images/example-slide-4.jpg" /></li>
+		{foreach from=$gallery item=img key=i}
+			<li><img src="{$GALLERYIMAGE}/base/{$img.banner}" title="{$img.gallery_title}"/></li>
+		{/foreach}
 	</ul>
 </div>
 <p><h1 class="page-head">Welcome to Business diary - Search find anything</h1></p>		

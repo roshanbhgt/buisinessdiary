@@ -40,7 +40,7 @@ date_default_timezone_set("Asia/Calcutta");
 
 // Loading smarty library
 require_once ('libs/Database/Database.class.php');
-$dbObj = new Database('localhost', 'root', 'root', 'businessdiary');
+$dbObj = new Database('127.1.1.1', 'root', 'root', 'businessdiary');
 
 
 // Loading smarty library
@@ -68,8 +68,8 @@ require('classes/Buisiness.class.php'); */
 require('classes/Categries.class.php');
 require('classes/Emailnewsletter.class.php');
 require('classes/Pages.class.php');
-/* require('classes/Webforms.class.php');
 require('classes/Gallery.class.php');
+/* require('classes/Webforms.class.php');
 require('classes/System.class.php');
 require('includes/functions.php'); */
 
@@ -83,6 +83,3 @@ $smarty->assign('catall', $objCat->getAllParentcat());
 $smarty->assign('FRONTEND',FRONTEND);
 $smarty->assign('GALLERYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/gallery');
 $smarty->assign('CATEGORYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/category');
- 
-
-
