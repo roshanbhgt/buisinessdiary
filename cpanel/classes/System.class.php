@@ -117,7 +117,7 @@ class System {
 	
 	public function getBackupList(){
 		global $dbObj;
-		$sql = "SELECT * FROM ".BACKUP."; ";
+		$sql = "SELECT * FROM ".BACKUP." ORDER BY backup_date DESC; ";
 		$res = $dbObj->fetch_all_array($sql);
 		return $res;
 	}
