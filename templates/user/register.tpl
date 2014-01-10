@@ -34,20 +34,36 @@ function login(){
 }
 </script>
 {/literal}<div class="std">
-	<div class="page-title"><h1>Login to business diary</h1></div>
-	<p>Having an account on business diary, login in with form below...</p>
-	<form action="" method="post" id="loginform">
+	<div class="page-title"><h1>Create an account</h1></div>
+	
+	<form action="" method="post" id="registerform">
 		<table border="0" width="400" id="msgform">
 			<tr>
 				<td align="left" colspan="2"><div id="message" style="dispaly:none;"></div></td>							
 			</tr>
 			<tr>
-				<td align="left" valign="top"><lable>Email<em>*</em></lable>&nbsp;</td>
+				<td align="left" valign="top"><lable>First name<em>*</em></lable>&nbsp;</td>
 				<td><input type="text" name="name" value="" /></td>
 			</tr>
 			<tr>
-				<td align="left" valign="top"><label>Password</label>&nbsp;</td>
+				<td align="left" valign="top"><lable>Last name<em>*</em></lable>&nbsp;</td>
+				<td><input type="text" name="name" value="" /></td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><lable>Email<em>*</em></lable>&nbsp;</td>
+				<td><input type="text" name="name" value="" /></td>
+			</tr>			
+			<tr>
+				<td align="left" valign="top"><label>Password<em>*</em></label>&nbsp;</td>
 				<td><input type="password" name="name" value=""/></td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><lable>Birthday<em>*</em></lable>&nbsp;</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><lable>Gender<em>*</em></lable>&nbsp;</td>
+				<td><input type="radio" name="gender" value="m" />Male<input type="radio" name="gender" value="f" />Female</td>
 			</tr>			
 			<tr>
 				<td align="right" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue" id="loginsubmit" name="contactsubmit" onclick="login()"><span>Login</span></button></td>
