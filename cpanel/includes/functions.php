@@ -68,7 +68,7 @@ function generateSeoUrl($identifier) {
  * 
  */
 function getPagination($count){
-	$paginationCount= floor($count / REC_PER_PAGE);
+	$paginationCount= round($count / REC_PER_PAGE);
 	$paginationModCount= $count % PAGE_PER_NO;
 	if(!empty($paginationModCount)){
 		$paginationCount++;

@@ -1,9 +1,9 @@
 <ul>
 	<li class="menu">
-		<a href="javascript:void(0);" onclick="showHide('mymenu1')">Buisiness List</a>
+		<a href="javascript:void(0);" onclick="showHide('mymenu1')">Business List</a>
 		<ul id="mymenu1" class="show">
-			<li class="submenu"><a href="{$BACKEND}manageblist.php?action=addbuisiness">Add Buisiness</a></li>			
-			<li class="submenu"><a href="{$BACKEND}manageblist.php?action=viewbuisiness">Manage Buisiness List</a></li>			
+			<li class="submenu"><a href="{$BACKEND}manageblist.php?action=addbuisiness">Add new</a></li>			
+			<li class="submenu"><a href="{$BACKEND}manageblist.php?action=viewbuisiness">Manage Buisiness</a></li>			
 		</ul>
 	</li>
 </ul>

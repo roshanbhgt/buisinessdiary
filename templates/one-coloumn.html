@@ -1,53 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>One Coloumn</title>
-<link href="http://localhost/buisinessdiary/design/css/styles.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript">
-function collapse(id,classname){	
-	$(id).removeClass(classname);
-		$('.wrapper .nav ul li ul').css('display', 'none');
-}
-function expand(id,classname){
-	$(id).addClass(classname);
-	$('.wrapper .nav ul li.over ul').css('display', 'block');
-}
-</script>
+	{include file='head.tpl'}
 </head>
 <body>
   <div class="wrapper">	
     <div class="header">
-        <div class="logo"><img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" /></div>
-        <div class="top-links">Top Links</div>    
-        <div class="slogan">Slogan</div>
-        <div class="searchbox">Search</div>
+        {include file='header.tpl'}	
+`	</div>
+	<div align="center">
+		<iframe src="http://www.beatthenifty.com/widget/widgetTwo" width="100%" height="42" frameborder="0" target="_blank"></iframe>
+	</div>
+    <div class="main-content">        	
+	    {include file='content.tpl'}
     </div>
-    <div class="nav">
-    	<ul>
-			<li id="menu1" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Menu1</a>
-            </li>
-            <li id="menu2" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Menu2</a>
-                <ul style="display:none">
-                	<li><a href="#"><span>Submenu 1</span></a></li>
-                    <li><a href="#"><span>Submenu 2</span></a></li>
-                    <li><a href="#"><span>Submenu 3</span></a></li>
-                </ul>
-            </li>
-            <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Menu3</a>
-            </li>
-		</ul>
-    </div>
-    <div class="main-content">Center</div>
-    <div class="footer">
-        <div class="twt-feed">Twitter Feed</div>
-        <div class="follow-btn">Follow Buttons</div>
-        <div class="copyright">Copyrights</div>
-    </div>
-  </div>  
+  </div>
+  <div class="footer">
+  	{include file='footer.tpl'}            
+  </div>
+  <div class="copyright">Copyright &copy; 2013 Business Diary. All rights reserved.</div>  
 </body>
 </html>

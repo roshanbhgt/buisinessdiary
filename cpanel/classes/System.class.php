@@ -24,11 +24,19 @@ class System {
 		 * 
 		 */
 		public function getAllStates($pageId){
+			if($pageId > 0){
+				$pageId = $pageId - 1;
+			}
 			global $dbObj;
 			$sql = "SELECT st.*, ct.title AS ctitle FROM ".STATE." AS st 
-					INNER JOIN ".COUNTRY." AS ct ON st.countryId=ct.countryId LIMIT ".($pageId*30).", 30";
+					INNER JOIN ".COUNTRY." AS ct ON st.countryId=ct.countryId ";
+			$count = $dbObj->num_rows($dbObj->query($sql));
+			$pageNumCount = getPagination($count);
+			if($pageId > 0 || $count > REC_PER_PAGE){
+				$sql .= "LIMIT ".($pageId*REC_PER_PAGE).", ".REC_PER_PAGE;
+			}
 			$res = $dbObj->fetch_all_array($sql);
-			return $res;
+			return array("states"=>$res, "pagecount"=>$pageNumCount);
 		}
 		
 		/**
@@ -36,14 +44,17 @@ class System {
 		 *
 		 */
 		public function getAllRegions($pageId){
+			if($pageId>0){
+				$pageId = $pageId - 1;
+			}
 			global $dbObj;			
 			$sql = "SELECT rt.*, ct.title AS ctitle, st.title AS stitle FROM ".REGIONS." AS rt 
 					INNER JOIN ".STATE." AS st ON st.stateId=rt.stateId 
 					INNER JOIN ".COUNTRY." AS ct ON st.countryId=ct.countryId ";
 			$count = $dbObj->num_rows($dbObj->query($sql));
 			$pageNumCount = getPagination($count);			
-			if($pageId != '' || $count > REC_PER_PAGE){
-				$sql .= "LIMIT ".($pageId*30).", ".REC_PER_PAGE;
+			if($pageId > 0 || $count > REC_PER_PAGE){
+				$sql .= "LIMIT ".($pageId*REC_PER_PAGE).", ".REC_PER_PAGE;
 			}						
 			$res = $dbObj->fetch_all_array($sql);
 			return array("regions"=>$res, "pagecount"=>$pageNumCount);

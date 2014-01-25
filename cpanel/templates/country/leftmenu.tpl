@@ -6,7 +6,7 @@
                 <li class="submenu"><a href="{$BACKEND}managecountries.php?type=country&action=add" >Add new country</a></li>			
                 <li class="submenu"><a href="{$BACKEND}managecountries.php?type=state&action=viewall" >Manage states</a></li>			
                 <li class="submenu"><a href="{$BACKEND}managecountries.php?type=state&action=add" >Add new states</a></li>			
-                <li class="submenu"><a href="{$BACKEND}managecountries.php?type=region&action=viewall" >Manage regionss</a></li>			
+                <li class="submenu"><a href="{$BACKEND}managecountries.php?type=region&action=viewall" >Manage regions</a></li>			
                 <li class="submenu"><a href="{$BACKEND}managecountries.php?type=region&action=add" >Add new region</a></li>	
             </ul>
 	</li>

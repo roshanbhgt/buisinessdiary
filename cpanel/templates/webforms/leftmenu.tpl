@@ -2,10 +2,10 @@
 	<li class="menu">
 		<a href="javascript:void(0);" onclick="showHide('mymenu1')">Webforms</a>
 		<ul id="mymenu1" class="show">
-			<li class="submenu"><a href="{$BACKEND}managewebforms.php?action=listRlist">Request listing</a></li>			
-			<li class="submenu"><a href="{$BACKEND}managewebforms.php?action=listSlist">Suggest listing</a></li>			  	
-			<li class="submenu"><a href="{$BACKEND}managewebforms.php?action=listFlist">Feedback</a></li>
-			<li class="submenu"><a href="{$BACKEND}managewebforms.php?action=listClist">Contact us</a></li>
+			<li class="submenu"><a href="{$BACKEND}managewebforms.php?action=rlist">Request listing</a></li>			
+			<li class="submenu"><a href="{$BACKEND}managewebforms.php?action=slist">Suggest listing</a></li>			  	
+			<li class="submenu"><a href="{$BACKEND}managewebforms.php?action=flist">Feedback</a></li>
+			<li class="submenu"><a href="{$BACKEND}managewebforms.php?action=clist">Contact us</a></li>
 		</ul>
 	</li>
 </ul>

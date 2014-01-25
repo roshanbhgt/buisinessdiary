@@ -13,22 +13,38 @@ class Categries {
 	 * 
 	 * 
 	 */
-	public function getAllParentcat(){
+	public function getAllParentcat($pageId = 0){
+        if($pageId>0){
+            $pageId = $pageId - 1;
+        }
 		global $dbObj;
-		$sql = "SELECT * FROM ".CATEGORIES." WHERE parentcat_id = 0  ;";
-		$res = $dbObj->fetch_all_array($sql);				
-		return $res;
+		$sql = "SELECT * FROM ".CATEGORIES." WHERE parentcat_id = 0 ";
+        $count = $dbObj->num_rows($dbObj->query($sql));
+        $pageNumCount = getPagination($count);
+        if($pageId > 0 || $count > REC_PER_PAGE){
+            $sql .= "LIMIT ".($pageId*REC_PER_PAGE).", ".REC_PER_PAGE;
+        }
+        $res = $dbObj->fetch_all_array($sql);
+        return array("parentcat"=>$res, "pagecount"=>$pageNumCount);
 	} 
 	
 	/**
 	 * 
 	 * 
 	 */
-	public function getAllSubcat(){
+	public function getAllSubcat($pageId = 0){
+        if($pageId>0){
+            $pageId = $pageId - 1;
+        }
 		global $dbObj;
-		$sql = "SELECT * FROM ".CATEGORIES." WHERE parentcat_id != 0;";
-		$res = $dbObj->fetch_all_array($sql);		
-		return $res;
+		$sql = "SELECT * FROM ".CATEGORIES." WHERE parentcat_id != 0 ";
+        $count = $dbObj->num_rows($dbObj->query($sql));
+        $pageNumCount = getPagination($count);
+        if($pageId > 0 || $count > REC_PER_PAGE){
+            $sql .= "LIMIT ".($pageId*REC_PER_PAGE).", ".REC_PER_PAGE;
+        }
+        $res = $dbObj->fetch_all_array($sql);
+        return array("subcat"=>$res, "pagecount"=>$pageNumCount);
 	}
 	
 	/**
