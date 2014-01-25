@@ -38,14 +38,14 @@ $city = "nagpur";
 
 $result1 = file_get_contents("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22$city%22&format=xml");
 $xml1 = simplexml_load_string($result1);
- $woeid=$xml1->results->place->woeid;
+$woeid=$xml1->results->place->woeid;
 
 if($woeid!="")
 {
-	$fetchData = file_get_contents("http://weather.yahooapis.com/forecastrss?w=$woeid&u=c");
+	$fetchData = file_get_contents("http://weather.yahooapis.com/forecastrss?w=$woeid&u=c");	
 	$xmlData = simplexml_load_string($fetchData);
 	$location = $xmlData->channel->xpath('yweather:location');
-	if(!empty($location))
+	if(!empty($location) && !empty($xmlData))
 	{
 		foreach($xmlData->channel->item as $data)
 		{
