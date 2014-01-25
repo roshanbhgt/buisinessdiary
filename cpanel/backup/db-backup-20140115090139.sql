@@ -1,6 +1,6 @@
 SET foreign_key_checks = 0;
 
-DROP TABLE admin  IF Exist ;
+DROP TABLE admin;
 
 CREATE TABLE `admin` (
   `adminId` int(11) NOT NULL AUTO_INCREMENT,
@@ -18,7 +18,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO admin VALUES("1","Roshan","Bhagat","roshanbhgt@gmail.com","admin","YWRtaW5AMTIz","administrator","active","2013-09-07 21:45:46","2014-01-09 21:19:47");
 
-DROP TABLE buisiness_category IF Exist ;
+DROP TABLE buisiness_category;
 
 CREATE TABLE `buisiness_category` (
   `cat_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -33,32 +33,32 @@ CREATE TABLE `buisiness_category` (
   PRIMARY KEY (`cat_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
-INSERT INTO buisiness_category VALUES("1","0","Accomodation","","<br>","","active","2013-12-30 22:55:48","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("2","0","Adult","","<br>","","active","2013-12-30 22:56:05","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("3","0","Automotive","","<br>","","active","2013-12-30 22:56:25","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("4","0","Domestic Services","","<br>","","active","2013-12-30 22:56:49","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("5","0","Education & Learning","","<br>","","active","2013-12-30 22:57:15","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("6","0","Entertainment","","<br>","","active","2013-12-30 22:57:35","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("7","0","Event Organisation","","<br>","","active","2013-12-30 22:58:09","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("8","0","Financial Services","","<br>","","active","2013-12-30 22:58:31","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("9","0","Food & Beverages","","<br>","","active","2013-12-30 22:58:56","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("10","0","Government","","<br>","","active","2013-12-30 22:59:18","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("11","0","Hair & Beauty","","<br>","","active","2013-12-30 22:59:37","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("12","0","Manufacturing & Agriculture","","<br>","","active","2013-12-30 22:59:57","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("13","0","Media & Communication","","<br>","","active","2013-12-30 23:00:21","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("14","0","Medical","","<br>","","active","2013-12-30 23:00:39","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("15","0","Pets","","<br>","","active","2013-12-30 23:01:06","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("16","0","Professional Services","","<br>","","active","2013-12-30 23:01:31","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("17","0","Religion","","<br>","","active","2013-12-30 23:01:49","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("18","0","Restaurants","","<br>","","active","2013-12-30 23:02:05","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("19","0","Retail Shopping","","<br>","","active","2013-12-30 23:02:20","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("20","0","Sports & Recreation","","<br>","","active","2013-12-30 23:02:37","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("21","0","Trades","","<br>","","active","2013-12-30 23:02:50","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("22","0","Travel & Transport","","<br>","","active","2013-12-30 23:03:12","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("23","0","Retail Shopping","","<br>","","active","2013-12-30 23:03:32","0000-00-00 00:00:00");
-INSERT INTO buisiness_category VALUES("24","0","Utilities","","<br>","","active","2013-12-30 23:03:51","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("1","0","Accomodation","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:55:48","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("2","0","Adult","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:56:05","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("3","0","Automotive","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:56:25","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("4","0","Domestic Services","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:56:49","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("5","0","Education & Learning","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:57:15","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("6","0","Entertainment","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:57:35","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("7","0","Event Organisation","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:58:09","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("8","0","Financial Services","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:58:31","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("9","0","Food & Beverages","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:58:56","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("10","0","Government","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:59:18","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("11","0","Hair & Beauty","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:59:37","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("12","0","Manufacturing & Agriculture","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 22:59:57","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("13","0","Media & Communication","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:00:21","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("14","0","Medical","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:00:39","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("15","0","Pets","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:01:06","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("16","0","Professional Services","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:01:31","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("17","0","Religion","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:01:49","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("18","0","Restaurants","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:02:05","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("19","0","Retail Shopping","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:02:20","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("20","0","Sports & Recreation","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:02:37","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("21","0","Trades","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:02:50","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("22","0","Travel & Transport","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:03:12","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("23","0","Retail Shopping","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:03:32","0000-00-00 00:00:00");
+INSERT INTO buisiness_category VALUES("24","0","Utilities","","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","","active","2013-12-30 23:03:51","0000-00-00 00:00:00");
 
-DROP TABLE buisiness_list IF Exist ;
+DROP TABLE buisiness_list;
 
 CREATE TABLE `buisiness_list` (
   `list_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -70,7 +70,7 @@ CREATE TABLE `buisiness_list` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
-DROP TABLE contactus IF Exist ;
+DROP TABLE contactus;
 
 CREATE TABLE `contactus` (
   `contactId` int(11) NOT NULL AUTO_INCREMENT,
@@ -84,7 +84,7 @@ CREATE TABLE `contactus` (
 
 INSERT INTO contactus VALUES("1","Test","test@gmail.com","2147483647","Lorem Ipsum","2013-11-14 00:00:00");
 
-DROP TABLE country IF Exist ;
+DROP TABLE country;
 
 CREATE TABLE `country` (
   `countryId` int(11) NOT NULL AUTO_INCREMENT,
@@ -97,7 +97,7 @@ INSERT INTO country VALUES("1","India","2013-09-09 17:50:59");
 INSERT INTO country VALUES("2","United States America","2013-10-05 17:55:11");
 INSERT INTO country VALUES("3","United Kingdom","2013-10-05 17:55:35");
 
-DROP TABLE dbbackup IF Exist ;
+DROP TABLE dbbackup;
 
 CREATE TABLE `dbbackup` (
   `backupid` int(11) NOT NULL AUTO_INCREMENT,
@@ -117,7 +117,7 @@ INSERT INTO dbbackup VALUES("11","admin","D:/UwAmp/www//buisinessdiary/cpanel/ba
 INSERT INTO dbbackup VALUES("12","admin","D:/UwAmp/www//buisinessdiary/cpanel/backup/db-backup-20140109090153.sql","162066 bytes","2014-01-09 21:19:53");
 INSERT INTO dbbackup VALUES("13","admin","D:/UwAmp/www//buisinessdiary/cpanel/backup/db-backup-20140109090153.sql","162220 bytes","2014-01-09 21:21:53");
 
-DROP TABLE emailnewsletter IF Exist ;
+DROP TABLE emailnewsletter;
 
 CREATE TABLE `emailnewsletter` (
   `subscriberId` int(11) NOT NULL AUTO_INCREMENT,
@@ -130,7 +130,7 @@ CREATE TABLE `emailnewsletter` (
 
 INSERT INTO emailnewsletter VALUES("1","Roshan","roshanbhgt@gmail.com","1","2013-12-30 22:11:18");
 
-DROP TABLE gallery  IF Exist ;
+DROP TABLE gallery;
 
 CREATE TABLE `gallery` (
   `galleryId` int(11) NOT NULL AUTO_INCREMENT,
@@ -142,12 +142,8 @@ CREATE TABLE `gallery` (
   PRIMARY KEY (`galleryId`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
-INSERT INTO gallery VALUES("10","Gallery 4","<br>","active","2014-01-09 21:17:38","");
-INSERT INTO gallery VALUES("9","Gallery 3","<br>","active","2014-01-09 21:17:21","");
-INSERT INTO gallery VALUES("8","Gallery 2","<br>","active","2014-01-09 21:17:03","");
-INSERT INTO gallery VALUES("7","Gallery 1","<br>","active","2014-01-09 21:16:44","");
 
-DROP TABLE gallery_image IF Exist ;
+DROP TABLE gallery_image;
 
 CREATE TABLE `gallery_image` (
   `galleryImageId` int(11) NOT NULL AUTO_INCREMENT,
@@ -166,7 +162,7 @@ INSERT INTO gallery_image VALUES("13","9","example_slide_3.jpg","2014-01-09 21:1
 INSERT INTO gallery_image VALUES("12","8","example_slide_2.jpg","2014-01-09 21:17:03");
 INSERT INTO gallery_image VALUES("11","7","example_slide_1.jpg","2014-01-09 21:16:44");
 
-DROP TABLE pages IF Exist ;
+DROP TABLE pages;
 
 CREATE TABLE `pages` (
   `pageId` int(11) NOT NULL AUTO_INCREMENT,
@@ -179,11 +175,11 @@ CREATE TABLE `pages` (
   PRIMARY KEY (`pageId`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
-INSERT INTO pages VALUES("1","About Us","about-us","<blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.","active","2013-10-02 17:37:00","2013-12-30 23:51:13");
-INSERT INTO pages VALUES("2","Services","services","<b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus PageMaker including versions of Lorem \nIpsum.","active","2013-11-05 14:56:20","0000-00-00 00:00:00");
-INSERT INTO pages VALUES("3","Faq","faq","<b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus PageMaker including versions of Lorem \nIpsum.","active","2013-11-05 14:56:48","0000-00-00 00:00:00");
+INSERT INTO pages VALUES("1","About Us","about-us","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","active","2013-10-02 17:37:00","2013-12-30 23:51:13");
+INSERT INTO pages VALUES("2","Services","services","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","active","2013-11-05 14:56:20","0000-00-00 00:00:00");
+INSERT INTO pages VALUES("3","Faq","faq","<p></p><blockquote><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry.\n		 	<br><br></blockquote>Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a \n		 	galley of type and scrambled it to make a type specimen book. \n		 	<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. \n		 	<br><br>It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, and more recently with desktop \npublishing software like Aldus Page Maker including versions of Lorem \nIpsum.<p></p>","active","2013-11-05 14:56:48","0000-00-00 00:00:00");
 
-DROP TABLE regions IF Exist ;
+DROP TABLE regions;
 
 CREATE TABLE `regions` (
   `regionId` int(11) NOT NULL AUTO_INCREMENT,
@@ -1676,7 +1672,7 @@ INSERT INTO regions VALUES("1477","1","35","Taki","2013-11-03 12:11:21","0000-00
 INSERT INTO regions VALUES("1478","1","35","Tamluk","2013-11-03 12:11:21","0000-00-00 00:00:00");
 INSERT INTO regions VALUES("1479","1","35","Tarakeswar","2013-11-03 12:11:21","0000-00-00 00:00:00");
 
-DROP TABLE state IF Exist ;
+DROP TABLE state;
 
 CREATE TABLE `state` (
   `stateId` int(11) NOT NULL AUTO_INCREMENT,
@@ -1721,25 +1717,29 @@ INSERT INTO state VALUES("32","1","Uttar Pradesh","2013-11-03 12:11:39");
 INSERT INTO state VALUES("33","1","Uttarakhand","2013-11-03 12:11:39");
 INSERT INTO state VALUES("35","1","West Bengal","2013-11-03 12:11:39");
 
-DROP TABLE user IF Exist ;
+DROP TABLE user;
 
 CREATE TABLE `user` (
   `userId` int(11) NOT NULL AUTO_INCREMENT,
   `roleId` int(11) NOT NULL,
-  `firstname` int(11) NOT NULL,
-  `lastname` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `gender` varchar(2) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created_date` datetime NOT NULL,
-  `updated_date` datetime NOT NULL,
+  `updated_date` datetime DEFAULT NULL,
+  `last_login_date` datetime DEFAULT NULL,
+  `postcode` varchar(6) DEFAULT NULL,
+  `status` int(2) DEFAULT '1',
   PRIMARY KEY (`userId`),
   UNIQUE KEY `userId_2` (`userId`),
   KEY `userId` (`userId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
+INSERT INTO user VALUES("1","1","Roshan","Bhagat","m","roshanbhgt@gmail.com","MTIzNDU2","2014-01-14 21:04:34","","2014-01-14 21:06:08","440003","1");
 
-DROP TABLE usertype IF Exist ;
+DROP TABLE usertype;
 
 CREATE TABLE `usertype` (
   `roleId` int(11) NOT NULL AUTO_INCREMENT,

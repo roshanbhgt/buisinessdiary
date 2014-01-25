@@ -43,4 +43,19 @@ class User {
 		}
 	}
 	
+	public function getUsers($pageId){
+		if($pageId>0){
+			$pageId = $pageId - 1;
+		}
+		global $dbObj;
+        $sql = "SELECT us.*,ust.role FROM ".USER." AS us INNER JOIN ".USERTYPE." AS ust ON us.roleId = ust.roleId ";
+		$count = $dbObj->num_rows($dbObj->query($sql));
+        $pageNumCount = getPagination($count);
+        if($pageId > 0 || $count > REC_PER_PAGE){
+            $sql .= "LIMIT ".($pageId*REC_PER_PAGE).", ".REC_PER_PAGE;
+        }
+        $res = $dbObj->fetch_all_array($sql);
+        return array("users"=>$res, "pagecount"=>$pageNumCount);
+	}
+	
 }

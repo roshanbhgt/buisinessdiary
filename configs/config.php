@@ -25,7 +25,7 @@ require_once ('configs/constants.php');
 
 // Session setting 
 ini_set('session.save_handler', 'files');
-$sessionpath = SESSION_BACKEND_PATH;
+$sessionpath = SESSION_FRONTEND_PATH;
 
 ini_set('session.save_path', $sessionpath);
 if(!isset($_SESSION) && !headers_sent()){
@@ -33,7 +33,6 @@ if(!isset($_SESSION) && !headers_sent()){
 	ini_set('session.gc_probability', 1); 
 }
 ini_set('session.gc_maxlifetime', 50*30*60);
-
 
 set_time_limit(0);
 date_default_timezone_set("Asia/Calcutta");
@@ -62,24 +61,12 @@ $privkey = "6LdTMuYSAAAAAL25lUALp8xFCNF9x7lW_DiyArze";
 
 $rsp = null;
 
-/* require('classes/Admin.class.php');
-require('classes/User.class.php');
-require('classes/Buisiness.class.php'); */
-require('classes/Categries.class.php');
-require('classes/Emailnewsletter.class.php');
-require('classes/Pages.class.php');
-require('classes/Gallery.class.php');
-/* require('classes/Webforms.class.php');
-require('classes/System.class.php');
-require('includes/functions.php'); */
-
-
-
 $objCat = new Categries();
-
+$objUser = new User();
 
 $smarty->assign('catall', $objCat->getAllParentcat());
 
-$smarty->assign('FRONTEND',FRONTEND);
+$smarty->assign('session', $_SESSION);
+$smarty->assign('FRONTEND', FRONTEND);
 $smarty->assign('GALLERYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/gallery');
 $smarty->assign('CATEGORYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/category');

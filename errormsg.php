@@ -1,15 +1,21 @@
 <?php
-	
+
+    // Including configuration file
+    require_once ('configs/config.php');
+
+    $objWebforms = new Webforms();
+
 	$data = $_POST;
-	if( $data['name'] != '' && $data['email'] != '' && $data['messge'] != ''){
-		
-		
+    if( $data['name'] != '' && $data['email'] != '' && $data['message'] != ''){
+
+        $objWebforms->contactus($data);
+
 		// multiple recipients
 		$touser  = $data['email'];	
 		$toadmin  = 'help@businessdiary.co.in';
 		
 		// subject
-		$subjectuser = 'Thanks for contating support. we will be back to you very soon.';// subject
+		$subjectuser = 'Thanks for contating support.';// subject
 		$subjectadmin = 'New enquiry from '.$data['name'];
 		
 		// message
@@ -38,7 +44,7 @@
 			    H/N 118A, Indira Nagar,
 			    Behind T. B. Ward Hospital,
 			    Nagpur, Maharashtra, India - 440003
-			    <br>M: help@buisinessdiary.in,
+			    <br>M: help@businessdiary.co.in,
 			    P: 0712-2742728, F: 0712-2742728
 								
 							</td>
@@ -54,7 +60,7 @@
 		<body style="background-color:#EFEFEF;">
 			<table border="1" width="700px" bgcolor="#FFF">
 				<tr>
-					<td><img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/></td>
+					<td><img alt="Business Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/></td>
 				</tr>
 				<tr>
 					<td>

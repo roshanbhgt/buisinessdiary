@@ -13,7 +13,7 @@
   					</ul>
   				</li>  				
   				<li {If $filename == 'manageblist' } class="active" {/If} >
-  					<a href="{$BACKEND}">Buisiness Listing</a>
+  					<a href="{$BACKEND}manageblist.php?action=viewbuisiness">Listing</a>
   					<ul>
   						<li><a href="{$BACKEND}manageblist.php?action=addbuisiness">Add buisiness</a></li>
   						<li class="last"><a href="{$BACKEND}manageblist.php?action=viewbuisiness">Manage Buisiness</a></li>
@@ -27,10 +27,10 @@
   					</ul>
   				</li>  				
   				<li {If $filename == 'manageuser' || $filename == 'manageusertype' } class="active" {/If} >
-  					<a href="{$BACKEND}">Users</a>
+  					<a href="{$BACKEND}manageuser.php?action=viewall">Users</a>
   					<ul>
   						<li><a href="{$BACKEND}">Add user</a></li>
-  						<li><a href="{$BACKEND}">Manage User</a></li>
+  						<li><a href="{$BACKEND}manageuser.php?action=viewall">Manage User</a></li>
   						<li class="last"><a href="{$BACKEND}/manageusertype.php?action=viewall">Manage Usertypes</a></li>
   					</ul>
   				</li>  				
@@ -42,12 +42,12 @@
   					</ul>
   				</li>  				
   				<li {If $filename == 'managewebforms' } class="active" {/If} >
-  					<a href="{$BACKEND}/managewebforms.php">Webforms</a>
+  					<a href="{$BACKEND}/managewebforms.php?action=clist">Webforms</a>
   					<ul>
-  						<li><a href="{$BACKEND}/managewebforms.php?action=listRlist">Request Listing</a></li>
-  						<li><a href="{$BACKEND}/managewebforms.php?action=listSlist">Suggest Listing</a></li>
-  						<li><a href="{$BACKEND}/managewebforms.php?action=listFlist">Feedback</a></li>
-  						<li class="last"><a href="{$BACKEND}/managewebforms.php?action=listClist">Contact Us</a></li>
+  						<li><a href="{$BACKEND}/managewebforms.php?action=rlist">Request Listing</a></li>
+  						<li><a href="{$BACKEND}/managewebforms.php?action=slist">Suggest Listing</a></li>
+  						<li><a href="{$BACKEND}/managewebforms.php?action=flist">Feedback</a></li>
+  						<li class="last"><a href="{$BACKEND}/managewebforms.php?action=clist">Contact Us</a></li>
   					</ul>
   				</li>  				
   				<li {If 
@@ -58,7 +58,7 @@
   					<a href="{$BACKEND}">System</a>
   					<ul>
   						<li><a href="{$BACKEND}/manageadmin.php?action=edit&id={$smarty.session.adminId}">Manage Admin</a></li>
-  						<li><a href="{$BACKEND}/managecountries.php?type=country">Manage Country</a></li>  						
+  						<li><a href="{$BACKEND}/managecountries.php?type=country&action=viewall">Manage Country</a></li>
   						<li><a href="{$BACKEND}/cachemgmt.php">Manage Cache</a></li>
   						<li class="last"><a href="{$BACKEND}/managebackup.php">Backup Databse</a></li>
   					</ul>

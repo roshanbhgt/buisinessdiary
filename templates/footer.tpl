@@ -24,11 +24,11 @@
   	<div class="footer-block">
   		<h3>Account / Places</h3>
   		<ul>
-  			<li><a>Login / Register</a></li>
-  			<li><a>My Account</a></li>
-  			<li><a>My Places</a></li>
-  			<li><a>My Reviews</a></li>
-  			<li><a>Recent History</a></li>
+  			<li><a href="{$FRONTEND}/login-register.php">Login / Register</a></li>
+  			<li><a href="{$FRONTEND}/myaccount.php">My Account</a></li>
+  			<li><a href="{$FRONTEND}/myplaces.php">My Places</a></li>
+  			<li><a href="{$FRONTEND}/myreviews.php">My Reviews</a></li>
+  			<li><a href="{$FRONTEND}/myhistory.php">Recent History</a></li>
   		</ul>
   	</div>
   	<div class="footer-block">
@@ -46,9 +46,9 @@
   		<ul>
   			<li>
   				<a href="https://www.facebook.com/businessdiaryin" target="_blank"><img src="design/images/facebook.png"/></a>
-  				<img src="design/images/twitter.png" />
-  				<img src="design/images/googleplus.png" />
-  				<img src="design/images/linkedin.png" />
+  				<a href="https://www.twitter.com/businessdiaryin" target="_blank"><img src="design/images/twitter.png" />
+  				<a href="https://plus.google.com/businessdiaryin" target="_blank"><img src="design/images/googleplus.png" />
+  				<a href="https://www.linkedin.com/businessdiaryin" target="_blank"><img src="design/images/linkedin.png" />
   			</li>  			
   		</ul>
   		<h3>Contact Us</h3>

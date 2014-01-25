@@ -9,15 +9,16 @@ define ('SESSION_BACKEND_PATH',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/cpanel
 define ('DB_BACKUP_PATH',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/cpanel/backup');
 define ('GALLERYIMAGE',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/media/gallery');
 define ('CATEGORYIMAGE',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/media/category');
-define('REC_PER_PAGE',30);
+define('REC_PER_PAGE',15);
+define('PAGE_PER_NO',6);
 
 // Defining Table Contants
 define ('ADMIN','admin');
-define ('CATEGORIES','buisiness_category');
-define ('LIST','buisiness_list');
+define ('CATEGORIES','bcategory');
+define ('LIST','blist');
 define ('PAGES','pages');
 define ('GALLERY','gallery');
-define ('GALLERYIMAGES','gallery_image');
+define ('GALLERYIMAGES','galleryimage');
 define ('COUNTRY','country');
 define ('STATE','state');
 define ('REGIONS','regions');
@@ -25,3 +26,4 @@ define ('CONTACTUS','contactus');
 define ('BACKUP','dbbackup');
 define ('USERTYPE','usertype');
 define ('USER','user');
+define ('FEEDBACK','feedback');

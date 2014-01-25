@@ -1,6 +1,3 @@
-<div class="inner-left">
+<div class="inner-center">
 	{$content}	        	
-</div>
-<div class="inner-right">
-	{include file='right.tpl'}	
 </div>

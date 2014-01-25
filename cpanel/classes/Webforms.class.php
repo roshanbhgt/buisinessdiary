@@ -12,11 +12,37 @@ class Webforms {
 	/**	 
 	 * 
 	 */
-	public function getContactListData(){
+	public function getContactListData($pageId){
+		if($pageId > 0){
+			$pageId = $pageId - 1;
+		}
 		global $dbObj;
 		$sql = "SELECT * FROM ".CONTACTUS." ORDER BY created_date DESC ";
+		$count = $dbObj->num_rows($dbObj->query($sql));
+		$pageNumCount = getPagination($count);
+		if($pageId > 0 || $count > REC_PER_PAGE){
+			$sql .= "LIMIT ".($pageId*REC_PER_PAGE).", ".REC_PER_PAGE;
+		}
 		$res = $dbObj->fetch_all_array($sql);
-		return $res;
+		return array("clist"=>$res, "pagecount"=>$pageNumCount);
+	}
+	
+	/**
+	 *
+	 */
+	public function getFeedbackListData($pageId){
+		if($pageId > 0){
+			$pageId = $pageId - 1;
+		}
+		global $dbObj;
+		$sql = "SELECT * FROM ".FEEDBACK." ORDER BY created_date DESC ";
+		$count = $dbObj->num_rows($dbObj->query($sql));
+		$pageNumCount = getPagination($count);
+		if($pageId > 0 || $count > REC_PER_PAGE){
+			$sql .= "LIMIT ".($pageId*REC_PER_PAGE).", ".REC_PER_PAGE;
+		}
+		$res = $dbObj->fetch_all_array($sql);
+		return array("flist"=>$res, "pagecount"=>$pageNumCount);
 	}
 	
 	/**

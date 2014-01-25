@@ -85,8 +85,12 @@
     }
     
     if(isset($_GET) && $_GET['type'] == 'state' && $_GET['action'] == 'viewall' || $_GET['action'] == ''){
-        $stateAll = $objSystem->getAllStates();            
+    	$pageId = isset($_GET['page']) ? intval($_GET['page']):0;
+        $result = $objSystem->getAllStates($pageId);
+        $stateAll = $result['states'];
+        $pageCount = $result['pagecount'];
         $smarty->assign("states", $stateAll);
+        $smarty->assign("pages", $pageCount);
         $smarty->assign("centercontent",$smarty->fetch("country/viewall.tpl"));
     }
 

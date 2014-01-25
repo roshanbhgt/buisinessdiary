@@ -74,13 +74,20 @@ if(isset($_POST) && $_POST['updateparentcat'] == 'updateparentcat' || $_POST['up
 }
 
 if(isset($_GET) && $_GET['action'] == 'viewparent' || $_GET['action'] == '' || $_GET['action'] == 'viewsub'){
+    $pageId = isset($_GET['page']) ? intval($_GET['page']):0;
 	if ($_GET['action'] == 'viewsub') {
-		$catAll = $objCat->getAllParentcat();		
+		$catAll = $objCat->getAllParentcat(0);
 		$smarty->assign("parentCat",$catAll);
-		$catAll = $objCat->getAllSubcat();
+		$result = $objCat->getAllSubcat($pageId);
+		$catAll = $result['subcat'];
+		$pageCount = $result['pagecount'];
+        $smarty->assign("pages", $pageCount);
 		$smarty->assign("view",'viewsub');
 	} else {
-		$catAll = $objCat->getAllParentcat();
+		$result = $objCat->getAllParentcat($pageId);
+		$catAll = $result['parentcat'];
+		$pageCount = $result['pagecount'];
+        $smarty->assign("pages", $pageCount);
 		$smarty->assign("view",'viewparent');
 	}
 	$smarty->assign("catall",$catAll);
@@ -129,7 +136,7 @@ if(isset($_GET) && $_GET['action'] == 'deleteparentcat' || $_GET['action'] == 'd
 		$catAll = $objCat->getAllSubcat();
 		$smarty->assign("view",'viewsub');
 	} else {
-		$catAll = $objCat->getAllParentcat();
+		$catAll = $objCat->getAllParentcat();		
 		$smarty->assign("view",'viewparent');
 	}
 	$smarty->assign("catall",$catAll);
