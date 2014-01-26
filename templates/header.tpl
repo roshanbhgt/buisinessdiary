@@ -6,8 +6,8 @@
         <div class="top-links">        
         	<ul>
         		<li>Welcome {if $session.userid == ''}Guest{else}{$session.firstname}{/if}</li><li>|</li>        		        		
-        		<li><a href="{$FRONTEND}/myaccount.php">My Account</a></li><li>|</li>
-        		<li><a href="{$FRONTEND}/myplaces.php">My Places</a></li><li>|</li>
+        		<li><a href="{$FRONTEND}/myaccount">My Account</a></li><li>|</li>
+        		<li><a href="{$FRONTEND}/myplaces">My Places</a></li><li>|</li>
         		<li>{if $session.userid == ''}<a href="{$FRONTEND}/login-register.php">Login</a>{else}<a href="{$FRONTEND}/logout.php">Logout</a>{/if}</li>
         	</ul>
         </div>
@@ -34,7 +34,7 @@
             	<a href="{$FRONTEND}">Home</a>
             </li>
             <li id="menu1" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="{$FRONTEND}/page.php?identifier=about-us">About Us</a>
+            	<a href="{$FRONTEND}/page/about-us">About Us</a>
             </li>
             <li id="menu2" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
             	<a href="#">Categories</a>            	
@@ -45,18 +45,18 @@
 	            </ul>
             </li>
             <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="{$FRONTEND}/page.php?identifier=services">Services</a>
+            	<a href="{$FRONTEND}/page/services">Services</a>
             </li>
             <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
             	<a href="#">Suggest buisiness</a>
             </li>
             <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="{$FRONTEND}/page.php?identifier=faq">Faq</a>
+            	<a href="{$FRONTEND}/page/faq">Faq</a>
             </li>
             <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="{$FRONTEND}/feedback.php">Feedback</a>
+            	<a href="{$FRONTEND}/feedback">Feedback</a>
             </li>
             <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="{$FRONTEND}/contactus.php">Contact Us</a>
+            	<a href="{$FRONTEND}/contactus">Contact Us</a>
             </li>
 		</ul>
