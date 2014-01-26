@@ -3,6 +3,6 @@
 	include 'configs/config.php';
 	
 	$smarty->assign('content', $smarty->fetch('contactus.tpl'));
-	$smarty->display('two-coloumn-left.html');
+	$smarty->display('two-coloumn-right.html');
 
 ?>

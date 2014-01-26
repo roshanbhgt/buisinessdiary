@@ -24,6 +24,9 @@ input, textarea {
 	width: 200px;	
 	color: #8D8B85;
 }
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
 em {
 	color: #990134;
 }
@@ -81,17 +84,29 @@ ul, ol li {
    background: #990134;
 }
 
-.inner-left {
+.content-right-inner-left {
 	float: left;
 	width: 69.5%;	
 	position: relative	
 }
-.inner-right {
+.content-right-inner-right {
 	float: right;
 	width: 29.5%;
 	overflow: hidden;
 	position: relative;
 }
+.content-left-inner-left {
+    float: left;
+    width: 22%;
+    position: relative
+}
+.content-left-inner-right {
+    float: right;
+    width: 76%;
+    overflow: hidden;
+    position: relative;
+}
+
 .slides {
 	float: left;	
 	width: 100%;	
@@ -449,29 +464,32 @@ a:hover {
 
 /** End of whether css box **/
 
-.inner-right .content {
+.content-left-inner-left .content, .content-right-inner-right .content {
 	border : 1px solid #3E779D;
 	border-radius: 5px 5px 0 0;
 	margin: 0 auto 10px;
 }
-.inner-right .content h2{
+.content-left-inner-left .content h2, .content-right-inner-right .content h2{
 	background: -moz-linear-gradient(center top , #3E779D, #65A9D7) repeat scroll 0 0 rgba(0, 0, 0, 0);
 	color: #FFFFFF;
     font-family: Helvetica, Arial, Sans-Serif;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 	padding: 5px;
 	font-size: 13px;
+    font-weight: bold;
 }
-.inner-right .content p {
+.content-right-inner-right .content p {
 	padding:5px;
 }
-.inner-right .content form{
+content-right-.inner-right .content form{
 	padding:5px;
 }
-.inner-right .content form input, textarea {
+.content-right-inner-right .content form input, textarea {
 	padding: 3px;
 }
-
+.content-left-inner-left .content ul li{
+    padding: 5px 15px;
+}
 /** Start of css for Latest on buisiness diary **/
 .latest-buisiness{	
 	float: left;
