@@ -8,6 +8,17 @@
 		<p>Quikly show your buisiness online. Fill the form below give us some information regarding your buisiness.</p>
 		<form action="" method="post">
     		<table>
+                <tr>
+                    <td align="left" valign="top" width="135px">Category<em>*</em></td>
+                    <td>
+                        <select name="category" class="select-large">
+                            <option value="">--- Select from options ---</option>
+                            {foreach from=$catall item=cat key=i}
+                                <option value="{$cat.cat_id}">{$cat.title}</option>
+                            {/foreach}
+                        </select>
+                    </td>
+                </tr>
 	    		<tr><td align="left" valign="top" width="135px">Company<em>*</em></td><td><input type="text" name="comapnyname" value=""/></td></tr>
 	    		<tr><td align="left" valign="top">Description<em>*</em></td><td><textarea name="moreinfo"> </textarea></td></tr>
 	    		<tr><td align="left" valign="top">Address<em>*</em></td><td><textarea name="address"> </textarea></td></tr>
