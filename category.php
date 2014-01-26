@@ -6,5 +6,5 @@
 	
 	$smarty->assign('cat', $objCat->getCategoryById($id));
 	$smarty->assign('content', $smarty->fetch('category/list.tpl'));
-	$smarty->display('two-coloumn-left.html');
+	$smarty->display('two-coloumn-right.html');
 ?>

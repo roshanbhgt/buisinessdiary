@@ -4,16 +4,23 @@
 	
 	$data = $_POST;
 	if(empty($data['email']) && empty($data['password'])){
-		echo "All * mark field are required.";
+        $response['success'] = 0;
+        $response['message'] = "All * mark field are required.";
+        echo json_encode($response);
 	} else {
 		if(!validateEmail($data['email'])){
-			echo "Please enter a valid email address.";
+            $response['success'] = 0;
+            $response['message'] = "Please enter a valid email address.";
+            echo json_encode($response);
 		}else{
 			if($objUser->loginUser($data)){				
-				header('Location: http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/myaccount.php/');
-				exit;
+				$response['success'] = 1;
+                $response['url'] = 'http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/myaccount.php/';
+                echo json_encode($response);
 			}else{
-				echo "Invalid login details entered. Please try again later in sometime...";
+                $response['success'] = 0;
+                $response['message'] = "Invalid login details entered. Please try again later in sometime...";
+                echo json_encode($response);
 			}
 		}
 	}

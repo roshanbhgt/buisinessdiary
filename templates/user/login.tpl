@@ -20,11 +20,16 @@ function login(){
 				submit.html('Submitting...'); // change submit button text
 			},
 			success: function(data) {
-				alert.css('display', 'block');
-				alert.css('padding', '5px');
-				alert.html(data).fadeIn(); // fade in response data
-				form.trigger('reset'); // reset form
-				submit.html('Login'); // reset submit button text
+                var response = $.parseJSON(data);
+                if(response.success){
+                    window.location.href = response.url;
+                } else {
+                    alert.css('display', 'block');
+                    alert.css('padding', '5px');
+                    alert.html(response.message).fadeIn(); // fade in response data
+                    form.trigger('reset'); // reset form
+                    submit.html('Login'); // reset submit button text
+                }
 			},
 			error: function(e) {
 				console.log(e)

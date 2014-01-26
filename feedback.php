@@ -125,6 +125,6 @@
 	
 	$smarty->assign('variable', $variable);
 	$smarty->assign('content', $smarty->fetch('system/feedback.tpl'));
-	$smarty->display('two-coloumn-left.html');
+	$smarty->display('two-coloumn-right.html');
 
 ?>
