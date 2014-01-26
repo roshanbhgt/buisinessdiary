@@ -48,7 +48,7 @@
             (function request() {
                 $.ajax({
                    type: "GET",
-                    url: "weather.php",
+                    url: "http://localhost/buisinessdiary/weather.php",
                     cache: false,
                     success: function(response) {
                         $('#wxWrap').html(response);
@@ -69,7 +69,7 @@
                 e.preventDefault(); // prevent default form submit
                 // sending ajax request through jQuery
                 $.ajax({
-                    url: 'emailnewsletter.php', // form action url
+                    url: 'http://localhost/buisinessdiary/emailnewsletter.php', // form action url
                     type: 'POST', // form submit method get/post
                     dataType: 'html', // request type html/json/xml
                     data: form.serialize(), // serialize form data

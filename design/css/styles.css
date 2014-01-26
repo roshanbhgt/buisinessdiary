@@ -19,10 +19,14 @@ body {
 	background-repeat: repeat-x;
 	background-attachment: fixed;
 }
-input, textarea {
+input, textarea, select {
 	border: 1px solid #ADC4EA;
 	width: 200px;	
 	color: #8D8B85;
+}
+.select-large {
+    width: 208px;
+    text-align: center;
 }
 h1,h2,h3,h4,h5,h6{
     font-weight: normal;
