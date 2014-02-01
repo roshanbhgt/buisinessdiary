@@ -1,4 +1,5 @@
-<div class="logo">
+
+        <div class="logo">
 			<a href="{$FRONTEND}">
 				<img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/>
 			</a>
@@ -40,7 +41,7 @@
             	<a href="#">Categories</a>            	
                 <ul style="display:none;">
 	                {foreach from=$catall item=cat key=i}
-					<li><a href="{$FRONTEND}/category.php?id={$cat.cat_id}"><span>{$cat.title}</span></a></li>
+					<li><a href="{$FRONTEND}/category/{$cat.identifier}"><span>{$cat.title}</span></a></li>
 					{/foreach}                	
 	            </ul>
             </li>
@@ -60,3 +61,16 @@
             	<a href="{$FRONTEND}/contactus">Contact Us</a>
             </li>
 		</ul>
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis-css addthis_toolbox addthis_default_style addthis_32x32_style" >
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_compact"></a>
+            <a class="addthis_counter addthis_bubble_style"></a>
+        </div>
+        {literal}
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52ec9ce86d2ea839"></script>
+        {/literal}
+        <!-- AddThis Button END -->

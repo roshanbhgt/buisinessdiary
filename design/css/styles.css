@@ -265,7 +265,7 @@ a:hover {
 	word-spacing: normal;
 	white-space: nowrap;
 	display: block;
-	height: 30px;
+	height: 36px;
 	width: 100%;
 	list-style-position: inside;
 	list-style-image: none;
@@ -274,7 +274,7 @@ a:hover {
 	margin: 5px 0;
 }
 .wrapper .nav ul {
-	width: 100%;	
+	width: 78%;
 }
 .wrapper .nav ul li {
 	float: left;
@@ -284,7 +284,7 @@ a:hover {
 	color: #FFF;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 	position: relative;
-	padding: 6px 6px 8px 14px;
+	padding: 11px 6px 8px 14px;
 }
 .wrapper .nav ul li.over {
 	z-index: 99;
@@ -509,6 +509,7 @@ content-right-.inner-right .content form{
     color: #FFFFFF;
     font-family: Helvetica,Arial,Sans-Serif;
     font-size: 13px;
+    font-weight: bold;
     padding: 5px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
@@ -544,4 +545,11 @@ content-right-.inner-right .content form{
 #msgform tr td textarea{
 	height: 100px;
 	width: 350px;	
+}
+
+.addthis-css{
+    float: left;
+    padding: 2px;
+    position: relative;
+    width: 212px;
 }

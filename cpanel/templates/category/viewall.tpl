@@ -36,6 +36,7 @@
 	<tr>
 		<td class="center"></td>
 		<td>Title</td>
+        <td>Identifier</td>
 		<td>Banner</td>
 		<td>Description</td>
 		<td>Created At</td>		
@@ -47,6 +48,7 @@
 	<tr>
 		<td width="30" class="center" valign="top"><input type="checkbox" name="parentcat" value="{$cat.cat_id}"></td>
 		<td width="150" align="justify" valign="top">{$cat.title}</td>
+        <td width="150" align="justify" valign="top">{$cat.identifier}</td>
 		<td width="50" align="justify" valign="top">{if $cat.banner != ''}<a href="{$CATEGORYIMAGE}/small/{$cat.banner}" data-lightbox="image-{$i}" style="padding: 0 !important;" ><img src="{$CATEGORYIMAGE}/thumb/{$cat.banner}" alt="" width="50"/></a>{/if}</td>
 		<td align="justify" valign="top">{$cat.description|truncate:200:'...'}</td>
 		<td width="100"align="justify" valign="top">{$cat.created_date}</td>
