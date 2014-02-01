@@ -15,7 +15,7 @@
 	<h2>Browse by category</h2>
 	<ul>
 		{foreach from=$catall item=cat key=i}
-		<li><h3>{$cat.title}</h3></li>
+		<li><a href="{$FRONTEND}/category/{$cat.identifier}"><h3>{$cat.title}</h3></a></li>
 		{/foreach}
 	</ul>
 </div>

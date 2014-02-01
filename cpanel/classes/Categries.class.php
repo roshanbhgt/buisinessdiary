@@ -82,6 +82,7 @@ class Categries {
 	public function addCategory($data){
 		global $dbObj;
 		$title = addslashes(trim($data['title']));
+        $identifier = generateSeoUrl($title);
 		$description = addslashes(nl2br(trim($data['description'])));
 		$banner = $data['banner'];
 		$status = $data['status'];
@@ -89,6 +90,7 @@ class Categries {
 					".CATEGORIES."
 				SET
 					title = '".$title."',
+					identifier = '".$identifier."',
 					description = '".$description."',					
 					parentcat_id = ".$data['parent_id'].",					
 					banner = '".$banner."',
@@ -105,6 +107,7 @@ class Categries {
 	public function updateCategory($data){
 		global $dbObj;		
 		$title = addslashes(trim($data['title']));
+        $identifier = generateSeoUrl($title);
 		$description = addslashes(nl2br(trim($data['description'])));
 		$banner = $data['banner'];
 		$status = $data['status'];
@@ -114,6 +117,7 @@ class Categries {
 					".CATEGORIES."
 				SET
 					title = '".$title."',
+					identifier = '".$identifier."',
 					description = '".$description."',
 					parentcat_id = ".$parentCatId.",";
 		if ($banner != ''){					
