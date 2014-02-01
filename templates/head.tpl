@@ -5,6 +5,7 @@
 <link href="{$FRONTEND}/design/css/styles.css" rel="stylesheet" type="text/css" />
 <link href="{$FRONTEND}/design/css/slider.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="{$FRONTEND}/design/js/jquery.min.js"></script>
+<script type="text/javascript" src="{$FRONTEND}/design/js/jquery.fancybox.js"></script>
 {literal}
     <script type="text/javascript">
         $(document).ready(function() {
@@ -90,6 +91,38 @@
                 });
             });
 
+        }
+
+        function submitquiklist(){
+            var form = $('#quiklistform'); // contact form
+            var submit = $('#quiklistsubmit');	// submit button
+            var alert = $('#message'); // alert div for show alert message
+
+            // form submit event
+            form.on('submit', function(e) {
+                e.preventDefault(); // prevent default form submit
+                // sending ajax request through jQuery
+                $.ajax({
+                    url: 'http://localhost/buisinessdiary/quiklist.php', // form action url
+                    type: 'POST', // form submit method get/post
+                    dataType: 'html', // request type html/json/xml
+                    data: form.serialize(), // serialize form data
+                    beforeSend: function() {
+                        alert.fadeOut();
+                        submit.html('Submitting...'); // change submit button text
+                    },
+                    success: function(data) {
+                        alert.css('display', 'block');
+                        alert.css('padding', '5px');
+                        alert.html(data).fadeIn(); // fade in response data
+                        form.trigger('reset'); // reset form
+                        submit.html('Submit'); // reset submit button text
+                    },
+                    error: function(e) {
+                        console.log(e)
+                    }
+                });
+            });
         }
 
         function collapse(id,classname){

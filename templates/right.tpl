@@ -6,8 +6,11 @@
 	<div class="quik-add-listing content">
 		<h2>Quick listing</h2>
 		<p>Quikly show your buisiness online. Fill the form below give us some information regarding your buisiness.</p>
-		<form action="" method="post">
+		<form id="quiklistform" action="" method="post" >
     		<table>
+                <tr>
+                    <td align="left" colspan="2"><div id="message" style="dispaly:none;"></div></td>
+                </tr>
                 <tr>
                     <td align="left" valign="top" width="135px">Category<em>*</em></td>
                     <td>
@@ -19,16 +22,18 @@
                         </select>
                     </td>
                 </tr>
-	    		<tr><td align="left" valign="top" width="135px">Company<em>*</em></td><td><input type="text" name="comapnyname" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Description<em>*</em></td><td><textarea name="moreinfo"> </textarea></td></tr>
+	    		<tr><td align="left" valign="top" width="135px">Company<em>*</em></td><td><input type="text" name="company" value=""/></td></tr>
+                <tr><td align="left" valign="top" width="135px">Email<em>*</em></td><td><input type="text" name="email" value=""/></td></tr>
+	    		<tr><td align="left" valign="top">Description<em>*</em></td><td><textarea name="description"> </textarea></td></tr>
 	    		<tr><td align="left" valign="top">Address<em>*</em></td><td><textarea name="address"> </textarea></td></tr>
 	    		<tr><td align="left" valign="top">City<em>*</em></td><td><input type="text" name="city" value=""/></td></tr>
 	    		<tr><td align="left" valign="top">State<em>*</em></td><td><input type="text" name="state" value=""/></td></tr>
 	    		<tr><td align="left" valign="top">Country<em>*</em></td><td><input type="text" name="country" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Postcode<em>*</em></td><td><input type="text" name="state" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Telephone<em>*</em></td><td><input type="text" name="state" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Fax</td><td><input type="text" name="state" value=""/></td></tr>
-	    		<tr><td align="right" valign="top" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue"><span>Submit</span></button></td></tr>
+	    		<tr><td align="left" valign="top">Postcode<em>*</em></td><td><input type="text" name="postcode" value=""/></td></tr>
+	    		<tr><td align="left" valign="top">Telephone<em>*</em></td><td><input type="text" name="telephone" value=""/></td></tr>
+	    		<tr><td align="left" valign="top">Fax</td><td><input type="text" name="fax" value=""/></td></tr>
+                <tr><td align="left" valign="top">Website</td><td><input type="text" name="website" value=""/></td></tr>
+	    		<tr><td align="right" valign="top" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue" id="quiklistsubmit" onclick="submitquiklist()"><span>Submit</span></button></td></tr>
     		</table>		    		 
 		</form>
 	</div>

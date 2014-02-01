@@ -49,7 +49,7 @@
             	<a href="{$FRONTEND}/page/services">Services</a>
             </li>
             <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
-            	<a href="#">Suggest buisiness</a>
+            	<a href="{$FRONTEND}/suggestbusiness">Suggest buisiness</a>
             </li>
             <li id="menu3" onmouseover="expand(this,'over')" onmouseout="collapse(this,'over')">
             	<a href="{$FRONTEND}/page/faq">Faq</a>

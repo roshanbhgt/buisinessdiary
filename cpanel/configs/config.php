@@ -73,6 +73,7 @@ require('classes/Pages.class.php');
 require('classes/Webforms.class.php');
 require('classes/Gallery.class.php');
 require('classes/System.class.php');
+require('classes/Enewsletter.class.php');
 require('includes/functions.php');
 
 $smarty->assign('BACKEND',BACKEND);

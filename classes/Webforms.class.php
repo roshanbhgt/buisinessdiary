@@ -57,5 +57,60 @@ class Webforms {
     	}
     }
 
+    public function quikAddListing($data){
+        global $dbObj;
+        $sql = "INSERT INTO
+		    		".QUIKLIST."
+		    	SET
+		    		cat_id = '".$data['category']."',
+		    		company = '".$data['company']."',
+		    		description = '".$data['description']."',
+			    	address = '".$data['address']."',
+			    	city = '".$data['city']."',
+			    	email = '".$data['email']."',
+			    	state = '".$data['state']."',
+			    	country = '".$data['country']."',
+			    	postcode = '".$data['postcode']."',
+			    	telephone = '".$data['telephone']."',
+			    	fax = '".$data['fax']."',
+			    	website = '".$data['website']."',
+			    	created_date = NOW()
+		    	";
+        if($dbObj->query($sql)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function suggestAddListing($data){
+
+        global $dbObj;
+        $sql = "INSERT INTO
+		    		".SUGGESTLIST."
+		    	SET
+		    	    yname = '".$data['yname']."',
+		    		yemail = '".$data['yemail']."',
+		    		cat_id = '".$data['category']."',
+		    		company = '".$data['company']."',
+		    		description = '".$data['description']."',
+			    	address = '".$data['address']."',
+			    	city = '".$data['city']."',
+			    	email = '".$data['email']."',
+			    	state = '".$data['state']."',
+			    	country = '".$data['country']."',
+			    	postcode = '".$data['postcode']."',
+			    	telephone = '".$data['telephone']."',
+			    	fax = '".$data['fax']."',
+			    	website = '".$data['website']."',
+			    	created_date = NOW()
+		    	";
+        if($dbObj->query($sql)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }

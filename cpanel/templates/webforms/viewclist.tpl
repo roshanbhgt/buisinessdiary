@@ -1,4 +1,4 @@
-<form method="post" id="admin_grid_massaction-form" action="{$BACKEND}manageadmin.php">
+<form method="post" id="admin_grid_massaction-form" action="{$BACKEND}managewebforms.php">
 <div style="height:25px;">
 	<div align="left" style="float: left; padding: 4px 0px; width: 17%;">
 		<a href="javascript:void(0);" onclick="check(this)">Select All</a> 

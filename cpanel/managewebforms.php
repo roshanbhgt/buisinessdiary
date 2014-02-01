@@ -30,6 +30,17 @@ if(isset($_GET) && $_GET['action'] == 'flist'){
 	$smarty->assign("centercontent",$smarty->fetch("webforms/viewflist.tpl"));
 }
 
+if(isset($_GET) && $_GET['action'] == 'rlist'){
+    $pageId = intval($_GET['page']);
+    $result = $objWebforms->getRequestListData($pageId);
+    $rlistData = $result['rlist'];
+    $pageCount = $result['pagecount'];
+    $smarty->assign("rlist", $rlistData);
+    $smarty->assign("pages", $pageCount);
+    $smarty->assign("contentheading","Webforms Request Listing");
+    $smarty->assign("centercontent",$smarty->fetch("webforms/viewrlist.tpl"));
+}
+
 
 if(isset($_GET) && $_GET['action'] == 'cinfo'){
 	$id = intval($_GET['id']);

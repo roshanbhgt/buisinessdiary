@@ -33,7 +33,10 @@
   						<li><a href="{$BACKEND}manageuser.php?action=viewall">Manage User</a></li>
   						<li class="last"><a href="{$BACKEND}/manageusertype.php?action=viewall">Manage Usertypes</a></li>
   					</ul>
-  				</li>  				
+  				</li>
+                <li {If $filename == 'managenewsletter' } class="active" {/If} >
+                    <a href="{$BACKEND}managenewsletter.php?action=viewall">Newsletter</a>
+                </li>
   				<li {If $filename == 'managepages' } class="active" {/If} >
   					<a href="{$BACKEND}/managepages.php">Pages</a>
   					<ul>
