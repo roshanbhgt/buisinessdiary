@@ -23,12 +23,17 @@
                         <li style="background: url('http://localhost/buisinessdiary/design/images/telephone.png') no-repeat;height: 24px;padding: 4px 30px 0"> 0712 - 2742728</li>
                         <li style="background: url('http://localhost/buisinessdiary/design/images/email.png') no-repeat;height: 24px;padding: 4px 30px 0"> <a href="#">help@thepridehotels.com</a></li>
                         <li style="background: url('http://localhost/buisinessdiary/design/images/globe.png') no-repeat;height: 24px;padding: 4px 30px 0"> <a href="#">www.thepridehotels.com</a></li>
+<<<<<<< HEAD
                         <li style="background: url('http://localhost/buisinessdiary/design/images/maps.png') no-repeat;height: 24px;padding: 4px 30px 0"> <a class="fancybox" href="http://localhost/buisinessdiary/favicon.ico">View in map </a></li>
+=======
+                        <li style="background: url('http://localhost/buisinessdiary/design/images/maps.png') no-repeat;height: 24px;padding: 4px 30px 0"> <a href="#">View in map </a></li>
+>>>>>>> 97132e1f7cabdbc9813b855e3e260b9da1ae6e51
                     </ul>
                 </div>
             </td>
         </tr>
     </table>
+<<<<<<< HEAD
 </div>
 
 {literal}
@@ -51,3 +56,8 @@
         });
     </script>
 {/literal}
+=======
+
+</div>
+
+>>>>>>> 97132e1f7cabdbc9813b855e3e260b9da1ae6e51
