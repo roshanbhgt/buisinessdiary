@@ -28,6 +28,8 @@ define ('USERTYPE','usertype');
 define ('USER','user');
 define ('EMAILNEWSLETTER','emailnewsletter');
 define ('FEEDBACK','feedback');
+define ('QUIKLIST','quiklist');
+define ('SUGGESTLIST','suggestbus');
 
 require('classes/User.class.php');
 /* require('classes/Buisiness.class.php'); */
@@ -35,8 +37,7 @@ require('classes/Categries.class.php');
 require('classes/Emailnewsletter.class.php');
 require('classes/Pages.class.php');
 require('classes/Gallery.class.php');
-/* require('classes/Webforms.class.php');
-require('classes/System.class.php'); */
+/* require('classes/System.class.php'); */
 require('classes/Webforms.class.php');
 require('includes/functions.php');
 
