@@ -20,6 +20,18 @@ function login(){
 				submit.html('Submitting...'); // change submit button text
 			},
 			success: function(data) {
+<<<<<<< HEAD
+				var response = $.parseJSON(data);
+				if (response.success) {
+					window.location.href = response.url;
+				} else {
+					alert.css('display', 'block');
+					alert.css('padding', '5px');
+					alert.html(response.message).fadeIn(); // fade in response data
+					form.trigger('reset'); // reset form
+					submit.html('Login'); // reset submit button text
+				}	
+=======
                 var response = $.parseJSON(data);
                 if(response.success){
                     window.location.href = response.url;
@@ -30,6 +42,7 @@ function login(){
                     form.trigger('reset'); // reset form
                     submit.html('Login'); // reset submit button text
                 }
+>>>>>>> develop
 			},
 			error: function(e) {
 				console.log(e)
