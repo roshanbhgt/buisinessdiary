@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /import
+Disallow: /classes
+Disallow: /libs
+Disallow: /design
+Disallow: /includes
+Disallow: /cache
+Disallow: /templates
+Disallow: /templates_c
+Disallow: /error
+Disallow: /configs

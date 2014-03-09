@@ -25,6 +25,7 @@ if($_POST){
     }
 }
 
+$smarty->assign('title', 'Suggest Business');
 $smarty->assign('content', $smarty->fetch('webforms/suggestbus.tpl'));
 $smarty->display('two-coloumn-right.html');
 

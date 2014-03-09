@@ -11,6 +11,7 @@ if(isset($_GET['identifier'])){
 }
 
 $smarty->assign('page', $page);
+$smarty->assign('title', $page['title']);
 $smarty->assign('content', $smarty->fetch('page.tpl'));
 $smarty->display('two-coloumn-right.html');
 

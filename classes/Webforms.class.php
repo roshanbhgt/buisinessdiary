@@ -113,4 +113,29 @@ class Webforms {
     }
 
 
+    /**
+     * @param $data
+     * @return bool
+     *
+     */
+    public function addQuikQuote($data){
+        global $dbObj;
+        $sql = "INSERT INTO
+		    		".QUIKCOTE."
+		    	SET
+		    		bannersize = '".$data['bannersize']."',
+			    	name = '".$data['name']."',
+			    	mobile = '".$data['mobile']."',
+			    	email = '".$data['email']."',
+			    	message = '".$data['message']."',
+			    	status = 0,
+			    	created_date = NOW()
+		    	";
+        if($dbObj->query($sql)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

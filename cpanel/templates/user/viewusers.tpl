@@ -53,12 +53,12 @@
 		<td width="150" align="justify" valign="top">{$user.lastname}</td>
 		<td width="150" align="justify" valign="top">{$user.email}</td>
 		<td width="150" align="justify" valign="top">{$user.role}</td>
-		<td width="150" align="justify" valign="top">{$user.gender}</td>
+		<td width="150" align="justify" valign="top">{if $user.gender == 'm'} Male {else} Female {/if}</td>
 		<td width="150" align="justify" valign="top">{$user.postcode}</td>
 		<td width="100"align="justify" valign="top">{$user.created_date}</td>
 		<td width="100" valign="top">{$user.updated_date}</td>
 		<td width="150" align="justify" valign="top">{$user.last_login_date}</td>
-		<td width="150" align="justify" valign="top">{$user.status}</td>
+		<td width="150" align="justify" valign="top">{if $user.status == 1}Active{else}Inactive{/if}</td>
 				
 		<td width="100">
 			<a href="{$BACKEND}manageuser.php?action=edituser&id={$user.userId}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>

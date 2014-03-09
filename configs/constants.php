@@ -29,6 +29,7 @@ define ('USER','user');
 define ('EMAILNEWSLETTER','emailnewsletter');
 define ('FEEDBACK','feedback');
 define ('QUIKLIST','quiklist');
+define ('QUIKCOTE','quikqote');
 define ('SUGGESTLIST','suggestbus');
 
 require('classes/User.class.php');

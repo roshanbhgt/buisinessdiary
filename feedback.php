@@ -124,6 +124,7 @@
 	}
 	
 	$smarty->assign('variable', $variable);
+    $smarty->assign('title', 'Feedback');
 	$smarty->assign('content', $smarty->fetch('system/feedback.tpl'));
 	$smarty->display('two-coloumn-right.html');
 
