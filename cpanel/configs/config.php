@@ -4,7 +4,7 @@
 require_once ('../libs/Error/Errorhandler.class.php');
 
 // Report simple running errors
-ErrorHandler::Init(E_ERROR | E_WARNING | E_PARSE);
+ErrorHandler::Init(E_ERROR | E_PARSE);
 
 // Display Errors
 ErrorHandler::$displayErrors = TRUE;

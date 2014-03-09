@@ -14,6 +14,8 @@
 
     RewriteRule ^feedback feedback.php
 
+    RewriteRule ^quikquote quikquote.php
+
     RewriteRule ^suggestbusiness suggestbus.php
 
     RewriteRule ^page/([a-z0-9-]+) page.php?identifier=$1

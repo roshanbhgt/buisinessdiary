@@ -5,7 +5,6 @@
     $objWebforms = new Webforms();
     if($_POST){
         $data = $_POST;
-
         if($data['category'] == null && $data['email'] == null && $data['company'] == null
             && $data['description'] == null && $data['address'] == null && $data['city'] == null
             && $data['state'] == null && $data['country'] == null && $data['postcode'] == null && $data['telephone'] == null){

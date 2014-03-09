@@ -75,3 +75,39 @@ function getPagination($count){
 	}
 	return $paginationCount;
 }
+
+/**
+ * Function to get countries
+ * @return array
+ * @params none
+ */
+function getCountry(){
+    global $dbObj;
+    $sql = "SELECT * FROM ".COUNTRY." ;";
+    $res = $dbObj->fetch_all_array($sql);
+    return $res;
+}
+
+/**
+ * @return array
+ * @param int country id
+ */
+function getState($countryid){
+    global $dbObj;
+    $sql = "SELECT * FROM ".STATE." WHERE countryId = ".$countryid;
+    $res = $dbObj->fetch_all_array($sql);
+    return $res;
+}
+
+/**
+ * @param int $countryid
+ * @param int $stateid
+ * @return float
+ *
+ */
+function getRegions($countryid, $stateid){
+    global $dbObj;
+    $sql = "SELECT * FROM ".REGIONS." WHERE countryId = ".$countryid." AND stateId = ".$stateid;
+    $res = $dbObj->fetch_all_array($sql);
+    return $res;
+}
