@@ -8,7 +8,7 @@ if (!$connect) {
 }
 
 // path where your CSV file is located
-define('CSV_PATH','C:/xampp/htdocs/buisinessdiary/import/sheets/');
+define('CSV_PATH','D:/UwAmp/www/buisinessdiary/import/sheets/');
 
 // Name of your CSV file
 $csv_file = CSV_PATH . "import_regions.csv"; 
