@@ -63,6 +63,7 @@ $rsp = null;
 
 $objCat = new Categries();
 $objUser = new User();
+$objBuis = new Buisiness();
 
 $smarty->assign('catall', $objCat->getAllParentcat());
 

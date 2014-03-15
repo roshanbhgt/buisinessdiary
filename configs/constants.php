@@ -33,7 +33,7 @@ define ('QUIKCOTE','quikqote');
 define ('SUGGESTLIST','suggestbus');
 
 require('classes/User.class.php');
-/* require('classes/Buisiness.class.php'); */
+require('classes/Buisiness.class.php');
 require('classes/Categries.class.php');
 require('classes/Emailnewsletter.class.php');
 require('classes/Pages.class.php');
