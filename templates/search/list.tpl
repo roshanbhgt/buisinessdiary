@@ -1,8 +1,6 @@
 <div class="std">
-	<div class="page-title"><h1>{$cat.title}</h1></div>
-	<p>{$cat.description}</p>
+	<div class="page-title"><h1>Search results for <span style="color:#38679D;">"{$smarty.post.q}"</span></h1></div>
 </div>
-<div class="subcat">&nbsp;</div>
 <div class="blist">
     <table width="100%" border="0">
 		{foreach from=$businesslist item=list key=i}
@@ -29,6 +27,8 @@
                 </div>
             </td>
         </tr>
+		{foreachelse}
+			No results were found in the search
 		{/foreach}
     </table>
 </div>

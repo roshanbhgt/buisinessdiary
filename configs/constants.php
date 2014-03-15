@@ -15,7 +15,7 @@ define('REC_PER_PAGE',30);
 // Defining Table Contants
 define ('ADMIN','admin');
 define ('CATEGORIES','bcategory');
-define ('LIST','blist');
+define ('BLIST','blist');
 define ('PAGES','pages');
 define ('GALLERY','gallery');
 define ('GALLERYIMAGES','galleryimage');
@@ -40,5 +40,6 @@ require('classes/Pages.class.php');
 require('classes/Gallery.class.php');
 /* require('classes/System.class.php'); */
 require('classes/Webforms.class.php');
+require('classes/Search.class.php');
 require('includes/functions.php');
 
