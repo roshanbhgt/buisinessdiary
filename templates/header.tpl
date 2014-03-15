@@ -9,7 +9,7 @@
         		<li>Welcome {if $session.userid == ''}Guest{else}{$session.firstname}{/if}</li><li>|</li>        		        		
         		<li><a href="{$FRONTEND}/myaccount">My Account</a></li><li>|</li>
         		<li><a href="{$FRONTEND}/myplaces">My Places</a></li><li>|</li>
-        		<li>{if $session.userid == ''}<a href="{$FRONTEND}/login-register.php">Login</a>{else}<a href="{$FRONTEND}/logout.php">Logout</a>{/if}</li>
+        		<li>{if $session.userid == ''}<a href="{$FRONTEND}/login-register">Login</a>{else}<a href="{$FRONTEND}/logout">Logout</a>{/if}</li>
         	</ul>
         </div>
         <div class="lang-whether">

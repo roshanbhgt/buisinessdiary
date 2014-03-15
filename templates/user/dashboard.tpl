@@ -8,21 +8,32 @@
     <p>&nbsp;</p>
     <table width="100%">
         <tr>
-            <td colspan="2">
-                <h2>Account Information</h2>
+            <td valign="top" width="49%">
+				<div style="position:relative; float: left;" class="content">
+					<h2>Contact</h2>
+					<ul>
+						<li>{$myinfo.firstname}</li>
+						<li>{$myinfo.email}</li>
+					</ul>
+				</div>
+            </td>
+            <td valign="top" width="49%">
+				<div style="position:relative;float: left;" class="content">
+					<h2>Newsletter</h2>
+					{if $mynews == true}
+						You have subscribed to our newsletter.
+					{else}
+						You haven't subscribed to our newsletter.
+					{/if}
+				</div>
             </td>
         </tr>
+		<tr><td colspan="2"><p>&nbsp;</p></td></tr>
         <tr>
-            <td>
-                <h3>Contact Information</h3>
-            </td>
-            <td>
-                <h3>Newsletter</h3>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <h3>My Address</h3>
+            <td colspan="2" valign="top">
+				<div style="position:relative; float: left;" class="content">
+					<h2>Address Book</h2>
+				</div>
             </td>
         </tr>
     </table>

@@ -8,9 +8,13 @@
 
     RewriteRule ^contactus contactus.php
 
+	RewriteRule ^login-register login-register.php
+	
     RewriteRule ^myaccount myaccount.php
 
     RewriteRule ^myplaces myplaces.php
+	
+	RewriteRule ^logout logout.php
 
     RewriteRule ^feedback feedback.php
 
@@ -25,3 +29,5 @@
     RewriteRule ^category/([a-z0-9-]+) category.php?identifier=$1
 
 	RewriteRule ^list/([a-z0-9-]+) business.php?id=$1
+
+	

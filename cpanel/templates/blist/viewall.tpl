@@ -36,8 +36,8 @@
 		<td width="100" valign="top">{$buis.update_date}</td>
 		<td width="50" valign="top">{$buis.status|capitalize}</td>
 		<td width="100">
-			<a href="{$BACKEND}managecat.php?action=editparentcat&id={$buis.cat_id}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>
-			<a href="{$BACKEND}managecat.php?action=deleteparentcat&id={$buis.cat_id}"><img src="{$BACKEND}design/images/delete.png" alt="D" title="Delete"></a>
+			<a href="{$BACKEND}manageblist.php?action=edit&id={$buis.list_id}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>
+			<a href="{$BACKEND}manageblist.php?action=delete&id={$buis.list_id}"><img src="{$BACKEND}design/images/delete.png" alt="D" title="Delete"></a>
 		</td>
 	</tr>
 	{foreachelse}
