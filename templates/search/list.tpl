@@ -15,7 +15,7 @@
                         {$list.region}, {$list.stte}, {$list.cntry} - {$list.postcode}
                         <div style="background: url('{$FRONTEND}/design/images/rating.png') no-repeat;height: 24px;">&nbsp;</div>
                     </address>
-                    <div style="float: left; width: 100%;padding: 5px;">{$list.description|truncate:100}<a href="{$FRONTEND}/list/{$list.list_id}">more</a></div>
+                    <div style="float: left; width: 100%;padding: 5px;">{$list.description}<a href="{$FRONTEND}/list/{$list.list_id}">more</a></div>
                 </div>
                 <div class="right" style="position: relative; float: left; width: 34.4%; padding: 5px">
                     <ul>
