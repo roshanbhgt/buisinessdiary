@@ -19,10 +19,10 @@
 			<td align="left" valign="middle"><label>Username</label><span class="required">*</span></td>
 			<td align="left"><input class="inputbox" type="text" name="username" value="{$admin.username}"></td>	
 		</tr>
-		<!-- <tr>
-			<td align="left" valign="middle"><label>Password</label><span class="required">*</span></td>
+		<tr>
+			<td align="left" valign="middle"><label>Password</label></td>
 			<td align="left" valign="middle"><input class="inputbox" type="password" name="password" value=""></td>	
-		</tr> -->
+		</tr>
 		<tr>
 			<td colspan="2" align="center" valign="middle">{nocache}{$captcha}{/nocache}</td>
 		</tr>

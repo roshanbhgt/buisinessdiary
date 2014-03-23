@@ -3,18 +3,31 @@
 {ElseIf ( $variables.error != '' )}
     <div class="error">{$variables.error}</div>
 {/If}
-{if $smarty.get.type == 'country'}    
-<form name="editcountry" method="post" id="editcountryform" >
+<form name="editnewsemail" method="post" id="editnewsemailform" >
     <fieldset>
-        <input type="hidden" name="id" value="{$country.countryId}" />
-  	<legend>Add country</legend>
+        <input type="hidden" name="id" value="{$newsemail.subscriberId}" />
+		<legend>Edit newsletter</legend>
         <table class="left" width="50%">                
             <tr>
-                <td align="left" valign="middle" width="200"><label>Country</label><span class="required">*</span></td>
-                <td align="left" valign="middle"><input class="inputbox" type="text" name="country" value="{$country.title}"></td>	
+                <td align="left" valign="middle" width="200"><label>Name</label><span class="required">*</span></td>
+                <td align="left" valign="middle"><input class="inputbox" type="text" name="name" value="{$newsemail.name}"></td>	
             </tr>
+			<tr>
+                <td align="left" valign="middle" width="200"><label>Email</label><span class="required">*</span></td>
+                <td align="left" valign="middle"><input class="inputbox" type="text" name="email" value="{$newsemail.email}"></td>	
+            </tr>
+			<tr>
+				<td align="left" valign="middle"><label>Status</label><span
+					class="required">*</span></td>
+				<td align="left" valign="middle">
+					<select name="status" class="iselect-small">
+						<option value="1" {If $newsemail.status == "1"} selected="selected" {/If}>Active</option>
+						<option value="0" {If $newsemail.status == "0"} selected="selected" {/If}>Inactive</option>
+					</select>
+				</td>
+			</tr>
             <tr>
-                <td colspan="2" align="right"><button name="updatecountry" value="updatecountry">Submit</button></td>	
+                <td colspan="2" align="right"><button name="updatenewsemail" value="updatenewsemail">Submit</button></td>	
             </tr>
             <tr>
                 <td colspan="2" align="right"><small>All * mark fields are required.</small></td>	
@@ -22,33 +35,3 @@
         </table>
     </fieldset>
 </form>
-{elseif $smarty.get.type == "state"}        
-<form name="addstate" method="post" id="addstateform" >
-    <fieldset>
-  	<legend>Add state</legend> 
-        <table class="left" width="50%">                
-            <tr>
-                <td align="left" valign="middle" width="200"><label>Coutry </label><span class="required">*</span></td>
-                <td align="left" valign="middle">                    
-                    <select name="country">
-                        <option value="">Please select</option>
-                        {foreach from=$countries item=country}	
-                        <option value="{$country.countryId}">{$country.title}</option>
-                        {/foreach}
-                    </select>
-                </td>	
-            </tr>
-            <tr>
-                <td align="left" valign="middle" width="200"><label>State</label><span class="required">*</span></td>
-                <td align="left" valign="middle"><input class="inputbox" type="text" name="state" value="{$smarty.post.state}"></td>	
-            </tr>
-            <tr>
-                <td colspan="2" align="right"><button name="addstate" value="addstate">Submit</button></td>	
-            </tr>
-            <tr>
-                <td colspan="2" align="right"><small>All * mark fields are required.</small></td>	
-            </tr>
-        </table>
-    </fieldset>
-</form>
-{/if}        

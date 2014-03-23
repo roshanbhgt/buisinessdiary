@@ -1,13 +1,13 @@
 <?php
 /**
- * 
+ *
  * @author admin
  * @version 0.0.1
- * 
+ *
  */
 
 class Admin {
-	
+
 	/**
 	 *
 	 * @param null
@@ -17,10 +17,10 @@ class Admin {
 	public function getAllAcounts(){
 		global $dbObj;
 		$sql = "SELECT * FROM ".ADMIN." ;";
-		$res = $dbObj->fetch_all_array($sql);		
-		return $res; 
-	}	
-	
+		$res = $dbObj->fetch_all_array($sql);
+		return $res;
+	}
+
 	/**
 	 *
 	 * @param null
@@ -34,11 +34,11 @@ class Admin {
 		if($dbObj->num_rows($res) > 0){
 			$res = $dbObj->fetch_array_assoc($res);
 		}
-		return $res;	
-	} 
-	
+		return $res;
+	}
+
 	/**
-	 * 
+	 *
 	 * @param Array $data
 	 * @return boolean
 	 */
@@ -46,7 +46,7 @@ class Admin {
 		global $dbObj;
 		$firstname = $data['firstname'];
 		$lastname = $data['lastname'];
-		$email = $data['email'];		
+		$email = $data['email'];
 		$username = $data['username'];
 		$password = $data['password'];
 		$sql = "INSERT INTO
@@ -65,9 +65,9 @@ class Admin {
 			return true;
 		} else {
 			return false;
-		}		
+		}
 	}
-	
+
 	/**
 	 *
 	 * @param Array $data
@@ -86,9 +86,15 @@ class Admin {
 					firstname = '".$firstname."',
 					lastname = '".$lastname."',
 					email = '".$email."',
-					username = '".$username."',					
-					updated_date = NOW()
-				WHERE 
+					username = '".$username."',
+					updated_date = NOW() ";
+
+		if(isset($data['password']) && $data['password'] != ''){
+			$password = $data['password'];
+			$sql .= ", password = '".base64_encode($password)."' ";
+		}
+
+		$sql .= "WHERE
 					adminId = ".$data['id'];
 		if($dbObj->query($sql)){
 			return true;
@@ -96,20 +102,20 @@ class Admin {
 			return false;
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param $username
 	 * @param $password
 	 * @return boolean
-	 * 
+	 *
 	 */
 	public function login($username,$password){
-		global $dbObj; 
+		global $dbObj;
 		$sql = "select * from ".ADMIN." where username = '".$username."' LIMIT 1; ";
 		$res = $dbObj->query($sql);
 		if($dbObj->num_rows($res) > 0){
-			$res = $dbObj->fetch_array_assoc($res);			
+			$res = $dbObj->fetch_array_assoc($res);
 			if($res['username'] == $username && $res['password'] == base64_encode($password) ){
 				$_SESSION['adminId'] = $res['adminId'];
 				$_SESSION['admin'] = $res['username'];
@@ -122,12 +128,12 @@ class Admin {
 			return false;
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param $username
 	 * @return boolean
-	 * 
+	 *
 	 */
 	public function getPassword($username){
 		global $dbObj;
@@ -137,22 +143,22 @@ class Admin {
 			$res = $dbObj->fetch_array_assoc($res);
 			$to = $res['email'];
 			$username = $res['username'];
-			$password = base64_decode($res['password']); 
+			$password = base64_decode($res['password']);
 			$subject = "New password";
 			$body = "<table>
 						<tr><td>Please find below your login credentials...</td></tr>
 						<tr><td>Username : ".$username."<td></tr>
 						<tr><td>Password : ".$password."<td></tr>
-					</table>";		
+					</table>";
 			$this->sendMail($to, $subject, $body);
 			return true;
 		} else {
 			return false;
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param varchar $email
 	 * @return boolean
 	 */
@@ -166,7 +172,7 @@ class Admin {
 			return false;
 		}
 	}
-	
+
 	/**
 	 *
 	 * @param varchar $email
@@ -182,16 +188,16 @@ class Admin {
 			return false;
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param Varchar $to
 	 * @param Varchar $subject
 	 * @param Text $message
 	 * @return boolean
 	 */
 	function sendMail($to,$subject,$message){
-		
+
 		// Setting message headers
 		$headers = "MIME-Version: 1.0";
 		$headers .= "Content-Type: text/html; charset='UTF-8';";
@@ -203,12 +209,12 @@ class Admin {
 		$headers .= "Return-Path: " . $from;
 		$headers .= "X-Mailer: PHP v" . phpversion();
 		$headers .= "X-Originating-IP: " . $_SERVER['SERVER_ADDR'];
-		
+
 		$ok = @mail($to, $subject, $message, $headers);
-		
+
 		if($ok){
-			return true;	
+			return true;
 		}
 	}
-	
+
 }

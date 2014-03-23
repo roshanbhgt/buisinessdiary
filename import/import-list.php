@@ -11,7 +11,7 @@ if (!$connect) {
 define('CSV_PATH','D:/UwAmp/www/buisinessdiary/import/sheets/');
 
 // Name of your CSV file
-$csv_file = CSV_PATH . "import-list.csv"; 
+$csv_file = CSV_PATH . "import-list.csv";
 
 $tablename = 'regions';
 
@@ -35,11 +35,11 @@ if (($getfile = fopen($csv_file, "r")) !== FALSE) {
 			<td>Website</td>
 			<td></td>
 		</tr>';
-    while (($data = fgetcsv($getfile, 1000, ",")) !== FALSE) {  
-		
-		echo $sql = 'INSERT INTO 
-					blist 
-				SET 			
+    while (($data = fgetcsv($getfile, 1000, ",")) !== FALSE) {
+
+		$sql = 'INSERT INTO
+					blist
+				SET
 					cat_id = '.$data[0].',
 					title = "'.addslashes($data[1]).'",
 					description = "'.addslashes($data[2]).'",
@@ -55,13 +55,13 @@ if (($getfile = fopen($csv_file, "r")) !== FALSE) {
 					website = "'.$data[12].'",
 					created_date = NOW()
 			';
-		
-			
+
+
 		if(mysqli_query($connect, $sql)){
 			echo '<td>Inserted</td></tr>';
 		} else {
 			echo '<td>Unable to inser</td></tr>';
-		}        
+		}
 		exit;
 		$num++;
     }

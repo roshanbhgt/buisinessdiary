@@ -36,8 +36,9 @@
         <td class="center"></td>
         <td>Name</td>
         <td>Email</td>
-        <td>Status</td>
         <td>Created At</td>
+		<td>Updated At</td>
+		<td>Status</td>
         <td></td>
     </tr>
     {foreach from=$newsletteremails item=emails}
@@ -45,8 +46,9 @@
         <td width="5%" class="center"><input type="checkbox" name="admin" value="{$emails.subscriberId}"></td>
         <td>{$emails.name}</td>
         <td>{$emails.email}</td>
-        <td>{if $emails.status == 1}Active{else}Inactive{/if}</td>
         <td>{$emails.created_date}</td>
+		<td>{$emails.updated_date}</td>
+		<td>{if $emails.status == 1}Active{else}Inactive{/if}</td>
         <td width="15%">
                 <a href="{$BACKEND}managenewsletter.php?action=edit&id={$emails.subscriberId}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>
                 <a href="{$BACKEND}managenewsletter.php?action=delete&id={$emails.subscriberId}"><img src="{$BACKEND}design/images/delete.png" alt="D" title="Delete"></a>
@@ -54,7 +56,7 @@
     </tr>
     {foreachelse}
     <tr>
-        <td align="left" valign="middle" colspan="6">No records to display.</td>
+        <td align="left" valign="middle" colspan="7">No records to display.</td>
     </tr>	
     {/foreach}
 </table>

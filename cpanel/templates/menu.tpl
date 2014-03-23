@@ -29,13 +29,17 @@
   				<li {If $filename == 'manageuser' || $filename == 'manageusertype' } class="active" {/If} >
   					<a href="{$BACKEND}manageuser.php?action=viewall">Users</a>
   					<ul>
-  						<li><a href="{$BACKEND}">Add user</a></li>
+  						<li><a href="{$BACKEND}manageuser.php?action=adduser">Add user</a></li>
   						<li><a href="{$BACKEND}manageuser.php?action=viewall">Manage User</a></li>
   						<li class="last"><a href="{$BACKEND}/manageusertype.php?action=viewall">Manage Usertypes</a></li>
   					</ul>
   				</li>
                 <li {If $filename == 'managenewsletter' } class="active" {/If} >
                     <a href="{$BACKEND}managenewsletter.php?action=viewall">Newsletter</a>
+					<ul>
+  						<li><a href="{$BACKEND}managenewsletter.php?action=add">Add email</a></li>
+  						<li class="last"><a href="{$BACKEND}managenewsletter.php?action=viewall">Manage newsletter</a></li>
+  					</ul>
                 </li>
   				<li {If $filename == 'managepages' } class="active" {/If} >
   					<a href="{$BACKEND}/managepages.php">Pages</a>
