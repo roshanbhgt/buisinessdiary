@@ -553,3 +553,52 @@ content-right-.inner-right .content form{
     position: relative;
     width: 212px;
 }
+/** Start of tabs css **/
+.tabs {
+	width: 100%;
+	position: relative;
+	float: left;
+	top: 10px;
+}
+.tabs ul li {
+	background: none repeat scroll 0 0 #4B83D0;
+    color: #FFFFFF;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0px 1px 0;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+}
+.tabs .content {
+	float: left; 
+	width: 100%;
+	padding: 5px 5px;
+	display:none;
+}
+/** Start of review css **/
+#reviewsbox {
+	float: left;
+    padding: 2px 5px;
+    vertical-align: middle;
+}
+.review{
+	width : 100%;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #C9DDF2;
+    overflow: hidden;
+}
+.review .byline {
+	color: #999999;
+    font-size: 12px;
+    font-style: italic;
+    margin: 2px 0;
+}
+.review .description {
+    margin: 0.4em 0 0;
+}
+.review .stars {
+    padding: 1px 0;
+}

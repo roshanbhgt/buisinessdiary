@@ -1,9 +1,10 @@
 <ul>
 	<li class="menu">
-            <a href="javascript:void(0);" onclick="showHide('mymenu1')">Manage Newsletter</a>
-            <ul id="mymenu1" class="show">
-                <li class="submenu"><a href="{$BACKEND}managenewsletter.php?action=viewall" >Manage newsletter</a></li>
-            </ul>
+		<a href="javascript:void(0);" onclick="showHide('mymenu1')">Manage Newsletter</a>
+		<ul id="mymenu1" class="show">
+			<li class="submenu"><a href="{$BACKEND}managenewsletter.php?action=add" >Add email</a></li>
+			<li class="submenu"><a href="{$BACKEND}managenewsletter.php?action=viewall" >Manage newsletter</a></li>
+		</ul>
 	</li>
 </ul>
 {literal}

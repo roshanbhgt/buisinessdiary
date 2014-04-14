@@ -15,8 +15,8 @@ if(isset($_POST) && $_POST['cache'] == 'clean'){
 		if($handle = opendir($pathFront . 'templates_c/')){
 			while (false !== ($file = readdir($handle))) {				
 				if($file != "." && $file != ".."){
-					if(is_file($pathFront . 'templates_c/' . $file))
-						unlink($pathFront . 'templates_c/' . $file);					
+					if(is_file($pathFront . '/templates_c/' . $file))
+						unlink($pathFront . '/templates_c/' . $file);					
 				}
 			}		
 		}
@@ -26,8 +26,8 @@ if(isset($_POST) && $_POST['cache'] == 'clean'){
 		if($handle = opendir($pathFront . 'cache/')){
 			while (false !== ($file = readdir($handle))) {				
 				if($file != "." && $file != ".."){
-					if(is_file($pathFront . 'cache/' . $file))
-						unlink($pathFront . 'cache/' . $file);
+					if(is_file($pathFront . '/cache/' . $file))
+						unlink($pathFront . '/cache/' . $file);
 				}
 			}		
 		}
@@ -59,8 +59,8 @@ if(isset($_POST) && $_POST['cache'] == 'clean'){
 		if($handle = opendir($pathFront . 'session/')){
 			while (false !== ($file = readdir($handle))) {
 				if($file != "." && $file != ".."){
-					if(is_file($pathFront . 'session/' . $file))
-						unlink($pathFront . 'session/' . $file);
+					if(is_file($pathFront . '/session/' . $file))
+						unlink($pathFront . '/session/' . $file);
 				}
 			}
 		}

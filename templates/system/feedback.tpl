@@ -11,7 +11,7 @@
 		<div id="message">{$variable.message}</div>
 	{/if}
 	<form action="{$FRONTEND}/feedback.php" method="post" id="feedbackform">
-		<table border="0" width="400">
+		<table>
 			<tr>
 				<td align="left" valign="top"><lable>Question</td>
 				<td align="center" valign="top">Totally Agree</td>

@@ -46,10 +46,10 @@
   		<h3>Follow Us On</h3>
   		<ul>
   			<li>
-  				<a href="https://www.facebook.com/businessdiaryin" target="_blank"><img src="design/images/facebook.png"/></a>
-  				<a href="https://www.twitter.com/businessdiaryin" target="_blank"><img src="design/images/twitter.png" /></a>
-                    <a target="_blank" rel="publisher" href="https://plus.google.com/116777282472305721005"><img src="design/images/googleplus.png" /></a>
-  				<a href="https://www.linkedin.com/businessdiaryin" target="_blank"><img src="design/images/linkedin.png" /></a>
+  				<a href="https://www.facebook.com/businessdiaryin" target="_blank"><img src="{$FRONTEND}/design/images/facebook.png"/></a>
+  				<a href="https://www.twitter.com/businessdiaryin" target="_blank"><img src="{$FRONTEND}/design/images/twitter.png" /></a>
+                    <a target="_blank" rel="publisher" href="https://plus.google.com/116777282472305721005"><img src="{$FRONTEND}/design/images/googleplus.png" /></a>
+  				<a href="https://www.linkedin.com/businessdiaryin" target="_blank"><img src="{$FRONTEND}/design/images/linkedin.png" /></a>
   			</li>  			
   		</ul>
   		<h3>Contact Us</h3>

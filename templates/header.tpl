@@ -1,4 +1,3 @@
-
         <div class="logo">
 			<a href="{$FRONTEND}">
 				<img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/>
@@ -9,7 +8,7 @@
         		<li>Welcome {if $session.userid == ''}Guest{else}{$session.firstname}{/if}</li><li>|</li>        		        		
         		<li><a href="{$FRONTEND}/myaccount">My Account</a></li><li>|</li>
         		<li><a href="{$FRONTEND}/myplaces">My Places</a></li><li>|</li>
-        		<li>{if $session.userid == ''}<a href="{$FRONTEND}/login-register.php">Login</a>{else}<a href="{$FRONTEND}/logout.php">Logout</a>{/if}</li>
+        		<li>{if $session.userid == ''}<a href="{$FRONTEND}/login-register">Login</a>{else}<a href="{$FRONTEND}/logout">Logout</a>{/if}</li>
         	</ul>
         </div>
         <div class="lang-whether">
@@ -22,10 +21,10 @@
 			</div>        	
         </div>
         <div class="searchbox">
-        	<form method="post" action="">
-        		<input class="searchinput" type="text" name="postcode" value="Enter your postcode or state or city" onfocus="if(this.value=='Enter your postcode or state or city')this.value='';" onblur="if(this.value=='')this.value='Enter your postcode or state or city';" />
-        		<input class="searchinput" type="text" name="keyword" value="Enter keyword looking for" onfocus="if(this.value=='Enter keyword looking for')this.value='';" onblur="if(this.value=='')this.value='Enter keyword looking for';"/>
-                <button class="searchbtn button-red" type="submit" name="submit">Go</button>
+        	<form method="post" action="{$FRONTEND}/search">
+        		<input class="searchinput" type="text" name="p" value="{if $smarty.post.p == ''}Enter your postcode or state or city{else}{$smarty.post.p}{/if}" onfocus="if(this.value=='Enter your postcode or state or city')this.value='';" onblur="if(this.value=='')this.value='Enter your postcode or state or city';" />
+        		<input class="searchinput" type="text" name="q" value="{if $smarty.post.q == ''}Enter keyword looking for{else}{$smarty.post.q}{/if}" onfocus="if(this.value=='Enter keyword looking for')this.value='';" onblur="if(this.value=='')this.value='Enter keyword looking for';"/>
+                <button class="searchbtn button-red" type="submit">Go</button>
             </form>
         </div>
     </div>
@@ -70,7 +69,11 @@
             <a class="addthis_counter addthis_bubble_style"></a>
         </div>
         {literal}
-        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+        <script type="text/javascript">
+	        var addthis_config = addthis_config||{};
+	        addthis_config.data_track_addressbar = false;
+	        addthis_config.data_track_clickback = false;
+        </script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52ec9ce86d2ea839"></script>
         {/literal}
         <!-- AddThis Button END -->

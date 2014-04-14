@@ -7,7 +7,7 @@ require_once ('libs/Error/Errorhandler.class.php');
 ErrorHandler::Init(E_ERROR | E_PARSE);
 
 // Display Errors
-ErrorHandler::$displayErrors = FALSE;
+ErrorHandler::$displayErrors = TRUE;
 
 // Log file path
 // ErrorHandler::Init(E_ALL, 'error.log');
@@ -23,14 +23,14 @@ ErrorHandler::$mailSub = 'Critical error.';
 // Loding constant
 require_once ('configs/constants.php');
 
-// Session setting 
+// Session setting
 ini_set('session.save_handler', 'files');
 $sessionpath = SESSION_FRONTEND_PATH;
 
 ini_set('session.save_path', $sessionpath);
 if(!isset($_SESSION) && !headers_sent()){
-	session_start();	
-	ini_set('session.gc_probability', 1); 
+	session_start();
+	ini_set('session.gc_probability', 1);
 }
 ini_set('session.gc_maxlifetime', 50*30*60);
 
@@ -39,7 +39,7 @@ date_default_timezone_set("Asia/Calcutta");
 
 // Loading smarty library
 require_once ('libs/Database/Database.class.php');
-$dbObj = new Database('127.1.1.1', 'root', 'root', 'businessdiary');
+$dbObj = new Database('localhost', 'root', 'root', 'businessdiary');
 
 
 // Loading smarty library
@@ -63,6 +63,16 @@ $rsp = null;
 
 $objCat = new Categries();
 $objUser = new User();
+$objBuis = new Buisiness();
+
+$country = getCountry();
+$state = getState();
+$region = getRegions();
+
+$smarty->assign("state", $state);
+$smarty->assign("city", $region);
+$smarty->assign("country", $country);
+
 
 $smarty->assign('catall', $objCat->getAllParentcat());
 

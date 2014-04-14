@@ -8,19 +8,26 @@
 
     RewriteRule ^contactus contactus.php
 
+	RewriteRule ^login-register login-register.php
+	
     RewriteRule ^myaccount myaccount.php
 
     RewriteRule ^myplaces myplaces.php
+	
+	RewriteRule ^logout logout.php
 
     RewriteRule ^feedback feedback.php
 
     RewriteRule ^quikquote quikquote.php
 
     RewriteRule ^suggestbusiness suggestbus.php
+    
+    RewriteRule ^search search.php
 
     RewriteRule ^page/([a-z0-9-]+) page.php?identifier=$1
 
     RewriteRule ^category/([a-z0-9-]+) category.php?identifier=$1
 
-    RewriteRule ^business/([a-z0-9-]+) blist.php?identifier=$1
+	RewriteRule ^list/([a-z0-9-]+) business.php?id=$1
 
+	

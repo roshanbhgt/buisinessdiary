@@ -1,17 +1,17 @@
 <?php
 
 /**
- * 
+ *
  * @author categries
  * @version 0.0.1
- * 
+ *
  */
 
 class Categries {
-	
+
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 */
 	public function getAllParentcat($pageId = 0){
         if($pageId>0){
@@ -26,11 +26,11 @@ class Categries {
         }
         $res = $dbObj->fetch_all_array($sql);
         return array("parentcat"=>$res, "pagecount"=>$pageNumCount);
-	} 
-	
+	}
+
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 */
 	public function getAllSubcat($pageId = 0){
         if($pageId>0){
@@ -46,7 +46,7 @@ class Categries {
         $res = $dbObj->fetch_all_array($sql);
         return array("subcat"=>$res, "pagecount"=>$pageNumCount);
 	}
-	
+
 	/**
 	 *
 	 *
@@ -60,7 +60,7 @@ class Categries {
 		}
 		return $res;
 	}
-	
+
 	/**
 	 *
 	 *
@@ -74,10 +74,10 @@ class Categries {
 		}
 		return $res;
 	}
-	
+
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 */
 	public function addCategory($data){
 		global $dbObj;
@@ -91,8 +91,8 @@ class Categries {
 				SET
 					title = '".$title."',
 					identifier = '".$identifier."',
-					description = '".$description."',					
-					parentcat_id = ".$data['parent_id'].",					
+					description = '".$description."',
+					parentcat_id = ".$data['parent_id'].",
 					banner = '".$banner."',
 					status = '".$status."',
 					created_date = NOW()
@@ -103,9 +103,9 @@ class Categries {
 			return false;
 		}
 	}
-	
+
 	public function updateCategory($data){
-		global $dbObj;		
+		global $dbObj;
 		$title = addslashes(trim($data['title']));
         $identifier = generateSeoUrl($title);
 		$description = addslashes(nl2br(trim($data['description'])));
@@ -120,7 +120,7 @@ class Categries {
 					identifier = '".$identifier."',
 					description = '".$description."',
 					parentcat_id = ".$parentCatId.",";
-		if ($banner != ''){					
+		if ($banner != ''){
 			$sql .=		"banner = '".$banner."',";
 		}
 		$sql .=  "  status = '".$status."',
@@ -133,10 +133,10 @@ class Categries {
 			return false;
 		}
 	}
-	
+
 	public function getDeletecat($id){
 		global $dbObj;
-		$sql = "DELETE FROM 
+		$sql = "DELETE FROM
 					".CATEGORIES."
 				WHERE
 					cat_id = ".$id ;
@@ -151,7 +151,7 @@ class Categries {
 	 *
 	 *
 	 */
-	public function uploadImage($data = array()){		
+	public function uploadImage($data = array()){
 		$handle = new Upload($_FILES['banner']);
 		if ($handle->uploaded) {
 			$handle->file_auto_rename 	 = false;
@@ -166,7 +166,7 @@ class Categries {
 			if (!$handle->processed) {
 				echo "Unable to upload base image";
 			}
-		
+
 			$handle->image_resize         = true;
 			$handle->image_x              = 261;
 			$handle->image_y              = 261;
@@ -185,7 +185,14 @@ class Categries {
 			}
 			$handle->clean();
 			$data['banner'] = $handle->file_dst_name;
-		}		
+		}
 		return $data;
+	}
+
+	public function getCategories(){
+		global $dbObj;
+		$sql = "SELECT * FROM ".CATEGORIES;
+		$res = $dbObj->fetch_all_array($sql);
+		return $res;
 	}
 }
