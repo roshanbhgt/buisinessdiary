@@ -16,6 +16,36 @@ $smarty->assign("country", $country);
 $category = $objCategory->getCategories();
 $smarty->assign("category", $category);
 
+if($_GET['action'] == 'marknew' && intval($_GET['id']) != 0){
+	$id = $_GET['id'];
+	if($objBuisiness->markNew($id)){
+		$variables['success'] = "Record mark as new successfully";
+	}else{
+		$variables['error'] = "Unable to mark record as new";
+	}
+	$pageId = isset($_GET['page']) ? intval($_GET['page']):0;
+	$result = $objBuisiness->getBuisinessList($pageId);
+	$buisinessLists = $result['businesslist'];
+	$pageCount = $result['pagecount'];
+	$smarty->assign("pages", $pageCount);
+	$smarty->assign("buisinesslists",$buisinessLists);
+	$smarty->assign("centercontent",$smarty->fetch("blist/viewall.tpl"));
+}elseif($_GET['action'] == 'unmarknew' && intval($_GET['id']) != 0){
+	$id = $_GET['id'];
+	if($objBuisiness->unmarkNew($id)){
+		$variables['success'] = "Record unmark as new successfully";
+	}else{
+		$variables['error'] = "Unable to unmark as new record";
+	}
+	$pageId = isset($_GET['page']) ? intval($_GET['page']):0;
+	$result = $objBuisiness->getBuisinessList($pageId);
+	$buisinessLists = $result['businesslist'];
+	$pageCount = $result['pagecount'];
+	$smarty->assign("pages", $pageCount);
+	$smarty->assign("buisinesslists",$buisinessLists);
+	$smarty->assign("centercontent",$smarty->fetch("blist/viewall.tpl"));
+}
+
 if($_GET['action'] == 'viewbuisiness' || $_GET['action'] == ''){
 	$pageId = isset($_GET['page']) ? intval($_GET['page']):0;
 	$result = $objBuisiness->getBuisinessList($pageId);

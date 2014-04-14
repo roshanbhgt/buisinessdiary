@@ -35,8 +35,8 @@
 <table width="100%" align="left" class="grid">	
 	<tr>
 		<td class="center"></td>
-		<td>Title</td>
 		<td>Logo</td>
+		<td>Title</td>
 		<td>Description</td>
 		<td>Created At</td>		
 		<td>Updated At</td>
@@ -46,13 +46,18 @@
 	{foreach from=$buisinesslists item=buis key=i}	
 	<tr>
 		<td width="30" class="center" valign="top"><input type="checkbox" name="parentcat" value="{$buis.cat_id}"></td>
-		<td width="150" align="justify" valign="top">{$buis.title}</td>
 		<td width="50" align="justify" valign="top">{if $buis.banner != ''}<a href="{$CATEGORYIMAGE}/small/{$buis.banner}" data-lightbox="image-{$i}" style="padding: 0 !important;" ><img src="{$CATEGORYIMAGE}/thumb/{$buis.banner}" alt="" width="50"/></a>{/if}</td>
+		<td width="150" align="justify" valign="top">{$buis.title}</td>
 		<td align="justify" valign="top">{$buis.description|truncate:200:'...'}</td>
 		<td width="100"align="justify" valign="top">{$buis.created_date}</td>
 		<td width="100" valign="top">{$buis.updated_date}</td>
 		<td width="50" valign="top">{if $buis.status == 1}Active{else}Inactive{/if}</td>
 		<td width="100">
+			{if $buis.is_new == 1} 
+				<a href="{$BACKEND}manageblist.php?action=marknew&id={$buis.list_id}"><img src="{$BACKEND}design/images/unmark-new.png" alt="N" title="Mark as New"></a>
+			{else}
+				<a href="{$BACKEND}manageblist.php?action=unmarknew&id={$buis.list_id}"><img src="{$BACKEND}design/images/mark-new.png" alt="UN" title="UnMark as New"></a>
+			{/if}
 			<a href="{$BACKEND}manageblist.php?action=edit&id={$buis.list_id}"><img src="{$BACKEND}design/images/edit.png" alt="E" title="Edit"></a>
 			<a href="{$BACKEND}manageblist.php?action=delete&id={$buis.list_id}"><img src="{$BACKEND}design/images/delete.png" alt="D" title="Delete"></a>
 		</td>

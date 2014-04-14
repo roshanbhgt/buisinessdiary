@@ -4,8 +4,10 @@
 <link rel="shortcut icon" href="{$FRONTEND}/favicon.ico" type="image/x-icon"/>
 <link href="{$FRONTEND}/design/css/styles.css" rel="stylesheet" type="text/css" />
 <link href="{$FRONTEND}/design/css/slider.css" rel="stylesheet" type="text/css" />
+<link href="{$FRONTEND}/design/css/fancybox.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="{$FRONTEND}/design/js/jquery.min.js"></script>
 <script type="text/javascript" src="{$FRONTEND}/design/js/jquery.fancybox.js"></script>
+<script type="text/javascript" src="{$FRONTEND}/design/js/jqueryui.js"></script>
 {literal}
     <script type="text/javascript">
         $(document).ready(function() {

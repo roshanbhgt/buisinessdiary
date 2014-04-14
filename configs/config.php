@@ -65,6 +65,15 @@ $objCat = new Categries();
 $objUser = new User();
 $objBuis = new Buisiness();
 
+$country = getCountry();
+$state = getState();
+$region = getRegions();
+
+$smarty->assign("state", $state);
+$smarty->assign("city", $region);
+$smarty->assign("country", $country);
+
+
 $smarty->assign('catall', $objCat->getAllParentcat());
 
 $smarty->assign('session', $_SESSION);

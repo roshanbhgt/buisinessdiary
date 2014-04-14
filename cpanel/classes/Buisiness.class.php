@@ -113,5 +113,37 @@ class Buisiness {
 			return false;
 		}
 	}
+	
+	public function markNew($id){
+		global $dbObj;
+		$sql = 'UPDATE
+					'.BLIST.'
+				SET 
+					is_new = 1
+				WHERE
+					list_id = '.$id.'
+				';
+		if($dbObj->query($sql)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public function unmarkNew($id){
+		global $dbObj;
+		$sql = 'UPDATE
+					'.BLIST.'
+				SET 
+					is_new = 0
+				WHERE
+					list_id = '.$id.'
+				';
+		if($dbObj->query($sql)){
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
 ?>

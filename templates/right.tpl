@@ -26,9 +26,39 @@
                 <tr><td align="left" valign="top" width="135px">Email<em>*</em></td><td><input type="text" name="email" value=""/></td></tr>
 	    		<tr><td align="left" valign="top">Description<em>*</em></td><td><textarea name="description"> </textarea></td></tr>
 	    		<tr><td align="left" valign="top">Address<em>*</em></td><td><textarea name="address"> </textarea></td></tr>
-	    		<tr><td align="left" valign="top">City<em>*</em></td><td><input type="text" name="city" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">State<em>*</em></td><td><input type="text" name="state" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Country<em>*</em></td><td><input type="text" name="country" value=""/></td></tr>
+	    		<tr>
+	    			<td align="left" valign="top">City<em>*</em></td>
+	    			<td>
+	    				<select name="city" class="select-large">
+							<option value="">--- Select from options ---</option>
+							{foreach from=$city item=val}
+							<option value="{$val.regionId}" {If $smarty.post.city == $val.regionId} selected="selected" {/If}>{$val.region}</option>
+							{/foreach}
+						</select>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td align="left" valign="top">State<em>*</em></td>
+	    			<td>
+	    				<select name="state" class="select-large" onchange="city($this)">
+							<option value="">--- Select from options ---</option>
+							{foreach from=$state item=val}
+							<option value="{$val.stateId}" {If $smarty.post.state == $val.stateId} selected="selected" {/If}>{$val.title}</option>
+							{/foreach}
+						</select>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td align="left" valign="top">Country<em>*</em></td>
+	    			<td>
+	    				<select name="country" class="select-large" onchange="statecity($this)">
+							<option value="">--- Select from options ---</option>
+							{foreach from=$country item=val}
+							<option value="{$val.countryId}" {If $smarty.post.country == $val.countryId} selected="selected" {/If}>{$val.title}</option>
+							{/foreach}
+						</select>
+	    			</td>
+	    		</tr>
 	    		<tr><td align="left" valign="top">Postcode<em>*</em></td><td><input type="text" name="postcode" value=""/></td></tr>
 	    		<tr><td align="left" valign="top">Telephone<em>*</em></td><td><input type="text" name="telephone" value=""/></td></tr>
 	    		<tr><td align="left" valign="top">Fax</td><td><input type="text" name="fax" value=""/></td></tr>

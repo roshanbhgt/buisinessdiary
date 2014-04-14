@@ -1,4 +1,3 @@
-
         <div class="logo">
 			<a href="{$FRONTEND}">
 				<img alt="Buisiness Diary" src="http://localhost/buisinessdiary/design/images/logo.png" height="85" width="250"/>
@@ -70,7 +69,11 @@
             <a class="addthis_counter addthis_bubble_style"></a>
         </div>
         {literal}
-        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+        <script type="text/javascript">
+	        var addthis_config = addthis_config||{};
+	        addthis_config.data_track_addressbar = false;
+	        addthis_config.data_track_clickback = false;
+        </script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52ec9ce86d2ea839"></script>
         {/literal}
         <!-- AddThis Button END -->

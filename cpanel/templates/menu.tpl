@@ -81,7 +81,7 @@ $(function(){
     $('#navmenu').find('> li').hover(function(){
         $(this).find('ul')
         .addClass('over')
-        .stop(true, true).slideToggle('medium');
+        .stop(true, true).slideToggle('slow');
     });
 });
 </script>
