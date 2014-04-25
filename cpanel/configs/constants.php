@@ -9,6 +9,7 @@ define ('SESSION_BACKEND_PATH',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/cpanel
 define ('DB_BACKUP_PATH',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/cpanel/backup');
 define ('GALLERYIMAGE',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/media/gallery');
 define ('CATEGORYIMAGE',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/media/category');
+define ('BUSINESSIMAGE',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/media/business');
 define('REC_PER_PAGE',15);
 define('PAGE_PER_NO',6);
 

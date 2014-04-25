@@ -75,8 +75,10 @@ $smarty->assign("country", $country);
 
 
 $smarty->assign('catall', $objCat->getAllParentcat());
+$smarty->assign('latbus', $objBuis->getListNewestBusiness());
 
 $smarty->assign('session', $_SESSION);
 $smarty->assign('FRONTEND', FRONTEND);
 $smarty->assign('GALLERYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/gallery');
 $smarty->assign('CATEGORYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/category');
+$smarty->assign('BUSINESSIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/business');

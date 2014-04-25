@@ -44,6 +44,23 @@ class Buisiness {
 			return false;
 		}
 	}
+	
+	/**
+	 * Function to get list of newest business
+	 *
+	 * @return unknown|boolean
+	 */
+	public function getListNewestBusiness(){
+		global $dbObj;
+		$sql = "SELECT * FROM ".BLIST." WHERE is_new = 1 ";
+		$count = $dbObj->num_rows($dbObj->query($sql));
+		if($count>0){
+			$res = $dbObj->fetch_all_array($sql);
+			return $res;
+		}else{
+			return false;
+		}
+	}
 
 }
 ?>

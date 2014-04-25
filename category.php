@@ -5,11 +5,7 @@
     $identifier = $_GET['identifier'];
 	$category = $objCat->getCategoryByIdentifier($identifier);
 	$businesslist = $objBuis->getBuisinessListByCat($category['cat_id']);
-	
-	// echo '<pre>';
-	// print_r($businesslist);
-	// exit;
-	
+		
 	$smarty->assign('cat', $category);
 	$smarty->assign('businesslist', $businesslist);
     $smarty->assign('title', $category['title']);

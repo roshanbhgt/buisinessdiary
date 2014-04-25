@@ -24,8 +24,7 @@ class Buisiness {
 		$res = $dbObj->fetch_all_array($sql);
 		return array("businesslist"=>$res, "pagecount"=>$pageNumCount);
 	}
-
-
+	
 	public function getBuisinessById($id){
 		global $dbObj;
 		$sql = "SELECT * FROM ".BLIST." WHERE list_id = ".$id;
@@ -57,11 +56,11 @@ class Buisiness {
 					fax = "'.$data['fax'].'",
 					website = "'.$data['website'].'",
 					status = "'.$data['status'].'",
+					logo = "'.$data['logo'].'",
 					updated_date = NOW()
 				WHERE
 					list_id = '.$data['id'].'
 				';
-
 
 		if($dbObj->query($sql)){
 			return true;
@@ -91,6 +90,7 @@ class Buisiness {
 					fax = "'.$data['fax'].'",
 					website = "'.$data['website'].'",
 					status = "'.$data['status'].'",
+					logo = "'.$data['logo'].'",
 					created_date = NOW()
 				';
 		if($dbObj->query($sql)){
@@ -144,6 +144,48 @@ class Buisiness {
 		} else {
 			return false;
 		}
+	}
+	
+	/**
+	 *
+	 *
+	 */
+	public function uploadImage($data = array()){
+		$handle = new Upload($_FILES['logo']);
+		if ($handle->uploaded) {
+			$handle->file_auto_rename 	 = false;
+			$handle->image_resize         = true;
+			$handle->auto_create_dir 	 = true;
+			$handle->dir_auto_chmod 		 = true;
+			$handle->dir_chmod 			 = 0777;
+			$handle->image_x              = 700;
+			$handle->image_y              = 261;
+			$handle->image_ratio_y        = false;
+			$handle->process(BUSINESSIMAGE."/base");
+			if (!$handle->processed) {
+				echo "Unable to upload base image";
+			}
+	
+			$handle->image_resize         = true;
+			$handle->image_x              = 261;
+			$handle->image_y              = 261;
+			$handle->image_ratio_y        = false;
+			$handle->process(BUSINESSIMAGE."/small");
+			if (!$handle->processed) {
+				echo "Unable to upload small image";
+			}
+			$handle->image_resize         = true;
+			$handle->image_x              = 100;
+			$handle->image_y              = 100;
+			$handle->image_ratio_y        = false;
+			$handle->process(BUSINESSIMAGE."/thumb");
+			if (!$handle->processed) {
+				echo "Unable to upload thumb image";
+			}
+			$handle->clean();
+			$data['logo'] = $handle->file_dst_name;
+		}
+		return $data;
 	}
 }
 ?>

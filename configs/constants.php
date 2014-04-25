@@ -10,6 +10,7 @@ define ('SESSION_FRONTEND_PATH',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/sessi
 define ('DB_BACKUP_PATH',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/cpanel/backup');
 define ('GALLERYIMAGE',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/media/gallery');
 define ('CATEGORYIMAGE',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/media/category');
+define ('BUSINESSIMAGE',$_SERVER['DOCUMENT_ROOT'].'/buisinessdiary/media/business');
 define('REC_PER_PAGE',30);
 
 // Defining Table Contants

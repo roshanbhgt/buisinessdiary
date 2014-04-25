@@ -46,7 +46,7 @@
 	{foreach from=$buisinesslists item=buis key=i}	
 	<tr>
 		<td width="30" class="center" valign="top"><input type="checkbox" name="parentcat" value="{$buis.cat_id}"></td>
-		<td width="50" align="justify" valign="top">{if $buis.banner != ''}<a href="{$CATEGORYIMAGE}/small/{$buis.banner}" data-lightbox="image-{$i}" style="padding: 0 !important;" ><img src="{$CATEGORYIMAGE}/thumb/{$buis.banner}" alt="" width="50"/></a>{/if}</td>
+		<td width="50" align="justify" valign="top">{if $buis.logo != ''}<a href="{$BUSINESSIMAGE}/small/{$buis.logo}" data-lightbox="image-{$i}" style="padding: 0 !important;" ><img src="{$BUSINESSIMAGE}/thumb/{$buis.logo}" alt="" width="50"/></a>{/if}</td>
 		<td width="150" align="justify" valign="top">{$buis.title}</td>
 		<td align="justify" valign="top">{$buis.description|truncate:200:'...'}</td>
 		<td width="100"align="justify" valign="top">{$buis.created_date}</td>

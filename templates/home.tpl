@@ -19,20 +19,17 @@
 		{/foreach}
 	</ul>
 </div>
+{if $latbus|count > 0}
 <div class="latest-buisiness">
 	<h3>Latest on business diary</h3>
 	<ul>
+	{foreach from=$latbus item=bus key=i}
 		<li>
-			<a href="#">The Pride Hotel</a>
-			<img src="design/images/pride-logo.jpg" alt="The Pride Hotel" />
-			<p>Restaurants with bar, beautiful landscape swiming tool...<a href="#">more</a></p>
+			<a href="{$FRONTEND}/list/{$bus.list_id}">{$bus.title}</a>
+			<img src="{$BUSINESSIMAGE}/thumb/{$bus.logo}" alt="{$bus.title}" />
+			<p>{$bus.description|truncate:70}<a href="{$FRONTEND}/list/{$bus.list_id}">more</a></p>
 		</li>
-		<li>
-			<a href="#">The Child Hospital</a>
-			<img src="design/images/child-hospital-logo.jpg" alt="The Pride Hotel" />
-			<p>Central India's Child Hospital & Research Institute...<a href="#">more</a></p>
-		</li>
-		<li></li>
-		<li></li>
+	{/foreach}	
 	</ul>
 </div>
+{/if}
