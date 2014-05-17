@@ -43,11 +43,11 @@ function register(){
 			</tr>
 			<tr>
 				<td align="left" valign="top" width="120px;"><lable>First name<em>*</em></lable>&nbsp;</td>
-				<td><input type="text" name="firstname" value="" /></td>
+				<td><input type="text" name="firstname" value="" class="input-text" /></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><lable>Last name<em>*</em></lable>&nbsp;</td>
-				<td><input type="text" name="lastname" value="" /></td>
+				<td><input type="text" name="lastname" value="" class="input-text" /></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><lable>Gender<em>*</em></lable>&nbsp;</td>
@@ -60,19 +60,19 @@ function register(){
 			</tr>
 			<tr>
 				<td align="left" valign="top"><lable>Postcode<em>*</em></lable>&nbsp;</td>
-				<td><input type="text" name="postcode" value=""/></td>
+				<td><input type="text" name="postcode" value="" class="input-text" /></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><lable>Email<em>*</em></lable>&nbsp;</td>
-				<td><input type="text" name="email" value="" /></td>
+				<td><input type="text" name="email" value="" class="input-text" /></td>
 			</tr>			
 			<tr>
 				<td align="left" valign="top"><label>Password<em>*</em></label>&nbsp;</td>
-				<td><input type="password" name="password" value=""/></td>
+				<td><input type="password" name="password" value="" class="input-text"/></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><label>Confirm Password<em>*</em></label>&nbsp;</td>
-				<td><input type="password" name="confpass" value=""/></td>
+				<td><input type="password" name="confpass" value="" class="input-text"/></td>
 			</tr>					
 			<tr>
 				<td align="right" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue" id="registersubmit" name="registersubmit" onclick="register()"><span>Create an Account</span></button></td>

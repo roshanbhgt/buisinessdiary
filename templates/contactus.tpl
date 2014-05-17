@@ -53,15 +53,15 @@ function submitquery(){
 			</tr>
 			<tr>
 				<td align="left" valign="top"><lable>Name<em>*</em></lable>&nbsp;</td>
-				<td><input type="text" name="name" value="" /></td>
+				<td><input type="text" name="name" value="" class="input-text"/></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><label>Phone</label>&nbsp;</td>
-				<td><input type="text" name="mobile" value=""/></td>
+				<td><input type="text" name="mobile" value="" class="input-text"/></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><lable>Email<em>*</em></lable>&nbsp;</td>
-				<td><input type="text" name="email" value=""/></td>
+				<td><input type="text" name="email" value="" class="input-text"/></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><label>Message<em>*</em></label>&nbsp;</td>

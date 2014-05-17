@@ -67,7 +67,6 @@ class Review {
 	
 	/**
 	 * Function to calculate rating from array of rating data
-	 * 
 	 */
 	public function calcRating($data) {
 		$sumUsers = 0;
@@ -78,6 +77,21 @@ class Review {
 		}
 		$rating = $sumRating/$sumUsers;
 		return ceil($rating);
+	}
+	
+	/**
+	 * Function to get reviews posted by user
+	 * Get business id
+	 */
+	public function getReviewsByUser($userid){
+		global $dbObj;
+		$sql = "SELECT breview.*, bus.title FROM bus_review AS breview INNER JOIN `blist` AS bus ON bus.list_id = breview.bus_id WHERE user_id = ".$userid." ORDER BY breview.created_date DESC";
+		$res = $dbObj->fetch_all_array($sql);;
+		if(count($res) > 0){
+			return $res;
+		}else{
+			return false;
+		}
 	}
 	 
 }

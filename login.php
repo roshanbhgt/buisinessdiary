@@ -15,7 +15,7 @@
 		}else{
 			if($objUser->loginUser($data)){				
 				$response['success'] = 1;
-                $response['url'] = 'http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/myaccount.php/';
+                $response['url'] = FRONTEND.'/myaccount';
                 echo json_encode($response);
 			}else{
                 $response['success'] = 0;

@@ -12,7 +12,11 @@
 	
     RewriteRule ^myaccount myaccount.php
 
-    RewriteRule ^myplaces myplaces.php
+    RewriteRule ^changepassword changepassword.php
+	
+	RewriteRule ^myreview myreview.php
+	
+	RewriteRule ^myfavourite myfavourite.php
 	
 	RewriteRule ^logout logout.php
 

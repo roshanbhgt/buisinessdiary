@@ -7,7 +7,7 @@
 
 	session_destroy();
 
-	header('Location: http://'.FRONTEND.'/');
+	header('Location: '.FRONTEND.'/');
 	exit;
 
 ?>

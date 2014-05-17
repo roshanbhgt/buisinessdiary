@@ -21,8 +21,11 @@ body {
 }
 input, textarea, select {
 	border: 1px solid #ADC4EA;
-	width: 200px;	
+	/*width: 200px; */	
 	color: #8D8B85;
+}
+.input-text{
+	width: 200px;
 }
 .select-large {
     width: 208px;
@@ -497,7 +500,6 @@ content-right-.inner-right .content form{
 /** Start of css for Latest on buisiness diary **/
 .latest-buisiness{	
 	float: left;
-    height: 162px;
     position: relative;
     width: 100%;
 	border: 1px solid #3E779D;
@@ -514,7 +516,7 @@ content-right-.inner-right .content form{
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 .latest-buisiness ul li{
-	width: 170px;
+	width: 163px;
 	float: left;
 	list-style-type: none;
 	text-align: center;
@@ -595,10 +597,29 @@ content-right-.inner-right .content form{
     font-size: 12px;
     font-style: italic;
     margin: 2px 0;
+    width: 100%;
+    float: left;
 }
 .review .description {
+    float: left;
     margin: 0.4em 0 0;
+    width: 100%;
 }
 .review .stars {
     padding: 1px 0;
+    height: 20px;
+    position: relative;
+    float: left;
+}
+.reviews th {
+	background: #BFE5FF;
+	text-align: left;
+	font-weight: bold;
+	padding: 4px;
+	color: #2A99E5;
+}
+.reviews td {
+	text-align: left;
+	padding: 4px;
+	border-bottom: 1px dotted #CCCCCC;
 }

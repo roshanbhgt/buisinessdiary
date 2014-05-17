@@ -53,11 +53,11 @@
             </tr>
             <tr>
                 <td align="left" valign="top" width="135px">Your Name<em>*</em></td>
-                <td><input type="text" name="yname" value=""/></td>
+                <td><input type="text" name="yname" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top" width="135px">Your Email<em>*</em></td>
-                <td><input type="text" name="yemail" value=""/></td>
+                <td><input type="text" name="yemail" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top" width="135px">Category<em>*</em></td>
@@ -72,11 +72,11 @@
             </tr>
             <tr>
                 <td align="left" valign="top" width="135px">Company<em>*</em></td>
-                <td><input type="text" name="company" value=""/></td>
+                <td><input type="text" name="company" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top" width="135px">Email<em>*</em></td>
-                <td><input type="text" name="email" value=""/></td>
+                <td><input type="text" name="email" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top">Description<em>*</em></td>
@@ -88,31 +88,31 @@
             </tr>
             <tr>
                 <td align="left" valign="top">City<em>*</em></td>
-                <td><input type="text" name="city" value=""/></td>
+                <td><input type="text" name="city" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top">State<em>*</em></td>
-                <td><input type="text" name="state" value=""/></td>
+                <td><input type="text" name="state" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top">Country<em>*</em></td>
-                <td><input type="text" name="country" value=""/></td>
+                <td><input type="text" name="country" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top">Postcode<em>*</em></td>
-                <td><input type="text" name="postcode" value=""/></td>
+                <td><input type="text" name="postcode" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top">Telephone<em>*</em></td>
-                <td><input type="text" name="telephone" value=""/></td>
+                <td><input type="text" name="telephone" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top">Fax</td>
-                <td><input type="text" name="fax" value=""/></td>
+                <td><input type="text" name="fax" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top">Website</td>
-                <td><input type="text" name="website" value=""/></td>
+                <td><input type="text" name="website" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="right" valign="top" colspan="2">
