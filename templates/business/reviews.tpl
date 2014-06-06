@@ -45,8 +45,16 @@ function submitquery(){
 				<td align="left" colspan="2"><div id="message" style="dispaly:none;"></div></td>							
 			</tr>
 			<tr>
-				<td align="left" valign="top" width="155px"><lable>Rate the business in the range of 1 to 5. <em>*</em></lable>&nbsp;</td>
-				<td><input type="text" name="rating" value="" /></td>
+				<td align="left" valign="top" width="155px"><lable>Rate the business<em>*</em></lable>&nbsp;</td>
+				<td>
+					<ul class="rating-star">
+						<li class="rating-1"><input type="radio" name="rating" value="1" /></li>
+						<li class="rating-2"><input type="radio" name="rating" value="2" /></li>
+						<li class="rating-3"><input type="radio" name="rating" value="3" /></li>
+						<li class="rating-4"><input type="radio" name="rating" value="4" /></li>
+						<li class="rating-5"><input type="radio" name="rating" value="5" /></li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><label>Review<em>*</em></label>&nbsp;</td>

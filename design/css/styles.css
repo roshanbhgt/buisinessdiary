@@ -623,3 +623,43 @@ content-right-.inner-right .content form{
 	padding: 4px;
 	border-bottom: 1px dotted #CCCCCC;
 }
+.rating-star .rating-1 {
+	background: url("../images/ratings.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+	float:left;
+	background-position: 0 0;
+	line-height: 16px !important;
+    width: 60px;
+	height:10px;
+}
+.rating-star .rating-2 {
+	background: url("../images/ratings.png") no-repeat scroll 0 80px rgba(0, 0, 0, 0);
+	float:left;
+	background-position: 0 0;
+	width:93px;
+	height:10px;
+	line-height: 16px !important;
+}
+.rating-star .rating-3 {
+	background: url("../images/ratings.png") no-repeat scroll 0 60px rgba(0, 0, 0, 0);
+	float:left;
+	background-position: 0 0;
+	width:140px;
+	height:10px;
+	line-height: 16px !important;
+}
+.rating-star .rating-4 {
+	background: url("../images/ratings.png") no-repeat scroll 0 140px rgba(0, 0, 0, 0);
+	float:left;
+	background-position: 0 0;
+	width:175px;
+	height:10px;
+	line-height: 16px !important;
+}
+.rating-star .rating-5 {
+	background: url("../images/ratings.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+	float:left;
+	background-position: 0 0;
+	width:105px;
+	height:10px;
+	line-height: 16px !important;
+}
