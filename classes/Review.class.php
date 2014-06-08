@@ -21,6 +21,7 @@ class Review {
 					user_id = '".$data['userid']."',
 					bus_id = '".$data['busid']."',
 					name = '".$_SESSION['firstname']."',
+					title = '".$_SESSION['reviewtitle']."',
 					rating = '".$data['rating']."',
 					reviews = '".addslashes($data['message'])."',
 					status = '0',

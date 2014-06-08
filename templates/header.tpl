@@ -28,7 +28,7 @@ function googleTranslateElementInit() {
 			</div>  
         </div>
         <div class="searchbox">
-        	<form method="post" action="{$FRONTEND}/search">
+        	<form method="get" action="{$FRONTEND}/search">
         		<input class="searchinput" type="text" name="p" value="{if $smarty.post.p == ''}Enter your postcode or state or city{else}{$smarty.post.p}{/if}" onfocus="if(this.value=='Enter your postcode or state or city')this.value='';" onblur="if(this.value=='')this.value='Enter your postcode or state or city';" />
         		<input class="searchinput" type="text" name="q" value="{if $smarty.post.q == ''}Enter keyword looking for{else}{$smarty.post.q}{/if}" onfocus="if(this.value=='Enter keyword looking for')this.value='';" onblur="if(this.value=='')this.value='Enter keyword looking for';"/>
                 <button class="searchbtn button-red" type="submit">Go</button>

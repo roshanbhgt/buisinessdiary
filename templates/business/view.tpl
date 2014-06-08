@@ -6,7 +6,11 @@
         <tr>
             <td>
                 <div class="left" style="position: relative; float: left; width: 62%;padding: 5px 5px 0;">
-                    <img src="{$FRONTEND}/design/images/pride-logo.jpg" width="150" height="150" style="float: left;"/>
+                    {if $business.logo != ''}
+						<img src="{$BUSINESSIMAGE}/thumb/{$business.logo}" alt="{$business.title}" style="float: left;"/>
+					{else}
+						<img src="{$BUSINESSIMAGE}/thumb/companies_thumb.jpg" alt="{$business.title}" style="float: left;"/>
+					{/if}
                     <address style="float: left; width: 60%;padding: 5px;">
                         {$business.address1},<br>
                         {$business.address2},<br>

@@ -10,7 +10,7 @@ function submitquery(){
 		e.preventDefault(); // prevent default form submit
 		// sending ajax request through jQuery
 		$.ajax({
-			url: 'http://localhost/buisinessdiary/submitreview.php', // form action url
+			url: 'http://'+document.domain+'/submitreview.php', // form action url
 			type: 'POST', // form submit method get/post
 			dataType: 'html', // request type html/json/xml
 			data: form.serialize(), // serialize form data 
@@ -55,6 +55,10 @@ function submitquery(){
 						<li class="rating-5"><input type="radio" name="rating" value="5" /></li>
 					</ul>
 				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><label>Review Title<em>*</em></label>&nbsp;</td>
+				<td><input type="text" name="reviewtitle" value="" /></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><label>Review<em>*</em></label>&nbsp;</td>
