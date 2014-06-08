@@ -1,11 +1,11 @@
 <div class="content" style="position:relative;width: 220px; float: left;">
     <h2>My Dashboard</h2>
     <ul>
-        <li><a href="#">My Account</a></li>
-        <li><a href="#">My Location</a></li>
-        <li><a href="#">My Business</a></li>
-        <li><a href="#">My Places</a></li>
-        <li><a href="#">My Reviews</a></li>
+        <li><a href="{$FRONTEND}/myaccount">My Account</a></li>
+        <li><a href="{$FRONTEND}/mylocaton">My Address</a></li>
+        <li><a href="{$FRONTEND}/changepassword">Change Password</a></li>
+        <li><a href="{$FRONTEND}/myfavourite">My Favourite</a></li>
+        <li><a href="{$FRONTEND}/myreview">My Reviews</a></li>
     </ul>
 </div>
 <div class="content" style="position:relative;width: 220px; float: left;">

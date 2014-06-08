@@ -12,6 +12,14 @@ $rating = $objReview->getRating($id);
 
 $rating = (105*$rating*20)/100;
 
+$i = 0;
+if(is_array($reviews)){
+	foreach($reviews as $val){
+		$reviews[$i]['rating'] = (105*$val['rating']*20)/100;
+		$i = $i + 1; 	
+	}
+}
+
 $smarty->assign('business', $business);
 $smarty->assign('reviews', $reviews);
 $smarty->assign('rating', $rating);

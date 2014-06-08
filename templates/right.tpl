@@ -22,10 +22,10 @@
                         </select>
                     </td>
                 </tr>
-	    		<tr><td align="left" valign="top" width="135px">Company<em>*</em></td><td><input type="text" name="company" value=""/></td></tr>
-                <tr><td align="left" valign="top" width="135px">Email<em>*</em></td><td><input type="text" name="email" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Description<em>*</em></td><td><textarea name="description"> </textarea></td></tr>
-	    		<tr><td align="left" valign="top">Address<em>*</em></td><td><textarea name="address"> </textarea></td></tr>
+	    		<tr><td align="left" valign="top" width="135px">Company<em>*</em></td><td><input type="text" name="company" value="" class="input-text"/></td></tr>
+                <tr><td align="left" valign="top" width="135px">Email<em>*</em></td><td><input type="text" name="email" value="" class="input-text"/></td></tr>
+	    		<tr><td align="left" valign="top">Description<em>*</em></td><td><textarea name="description" class="input-text"> </textarea></td></tr>
+	    		<tr><td align="left" valign="top">Address<em>*</em></td><td><textarea name="address" class="input-text"> </textarea></td></tr>
 	    		<tr>
 	    			<td align="left" valign="top">City<em>*</em></td>
 	    			<td>
@@ -59,10 +59,10 @@
 						</select>
 	    			</td>
 	    		</tr>
-	    		<tr><td align="left" valign="top">Postcode<em>*</em></td><td><input type="text" name="postcode" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Telephone<em>*</em></td><td><input type="text" name="telephone" value=""/></td></tr>
-	    		<tr><td align="left" valign="top">Fax</td><td><input type="text" name="fax" value=""/></td></tr>
-                <tr><td align="left" valign="top">Website</td><td><input type="text" name="website" value=""/></td></tr>
+	    		<tr><td align="left" valign="top">Postcode<em>*</em></td><td><input type="text" name="postcode" value="" class="input-text"/></td></tr>
+	    		<tr><td align="left" valign="top">Telephone<em>*</em></td><td><input type="text" name="telephone" value="" class="input-text"/></td></tr>
+	    		<tr><td align="left" valign="top">Fax</td><td><input type="text" name="fax" value="" class="input-text"/></td></tr>
+                <tr><td align="left" valign="top">Website</td><td><input type="text" name="website" value="" class="input-text"/></td></tr>
 	    		<tr><td align="right" valign="top" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue" id="quiklistsubmit" onclick="submitquiklist()"><span>Submit</span></button></td></tr>
     		</table>		    		 
 		</form>
@@ -73,8 +73,8 @@
 		<div id="success" style="display:none"></div>
 		<form id="newsletterform" action="" method="post">
 			<table>	    				
-				<tr><td align="left" valign="top" width="135px">Name<em>*</em></td><td><input type="text" name="name" value="Enter first name" onfocus="if(this.value=='Enter first name')this.value='';" onblur="if(this.value=='')this.value='Enter first name';" /></td></tr>
-				<tr><td align="left" valign="top">Email<em>*</em></td><td><input type="text" name="email" value="Enter your email" onfocus="if(this.value=='Enter your email')this.value='';" onblur="if(this.value=='')this.value='Enter your email';" /></td></tr>
+				<tr><td align="left" valign="top" width="135px">Name<em>*</em></td><td><input type="text" name="name" value="Enter first name" onfocus="if(this.value=='Enter first name')this.value='';" onblur="if(this.value=='')this.value='Enter first name';" class="input-text" /></td></tr>
+				<tr><td align="left" valign="top">Email<em>*</em></td><td><input type="text" name="email" value="Enter your email" onfocus="if(this.value=='Enter your email')this.value='';" onblur="if(this.value=='')this.value='Enter your email';" class="input-text"/></td></tr>
 				<tr><td align="right" valign="top" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue" name="submit" type="submit" id="newsletter" onclick="submitnewsletter()"><span>Submit</span></button></td></tr>
 			</table>
 		</form> 

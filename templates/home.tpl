@@ -1,7 +1,10 @@
 <div class="slides">
 	<ul class="slider">
 		{foreach from=$gallery item=img key=i}
-			<li><img src="{$GALLERYIMAGE}/base/{$img.banner}" title="{$img.gallery_title}"/></li>
+			<li>
+				<img src="{$GALLERYIMAGE}/base/{$img.banner}" title="{$img.gallery_title}"/>
+				<div id="img{$i}" style="color: #FFFFFF;padding: 5px;position: absolute;top: 222px;width: 100%;font-weight: bold;">{$img.gallery_title}</div>
+			</li>
 		{/foreach}
 	</ul>
 </div>
@@ -19,20 +22,21 @@
 		{/foreach}
 	</ul>
 </div>
+{if $latbus|count > 0}
 <div class="latest-buisiness">
 	<h3>Latest on business diary</h3>
 	<ul>
+	{foreach from=$latbus item=bus key=i}
 		<li>
-			<a href="#">The Pride Hotel</a>
-			<img src="design/images/pride-logo.jpg" alt="The Pride Hotel" />
-			<p>Restaurants with bar, beautiful landscape swiming tool...<a href="#">more</a></p>
+			<a href="{$FRONTEND}/list/{$bus.list_id}">{$bus.title}</a><br/>
+			{if $bus.logo != ''}
+				<img src="{$BUSINESSIMAGE}/thumb/{$bus.logo}" alt="{$bus.title}" />
+			{else}
+				<img src="{$BUSINESSIMAGE}/thumb/companies_large.jpg" alt="{$bus.title}" />
+			{/if}
+			<p>{$bus.description|truncate:70}<a href="{$FRONTEND}/list/{$bus.list_id}">more</a></p>
 		</li>
-		<li>
-			<a href="#">The Child Hospital</a>
-			<img src="design/images/child-hospital-logo.jpg" alt="The Pride Hotel" />
-			<p>Central India's Child Hospital & Research Institute...<a href="#">more</a></p>
-		</li>
-		<li></li>
-		<li></li>
+	{/foreach}	
 	</ul>
 </div>
+{/if}

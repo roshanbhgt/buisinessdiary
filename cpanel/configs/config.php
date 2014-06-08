@@ -81,6 +81,7 @@ $smarty->assign('BACKEND',BACKEND);
 $smarty->assign('FRONTEND',FRONTEND);
 $smarty->assign('GALLERYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/gallery');
 $smarty->assign('CATEGORYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/category');
+$smarty->assign('BUSINESSIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/business');
 $smarty->assign('date',date("F j, Y, g:i a"));
 $smarty->assign('admin',$_SESSION['admin']);
  

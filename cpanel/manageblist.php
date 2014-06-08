@@ -58,6 +58,12 @@ if($_GET['action'] == 'viewbuisiness' || $_GET['action'] == ''){
 
 if($_POST['addbusiness'] == 'addbusiness'){
 	$data = $_POST;
+	if(isset($_FILES)){
+		$count = count($_FILES);
+		if($count>0){
+			$data = $objBuisiness->uploadImage($data);
+		}
+	}
 	if($data['title'] != '' && $data['address1'] != ''
 			&& $data['city'] != '' && $data['state'] != ''
 			&& $data['country'] != '' && $data['postcode'] != '' && $data['phone'] != '' ){
@@ -73,6 +79,12 @@ if($_POST['addbusiness'] == 'addbusiness'){
 
 if($_POST['updatebusiness'] == 'updatebusiness' && intval($_POST['id']) != 0){
 	$data = $_POST;
+	if(isset($_FILES)){
+		$count = count($_FILES);
+		if($count>0){
+			$data = $objBuisiness->uploadImage($data);
+		}
+	}
 	if($data['title'] != '' && $data['address1'] != ''
 			&& $data['city'] != '' && $data['state'] != ''
 			&& $data['country'] != '' && $data['postcode'] != '' && $data['phone'] != '' ){

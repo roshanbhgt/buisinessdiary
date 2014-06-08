@@ -10,8 +10,12 @@
             <td style="border: 1px solid #71a7cc">
                 <a href="{$FRONTEND}/list/{$list.list_id}"><h3 style="font-weight: bold;width: 99%;color:#FFFFF0;background-color: #007ED1; padding: 5px 5px 5px 3px;">{$list.title}</h3></a>
                 <div class="left" style="position: relative; float: left; width: 62%;padding: 5px 5px 0;">
-                    <img src="{$FRONTEND}/design/images/pride-logo.jpg" width="85" height="85" style="float: left;"/>
-                    <address style="float: left; width: 77%;padding: 5px;">
+                    {if $list.logo != ''}
+						<img src="{$BUSINESSIMAGE}/thumb/{$list.logo}" alt="{$list.title}" style="float: left;"/>
+					{else}
+						<img src="{$BUSINESSIMAGE}/thumb/companies_large.jpg" alt="{$list.title}" style="float: left;"/>
+					{/if}
+                    <address style="float: left; width: 73%;padding: 5px;">
                         {$list.address1},<br>
                         {$list.address2},<br>
                         {$list.region}, {$list.stte}, {$list.cntry} - {$list.postcode}

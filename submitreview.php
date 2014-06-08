@@ -6,7 +6,7 @@
 	if($_POST){
 		$data = $_POST;
 		if(isset($data['userid']) && isset($data['busid']) 
-		&& $data['rating'] != '' && $data['message'] != ''){
+		&& $data['reviewtitle'] != '' && $data['rating'] != '' && $data['message'] != ''){
 			if ($objReview->submitReview($data)) {
 				echo "Thank you for submitting review.";
 			} else {

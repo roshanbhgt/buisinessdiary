@@ -20,15 +20,15 @@
             {/if}
             <tr>
                 <td align="left" valign="top"><lable>Name<em>*</em></lable>&nbsp;</td>
-                <td><input type="text" name="name" value="" /></td>
+                <td><input type="text" name="name" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top"><label>Phone</label>&nbsp;</td>
-                <td><input type="text" name="mobile" value=""/></td>
+                <td><input type="text" name="mobile" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top"><lable>Email<em>*</em></lable>&nbsp;</td>
-                <td><input type="text" name="email" value=""/></td>
+                <td><input type="text" name="email" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="left" valign="top"><label>Message<em>*</em></label>&nbsp;</td>
@@ -36,7 +36,7 @@
             </tr>
             <tr>
                 <td align="left" valign="top"><label>Banner size<em>*</em></label>&nbsp;</td>
-                <td><input type="text" name="bannersize" value=""/></td>
+                <td><input type="text" name="bannersize" value="" class="input-text"/></td>
             </tr>
             <tr>
                 <td align="right" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue" id="promoquotesubmit" name="promoquotesubmit" onclick="submitquery()"><span>Submit</span></button></td>

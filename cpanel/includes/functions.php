@@ -8,7 +8,7 @@
 function checkAuthentication(){
 	if(empty($_SESSION['adminId']) && empty($_SESSION['adminType']) ){
 		if($_SESSION['adminType'] != 'administrator'){
-			header('Location: http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/cpanel/login.php/');
+			header('Location: '.BACKEND.'login.php/');
 			exit;
 		}
 	}

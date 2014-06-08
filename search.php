@@ -3,7 +3,7 @@
 	include 'configs/config.php';
 
 	$objSearch = new Search();
-    $data = $_POST;
+    $data = $_GET;
 
     if(isset($data['p']) || $data['q']){
     	$p = $data['p'];
