@@ -43,11 +43,8 @@ ul, ol li {
 	width: 100%;
 }
 .button-blue {
-	background: -moz-linear-gradient(center top , #3E779D, #65A9D7) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: medium none;
-    border-radius: 10px;
-    border-top: 1px solid #96D1F8;
-    box-shadow: 0 0 0 #000000;
+	border:none;
+	background:url("../images/button.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
     color: #FFFFFF;
     font-family: Helvetica,Arial,Sans-Serif;
     font-size: 15px;
@@ -58,9 +55,10 @@ ul, ol li {
     vertical-align: middle;
 }
 .button-blue:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #fff;
+	background: -moz-linear-gradient(center top , #28597a, #65A9D7) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-top-color: #28597a;
+    /* background: #28597a; */
+    color: #fff;
 }
 .button-blue:active {
    border-top-color: #1b435e;
@@ -287,7 +285,7 @@ a:hover {
 	color: #FFF;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 	position: relative;
-	padding: 11px 6px 8px 14px;
+	padding: 11px 15px 9px 10px;
 }
 .wrapper .nav ul li.over {
 	z-index: 99;
@@ -295,6 +293,7 @@ a:hover {
 	border-left:5px solid #FF0000;
 	border-right:5px solid #FF0000;
 	text-shadow: none;
+	text-align: left;
 }
 
 .main-content {
@@ -334,7 +333,7 @@ a:hover {
 	float: left;
 	width: 726px;
 	position: absolute;
-	margin-top: 7px;
+	margin-top: 8px;
 	display: block;
 	left: -5px;
 	border:5px solid #FF0000;
