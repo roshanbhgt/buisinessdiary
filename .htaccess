@@ -15,7 +15,9 @@
     RewriteRule ^changepassword changepassword.php
 	
 	RewriteRule ^myreview myreview.php
-	
+
+	RewriteRule ^myreview/([a-z0-9-]+)/([a-z0-9-]+) myreview.php?action=$1&id=$2
+
 	RewriteRule ^myfavourite myfavourite.php
 	
 	RewriteRule ^logout logout.php

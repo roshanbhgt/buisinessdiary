@@ -1,3 +1,9 @@
+{if $variables.success != ''}
+{$variables.success}
+{else}
+{$variables.error}
+{/if}
+
 <div class="std">
     <div class="page-title"><h1>My Reviews</h1></div>
     <p>List of the reviews posted by mine</p>
@@ -8,9 +14,9 @@
     		<th>Business Title</th>
     		<th>Rating</th>
     		<th>Review</th>
-    		<th>Status</th>
-    		<th>Created At</th>
-    		<th></th>
+    		<th>Posted On</th>
+            <th>Status</th>
+    		<th>Action</th>
     	</tr>
     	{foreach from=$reviews item=rev key=i}
     	<tr>
@@ -18,9 +24,9 @@
     		<td>{$rev.title}</td>
     		<td>{$rev.rating}</td>
     		<td>{$rev.reviews}</td>
-    		<td>{if $rev.status == 0}Inactive{else}Active{/if}</td>
-    		<td>{$rev.created_date}</td>
-    		<td></td>
+            <td>{$rev.created_date}</td>
+    		<td>{if $rev.status == 0}Pending Approval{else}Approved{/if}</td>
+    		<td><a href="{$FRONTEND}/myreview/remove/{$rev.review_id}">Remove</a></td>
     	</tr>
     	{foreachelse}
     	<tr><td colspan="7"></td></tr>
