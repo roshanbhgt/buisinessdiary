@@ -21,6 +21,36 @@ body {
     background-attachment: fixed;
 }
 
+.success{
+    color: green;
+    font-weight: bold;
+    font-size: 12px;
+    background: none repeat scroll 0 0 #F4F4F4;
+    padding: 5px 10px 5px;
+    border-color: transparent -moz-use-text-color transparent red;
+    border-style: solid none solid solid;
+    border-width: 6px medium 6px 6px;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+.error{
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+    background: none repeat scroll 0 0 #F4F4F4;
+    padding: 5px 10px 5px;
+    border-color: transparent -moz-use-text-color transparent #11b400;
+    border-style: solid none solid solid;
+    border-width: 6px medium 6px 6px;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+}
 input, textarea, select {
     border: 1px solid #ADC4EA;
     /*width: 200px; */

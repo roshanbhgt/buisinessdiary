@@ -105,7 +105,7 @@ class Review {
      */
 	 public function deleteReview($id){
          global $dbObj;
-         $sql = 'DELETR FROM '.REVIEW.' WHERE review_id = '.$id;
+         $sql = 'DELETE FROM '.REVIEW.' WHERE review_id = '.$id;
          if($dbObj->query($sql)){
              return true;
          }else{

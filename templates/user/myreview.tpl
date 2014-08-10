@@ -1,7 +1,7 @@
 {if $variables.success != ''}
-{$variables.success}
+<div class="success">{$variables.success}</div>
 {else}
-{$variables.error}
+<div class="error">{$variables.error}</div>
 {/if}
 
 <div class="std">
@@ -26,7 +26,7 @@
     		<td>{$rev.reviews}</td>
             <td>{$rev.created_date}</td>
     		<td>{if $rev.status == 0}Pending Approval{else}Approved{/if}</td>
-    		<td><a href="{$FRONTEND}/myreview/remove/{$rev.review_id}">Remove</a></td>
+    		<td><a href="{$FRONTEND}/review/remove/{$rev.review_id}"><img src="{$FRONTEND}/design/images/delete.png" alt="remove" title="Remove" /></a></td>
     	</tr>
     	{foreachelse}
     	<tr><td colspan="7"></td></tr>
