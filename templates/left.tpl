@@ -2,9 +2,10 @@
     <h2>My Dashboard</h2>
     <ul>
         <li><a href="{$FRONTEND}/myaccount">My Account</a></li>
-        <li><a href="{$FRONTEND}/account-info">Account Info</a></li>
+        <li><a href="{$FRONTEND}/account-info">My Information</a></li>
         <li><a href="{$FRONTEND}/mylocaton">My Address</a></li>
         <li><a href="{$FRONTEND}/myfavourite">My Favourite</a></li>
+        <li><a href="{$FRONTEND}/mywishlist">My Wishlist</a></li>
         <li><a href="{$FRONTEND}/myreview">My Reviews</a></li>
     </ul>
 </div>

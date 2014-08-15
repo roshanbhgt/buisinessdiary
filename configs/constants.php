@@ -27,6 +27,8 @@ define ('CONTACTUS','contactus');
 define ('BACKUP','dbbackup');
 define ('USERTYPE','usertype');
 define ('USER','user');
+define ('USERWISHLIST','user_wishlist');
+define ('USERFAVOURITE','user_favourite');
 define ('EMAILNEWSLETTER','emailnewsletter');
 define ('FEEDBACK','feedback');
 define ('QUIKLIST','quiklist');

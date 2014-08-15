@@ -46,7 +46,7 @@ function forgetpass(){
 				<td><input type="text" name="email" value="" class="input-text" /></td>
 			</tr>		
 			<tr>
-				<td align="right" colspan="2"><a href="{$FRONTEND}/forgetpass.php"><em>*</em> mark fields are required.&nbsp;<button class="button-blue" id="forgetpasssubmit" name="forgetpasssubmit" onclick="forgetpass()"><span>Submit</span></button></td>
+				<td align="right" colspan="2"><em>*</em> mark fields are required.&nbsp;<a href="{$FRONTEND}/forgetpass.php"><button class="button-blue" id="forgetpasssubmit" name="forgetpasssubmit" onclick="forgetpass()"><span>Submit</span></button></td>
 			</tr>
 		</table>
 	</form>

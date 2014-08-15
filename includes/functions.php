@@ -20,7 +20,7 @@ function validateEmail($email){
 function checkAuthentication(){
 	if(empty($_SESSION['userid']) && empty($_SESSION['roleid']) ){
 		if($_SESSION['roleid'] != 'general'){
-			header('Location: http://'.FRONTEND.'/login');
+			header('Location: '.FRONTEND.'/login-register');
 			exit;
 		}
 	}

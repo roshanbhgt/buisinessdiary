@@ -1,6 +1,6 @@
 {if $variables.success != ''}
 <div class="success">{$variables.success}</div>
-{else}
+{elseif $variables.error != ''}
 <div class="error">{$variables.error}</div>
 {/if}
 
