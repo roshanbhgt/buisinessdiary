@@ -6,8 +6,9 @@
     $objWebforms = new Webforms();
 
 	$data = $_POST;
+		
     if( $data['name'] != '' && $data['email'] != '' && $data['message'] != ''){
-
+	
         $objWebforms->contactus($data);
 
 		// multiple recipients
@@ -90,27 +91,19 @@
 		</html>
 		';
 		
-		// Additional headers		
-		$headers = 'From: Team <noreply@businessdiary.co.in>' . "\r\n";
-		// $headers .= 'Cc: roshanbhgt@gmail.com' . "\r\n";
-		$headers .= 'Bcc: Administrator <admin@businessdiary.co.in>' . "\r\n";
+		$from = $touser;
+		$toadmin = 'help@businessdiary.co.in';
 		
-		// To send HTML mail, the Content-type header must be set
-		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-		$headers  .= 'MIME-Version: 1.0' . "\r\n";
-		
-		// Mail it
-		if(mail($touser, $subjectuser, $messageuser, $headers)){
-			if(mail($toadmin, $subjectadmin, $messageadmin, $headers)){
-				echo 'Your message posted successfully.';
-			} else{
-				echo 'Unable to post the message.';
-			}
+		if (!$mail->send($from,$toadmin,$subjectuser,$messageuser)) {
+			echo "Unable to deliver your message." . $mail->ErrorInfo;
+			exit;
 		} else {
-			echo 'Unable to post your message.';
+			echo "Your message has been sent successfully.";
+			exit;
 		}
 	} else {
 		echo 'All the * mark fields are required.';
+		exit;
 	}
 
 ?>
