@@ -1,20 +1,17 @@
 <?php
 class Database {
- 
-    private $host;
-    private $user;
-    private $pass;
-    private $name;
+    
     private $link;
     private $error;
     private $errno;
     private $query;
  
-    function __construct($host, $user, $pass, $name = "", $conn = 1) {
-        $this -> host = $host;
-        $this -> user = $user;
-        $this -> pass = $pass;
-        if (!empty($name)) $this -> name = $name;      
+    function __construct() {
+		$conn = 1;
+        $this -> host = 'localhost';
+        $this -> user = 'root';
+        $this -> pass = 'root';
+        $this -> name = 'businessdiary';      
         if ($conn == 1) $this -> connect();
     }
  

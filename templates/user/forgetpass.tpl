@@ -11,13 +11,14 @@ function forgetpass(){
 		e.preventDefault(); // prevent default form submit
 		// sending ajax request through jQuery
 		$.ajax({
-			url: 'login.php', // form action url
+			url: 'forgetpass.php', // form action url
 			type: 'POST', // form submit method get/post
 			dataType: 'html', // request type html/json/xml
 			data: form.serialize(), // serialize form data 
 			beforeSend: function() {
 				alert.fadeOut();
 				submit.html('Submitting...'); // change submit button text
+				document.getElementById('forgetpasssubmit').disabled = true;
 			},
 			success: function(data) {
 				alert.css('display', 'block');
@@ -25,6 +26,7 @@ function forgetpass(){
 				alert.html(data).fadeIn(); // fade in response data
 				form.trigger('reset'); // reset form
 				submit.html('Submit'); // reset submit button text
+				document.getElementById('forgetpasssubmit').disabled = false;
 			},
 			error: function(e) {
 				console.log(e)
@@ -46,7 +48,7 @@ function forgetpass(){
 				<td><input type="text" name="email" value="" class="input-text" /></td>
 			</tr>		
 			<tr>
-				<td align="right" colspan="2"><em>*</em> mark fields are required.&nbsp;<a href="{$FRONTEND}/forgetpass.php"><button class="button-blue" id="forgetpasssubmit" name="forgetpasssubmit" onclick="forgetpass()"><span>Submit</span></button></td>
+				<td align="right" colspan="2"><em>*</em> mark fields are required.&nbsp;<button class="button-blue" id="forgetpasssubmit" name="forgetpasssubmit" onclick="forgetpass()"><span>Submit</span></button></td>
 			</tr>
 		</table>
 	</form>

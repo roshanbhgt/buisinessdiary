@@ -62,14 +62,15 @@ class User {
 		}
 	}
 
-	public function forgetPass(){
+	public function forgetPass($email){
 		global $dbObj;
 		$sql = "SELECT * FROM ".USER." WHERE email = '".$email."' ";
 		$res = $dbObj->query($sql);
 		if($dbObj->num_rows($res) > 0){
 			$res = $dbObj->fetch_array_assoc($res);
+			return $res;
 		}else{
-			return false;
+			return null;
 		}
 	}
 

@@ -43,8 +43,9 @@ date_default_timezone_set("Asia/Calcutta");
 
 // Loading smarty library
 require_once ('../libs/Database/Database.class.php');
-$dbObj = new Database('localhost', 'root', 'root', 'businessdiary');
+require_once ('../libs/mail/autoload.php');
 
+$dbObj = new Database();
 
 // Loading smarty library
 require_once ('../libs/Smarty/Smarty.class.php');
