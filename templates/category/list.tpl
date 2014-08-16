@@ -20,6 +20,7 @@
                         {$list.address2},<br>
                         {$list.region}, {$list.stte}, {$list.cntry} - {$list.postcode}
                         <div style="background: url('{$FRONTEND}/design/images/rating.png') no-repeat;height: 24px;">&nbsp;</div>
+                        <div><a href="{$FRONTEND}/favourite/action/mark/id/{$list.list_id}">Mark as favourite</a> | <a href="{$FRONTEND}/wishlist/action/add/id/{$list.list_id}">Add to wishlist</a></div>
                     </address>
                     <div style="float: left; width: 100%;padding: 5px;">{$list.description}<a href="{$FRONTEND}/list/{$list.list_id}">more</a></div>
                 </div>

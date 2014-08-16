@@ -57,10 +57,7 @@
 	<div id="tab4" class="content">This business has no location.</div>
 	<div id="tab4" class="content">This business has no location.</div>
 	<div id="tab5" class="content">
-	    <iframe width="500" height="300"  frameborder="0" style="border:0;margin: 10px 90px;"
-		  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDa1_uWjcZhdUI6ZX4bpZO4v7idVIBv3Dk
-		    &q=Space+Needle,Seattle+WA">
-		</iframe>
+	    <iframe width="450" height="250"  frameborder="0" style="border:0;margin: 10px 0px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDbpzm__Em8dsmDI0_XRCF40VqytZAkmuM&q={$business.title}+{$business.address1}+{$business.address2}+{$business.region}+{$business.stte}+{$business.cntry}+{$business.postcode}"></iframe>
 	</div>
 </div>
 {literal}

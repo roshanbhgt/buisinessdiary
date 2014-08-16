@@ -7,38 +7,84 @@ checkAuthentication();
 
 $smarty->assign("title","Buisiness Diary - Welcome to the admin");
 
-$oAnalytics = new Analytics("roshanbhgt@gmail.com", "shrungarika");
+      
+    // From the APIs console
+    $client_id = '152284621414-s6g9548re2s2e6liraq9lc0gdug0nkcm.apps.googleusercontent.com';
+    
+    // From the APIs console
+    $client_secret = 'n4U9RWPb81lPb7U7lLdAo15Z';
+    
+     // Url to your this page, must match the one in the APIs console
+    $redirect_uri = 'http://www.businessdiary.co.in/cpanel';
 
-try {
-      
-      
-      // set it up to use caching
-      $oAnalytics->useCache();
-      
-      // $oAnalytics->setProfileByName('Business Diary');
-      $oAnalytics->setProfileById('ga:47488904');
-      
-      // set the date range
-      $oAnalytics->setMonth(date('n'), date('Y'));
-      // or $oAnalytics->setDateRange('YYYY-MM-DD', 'YYYY-MM-DD');
-      
-      echo '<pre>';
-      // print out visitors for given period
-      print_r($oAnalytics->getVisitors());
-      
-      // print out pageviews for given period
-      print_r($oAnalytics->getPageviews());
-      
-      // use dimensions and metrics for output
-      // see: http://code.google.com/intl/nl/apis/analytics/docs/gdata/gdataReferenceDimensionsMetrics.html
-      print_r($oAnalytics->getData(array(   'dimensions' => 'ga:keyword',
-                                            'metrics'    => 'ga:visits',
-                                            'sort'       => 'ga:keyword')));
-      
-  } catch (Exception $e) { 
-      echo 'Caught exception: ' . $e->getMessage(); 
-  }
+    // Analytics account id like, 'ga:xxxxxxx'
+    $account_id = 'ga:47488904';
+    
+    session_start();
+    
+    $ga = new Analytics(); 
+    $ga->auth->setClientId($client_id);
+    $ga->auth->setClientSecret($client_secret);
+    $ga->auth->setRedirectUri($redirect_uri);
 
+    if (isset($_GET['force_oauth'])) {
+        $_SESSION['oauth_access_token'] = null;
+    }
+
+
+    /*
+     *  Step 1: Check if we have an oAuth access token in our session
+     *          If we've got $_GET['code'], move to the next step
+     */
+    if (!isset($_SESSION['oauth_access_token']) && !isset($_GET['code'])) {
+        // Go get the url of the authentication page, redirect the client and go get that token!
+        $url = $ga->auth->buildAuthUrl();
+        header("Location: ".$url);
+    } 
+
+    /*
+     *  Step 2: Returning from the Google oAuth page, the access token should be in $_GET['code']
+     */
+    if (!isset($_SESSION['oauth_access_token']) && isset($_GET['code'])) {
+        $auth = $ga->auth->getAccessToken($_GET['code']);
+        if ($auth['http_code'] == 200) {
+            $accessToken    = $auth['access_token'];
+            $refreshToken   = $auth['refresh_token'];
+            $tokenExpires   = $auth['expires_in'];
+            $tokenCreated   = time();
+            
+            // For simplicity of the example we only store the accessToken
+            // If it expires use the refreshToken to get a fresh one
+            $_SESSION['oauth_access_token'] = $accessToken;
+        } else {
+            die("Sorry, something wend wrong retrieving the oAuth tokens");
+        }
+    }
+    
+    /*
+     *  Step 3: Do real stuff!
+     *          If we're here, we sure we've got an access token
+     */
+    $ga->setAccessToken($_SESSION['oauth_access_token']);
+    $ga->setAccountId($account_id);
+
+    
+    // Set the default params. For example the start/end dates and max-results
+    $defaults = array(
+        'start-date' => date('Y-m-d', strtotime('-1 month')),
+        'end-date'   => date('Y-m-d'),
+    );
+    $ga->setDefaultQueryParams($defaults);
+
+    $params = array(
+        'metrics'    => 'ga:visits',
+        'dimensions' => 'ga:date',
+    );
+    $visits = $ga->query($params);
+    
+    print "<pre>";
+    var_dump($visits);
+    print "</pre>";
 $smarty->assign("contentheading", "Dashboard");
 $smarty->assign("content",$smarty->fetch("dashboard.tpl"));
 

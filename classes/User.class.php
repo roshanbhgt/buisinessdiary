@@ -96,5 +96,97 @@ class User {
 		}
 	}
 
+    public function getUsersWishlist(){
+        global $dbObj;
+        $sql = "SELECT * FROM ".USERWISHLIST." INNER JOIN ".BLIST." WHERE user_id = '".$_SESSION['userid']."' AND buis_id = list_id ";
+        $res = $dbObj->fetch_all_array($sql);;
+        if(count($res) > 0){
+            return $res;
+        }else{
+            return null;
+        }
+    }
 
+    public function getUsersFavourite(){
+        global $dbObj;
+        $sql = "SELECT * FROM ".USERFAVOURITE." INNER JOIN ".BLIST." WHERE user_id = '".$_SESSION['userid']."' AND buis_id = list_id ";
+        $res = $dbObj->fetch_all_array($sql);;
+        if(count($res) > 0){
+            return $res;
+        }else{
+            return null;
+        }
+    }
+
+    public function inWishlist($id){
+        global $dbObj;
+        $sql = "SELECT * FROM ".USERWISHLIST." WHERE buis_id = '".$id."' AND user_id  = '".$_SESSION['userid']."' ";
+        $res = $dbObj->query($sql);
+        if($dbObj->num_rows($res) > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function isFavourite($id){
+        global $dbObj;
+        $sql = "SELECT * FROM ".USERFAVOURITE." WHERE buis_id = '".$id."' AND user_id  = '".$_SESSION['userid']."' ";
+        $res = $dbObj->query($sql);
+        if($dbObj->num_rows($res) > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function addToFavourite($id){
+        global $dbObj;
+        $sql = "INSERT INTO
+                    ".USERFAVOURITE."
+                SET
+                    buis_id = '".$id."',
+                    user_id  = '".$_SESSION['userid']."',
+                    added_date = NOW() ";
+        if($dbObj->query($sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function addToWishlist($id){
+        global $dbObj;
+        $sql = "INSERT INTO
+                    ".USERWISHLIST."
+                SET
+                    buis_id = '".$id."',
+                    user_id  = '".$_SESSION['userid']."',
+                    added_date = NOW() ";
+        if($dbObj->query($sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function removeFromFav($id){
+        global $dbObj;
+        $sql = "DELETE FROM ".USERFAVOURITE." WHERE id = '".$id."' ";
+        if($dbObj->query($sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function removeFromWishlist($id){
+        global $dbObj;
+        $sql = "DELETE FROM ".USERWISHLIST." WHERE id = '".$id."' ";
+        if($dbObj->query($sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

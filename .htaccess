@@ -2,7 +2,7 @@
 
 ############################################
 ## enable rewrites
-    RewriteOptions inherit
+
     Options +FollowSymLinks
     RewriteEngine on
 
@@ -12,11 +12,19 @@
 	
     RewriteRule ^myaccount myaccount.php
 
-    RewriteRule ^changepassword changepassword.php
-	
+    RewriteRule ^account-info account-info.php
+
 	RewriteRule ^myreview myreview.php
-	
+
+    RewriteRule ^review/([A-Za-z-\s0-9]+)/([A-Za-z-\s0-9]+)$ myreview.php?action=$1&id=$2 [L]
+
+    RewriteRule ^favourite/action/([A-Za-z-\s0-9]+)/id/([A-Za-z-\s0-9]+)$ favourite.php?action=$1&id=$2 [L]
+
+    RewriteRule ^wishlist/action/([A-Za-z-\s0-9]+)/id/([A-Za-z-\s0-9]+)$ wishlist.php?action=$1&id=$2 [L]
+
 	RewriteRule ^myfavourite myfavourite.php
+
+	RewriteRule ^mywishlist mywishlist.php
 	
 	RewriteRule ^logout logout.php
 

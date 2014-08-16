@@ -21,9 +21,9 @@
 				<div style="position:relative;float: left;" class="content">
 					<h2>Newsletter</h2>
 					{if $mynews == true}
-						You have subscribed to our newsletter.
+						You have subscribed to general newsletter.
 					{else}
-						You haven't subscribed to our newsletter.
+						You haven't subscribed to newsletter.
 					{/if}
 				</div>
             </td>

@@ -36,14 +36,14 @@ function register(){
 {/literal}<div class="std">
 	<div class="page-title"><h1>New user</h1></div>
 	<p>By creating an account with us, you will be able to save place, rate and review businesses in your account and more.</p>	
-	<form action="" method="post" id="registerform">
+	<form action="" method="post" id="registerform">class="input-text"
 		<table border="0" id="msgform">
 			<tr>
 				<td align="left" colspan="2"><div id="registermessage" style="dispaly:none;"></div></td>							
 			</tr>
 			<tr>
 				<td align="left" valign="top" width="120px;"><lable>First name<em>*</em></lable>&nbsp;</td>
-				<td><input type="text" name="firstname" value="" class="input-text" /></td>
+				<td><input type="text" name="firstname" value=""  /></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><lable>Last name<em>*</em></lable>&nbsp;</td>

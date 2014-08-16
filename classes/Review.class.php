@@ -42,12 +42,13 @@ class Review {
 	 */
 	public function getReviews($busId){
 		global $dbObj;
+        $res = array();
 		$sql = "SELECT * FROM ".REVIEW." WHERE bus_id = ".$busId." AND status = 0 ORDER BY created_date DESC ";
 		$res = $dbObj->fetch_all_array($sql);;
 		if(count($res) > 0){
 			return $res;
 		}else{
-			return false;
+			return null;
 		}
 	}
 	
@@ -57,12 +58,13 @@ class Review {
 	 */
 	public function getRating($busId){
 		global $dbObj;
+        $res = array();
 		$sql = "SELECT rating, count(*) as count FROM ".REVIEW." WHERE bus_id = ".$busId." AND status = 0 GROUP BY rating ASC ";
 		$res = $dbObj->fetch_all_array($sql);;
 		if(count($res) > 0){
 			return $this->calcRating($res);
 		}else{
-			return 0;
+			return null;
 		}
 	}
 	
@@ -86,13 +88,28 @@ class Review {
 	 */
 	public function getReviewsByUser($userid){
 		global $dbObj;
+        $res = array();
 		$sql = "SELECT breview.*, bus.title FROM bus_review AS breview INNER JOIN `blist` AS bus ON bus.list_id = breview.bus_id WHERE user_id = ".$userid." ORDER BY breview.created_date DESC";
 		$res = $dbObj->fetch_all_array($sql);;
 		if(count($res) > 0){
 			return $res;
 		}else{
-			return false;
+			return null;
 		}
 	}
-	 
+
+
+    /**
+     * Function to delete user reviews
+     * @param id integere
+     */
+	 public function deleteReview($id){
+         global $dbObj;
+         $sql = 'DELETE FROM '.REVIEW.' WHERE review_id = '.$id;
+         if($dbObj->query($sql)){
+             return true;
+         }else{
+             return false;
+         }
+     }
 }
