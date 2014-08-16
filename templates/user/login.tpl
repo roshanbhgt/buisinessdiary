@@ -55,7 +55,7 @@ function login(){
 				<td><input type="password" name="password" value="" class="input-text"/></td>
 			</tr>			
 			<tr>
-				<td align="right" colspan="2"><a href="{$FRONTEND}/forgetpass.php">Forget password?</a> | <em>*</em> mark fields are required.&nbsp;<button class="button-blue" id="loginsubmit" name="loginsubmit" onclick="login()"><span>Login</span></button></td>
+				<td align="right" colspan="2"><a href="{$FRONTEND}/forgetpass">Forget password?</a> | <em>*</em> mark fields are required.&nbsp;<button class="button-blue" id="loginsubmit" name="loginsubmit" onclick="login()"><span>Login</span></button></td>
 			</tr>
 		</table>
 	</form>

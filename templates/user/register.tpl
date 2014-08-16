@@ -36,7 +36,7 @@ function register(){
 {/literal}<div class="std">
 	<div class="page-title"><h1>New user</h1></div>
 	<p>By creating an account with us, you will be able to save place, rate and review businesses in your account and more.</p>	
-	<form action="" method="post" id="registerform">class="input-text"
+	<form action="" method="post" id="registerform">
 		<table border="0" id="msgform">
 			<tr>
 				<td align="left" colspan="2"><div id="registermessage" style="dispaly:none;"></div></td>							
