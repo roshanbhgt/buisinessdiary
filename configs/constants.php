@@ -20,6 +20,10 @@ define ('BLIST','blist');
 define ('PAGES','pages');
 define ('GALLERY','gallery');
 define ('GALLERYIMAGES','galleryimage');
+define ('LOGURL','log_url');
+define ('LOGURLINFO','log_url_info');
+define ('LOGVISITOR','log_visitor');
+define ('LOGVISITORINFO','log_visitor_info');
 define ('COUNTRY','country');
 define ('STATE','state');
 define ('REGIONS','regions');
@@ -46,5 +50,6 @@ require('classes/Gallery.class.php');
 require('classes/Webforms.class.php');
 require('classes/Review.class.php');
 require('classes/Search.class.php');
+require('classes/Logs.class.php');
 require('includes/functions.php');
 

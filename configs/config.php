@@ -23,6 +23,8 @@ ErrorHandler::$mailSub = 'Critical error.';
 // Loding constant
 require_once ('configs/constants.php');
 
+$logs = new Logs();
+
 // Session setting
 ini_set('session.save_handler', 'files');
 $sessionpath = SESSION_FRONTEND_PATH;
@@ -31,6 +33,7 @@ ini_set('session.save_path', $sessionpath);
 if(!isset($_SESSION) && !headers_sent()){
 	session_start();
 	ini_set('session.gc_probability', 1);
+
 }
 ini_set('session.gc_maxlifetime', 50*30*60);
 

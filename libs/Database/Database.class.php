@@ -84,7 +84,7 @@ class Database {
     }
  
     public function last_id() {
-        return mysqli_insert_id($this -> link);
+        return mysqli_insert_id($this->link);
     }
     
     public function num_fields($qid) {
