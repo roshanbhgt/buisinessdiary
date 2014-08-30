@@ -86,6 +86,29 @@ class User {
 		}
 	}
 
+    public function updateUserInfo($data){
+        global $dbObj;
+        $sql = "UPDATE
+                    ".USER."
+                SET
+                    firstname = '".$data['firstname']."',
+                    lastname = '".$data['lastname']."',
+                    email = '".$data['email']."',
+                    updated_date = NOW() ";
+
+        if($data['change_password'] == 1){
+            $sql .= ", password = '".base64_encode($data['new_pass'])."' ";
+        }
+
+        $sql .= " WHERE userId = '".$_SESSION['userid']."' ";
+
+        if($dbObj->query($sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 	public function getNewsletter($email){
 		global $dbObj;
 		$sql = "SELECT * FROM ".EMAILNEWSLETTER." WHERE email = '".$email."' ";

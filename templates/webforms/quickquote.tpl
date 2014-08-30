@@ -12,7 +12,7 @@
 
     <p align="left">We would like to promote business you might have. To get promotions quote please fill form below.</p>
     <form action="{$FRONTEND}/quikquote.php" method="post" id="promoquoteform">
-        <table border="0" width="400" id="msgform">
+        <table border="0" width="440" id="msgform">
             {if $variables.success != ''}
             <tr>
                 <td align="left" colspan="2"><div id="message" >{$variables.message}</div></td>

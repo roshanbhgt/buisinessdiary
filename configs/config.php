@@ -5,6 +5,7 @@ require_once ('libs/Error/Errorhandler.class.php');
 
 // Report simple running errors
 ErrorHandler::Init(E_ERROR | E_PARSE);
+// ErrorHandler::Init(E_ALL);
 
 // Display Errors
 ErrorHandler::$displayErrors = TRUE;
@@ -33,7 +34,6 @@ ini_set('session.save_path', $sessionpath);
 if(!isset($_SESSION) && !headers_sent()){
 	session_start();
 	ini_set('session.gc_probability', 1);
-
 }
 ini_set('session.gc_maxlifetime', 50*30*60);
 
@@ -77,12 +77,19 @@ $smarty->assign("state", $state);
 $smarty->assign("city", $region);
 $smarty->assign("country", $country);
 
-
 $smarty->assign('catall', $objCat->getAllParentcat());
 $smarty->assign('latbus', $objBuis->getListNewestBusiness());
+
+$recentlyviewed = array();
+if(isset($_COOKIE['recently_view'])){
+    foreach($_COOKIE['recently_view']  as $val){
+        $recentlyviewed[] = $objBuis->getBuisinessListById($val);
+    }
+}
 
 $smarty->assign('session', $_SESSION);
 $smarty->assign('FRONTEND', FRONTEND);
 $smarty->assign('GALLERYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/gallery');
 $smarty->assign('CATEGORYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/category');
 $smarty->assign('BUSINESSIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/business');
+$smarty->assign('recentlyview', $recentlyviewed);

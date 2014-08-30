@@ -20,6 +20,24 @@ if(is_array($reviews)){
 	}
 }
 
+// Saving the recently viewed business
+if(in_array($id,$_COOKIE['recently_view']) == false){
+    if(count($_COOKIE['recently_view']) == 0){
+        STATIC $j = 0;
+        setcookie('recently_view[0]',$id,time()+86400,"/buisinessdiary");
+        $j = $j + 1;
+    } elseif(count($_COOKIE['recently_view']) == 5 ){
+        unset($_COOKIE['recently_view'][0]);
+        $j = $j - 1 ;
+        setcookie('recently_view['.$j.']',$id,time()+86400,"/buisinessdiary");
+        $j = $j + 1 ;
+    } else {
+        echo $j;
+        setcookie('recently_view['.$j.']',$id,time()+86400,"/buisinessdiary");
+        $j = $j + 1 ;
+    }
+}
+
 $smarty->assign('business', $business);
 $smarty->assign('reviews', $reviews);
 $smarty->assign('rating', $rating);

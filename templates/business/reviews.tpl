@@ -58,7 +58,7 @@ function submitquery(){
 			</tr>
 			<tr>
 				<td align="left" valign="top"><label>Review Title<em>*</em></label>&nbsp;</td>
-				<td><input type="text" name="reviewtitle" value="" /></td>
+				<td><input type="text" name="reviewtitle" value="" class="input-text" /></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><label>Review<em>*</em></label>&nbsp;</td>

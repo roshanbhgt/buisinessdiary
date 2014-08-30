@@ -10,11 +10,21 @@
     </ul>
 </div>
 <div class="content" style="position:relative;width: 220px; float: left;">
-    <h2>Recently View Business</h2>
+    <h2>Recently Viewed</h2>
     <ul>
-        <li>Business 1</li>
-        <li>Business 2</li>
-        <li>Business 3</li>
+        {foreach from=$recentlyview item=val key=i}
+        <li>
+            <div style="text-align:center;position: relative;float: left;width:100%;">
+                {if $business.logo != ''}
+                    <img src="{$BUSINESSIMAGE}/thumb/{$val.logo}" alt="{$val.title}" />
+                {else}
+                    <img src="{$BUSINESSIMAGE}/thumb/companies_large.jpg" alt="{$val.title}" />
+                {/if}
+                <a href="{$FRONTEND}/list/{$val.list_id}"><h3 style="font-weight: bold;text-align: center">{$val.title}</h3></a>
+                <div style="width:100%;float:left;"><a href="{$FRONTEND}/favourite/action/mark/id/{$val.list_id}">Mark as favourite</a> | <a href="{$FRONTEND}/wishlist/action/add/id/{$val.list_id}">Add to wishlist</a></div>
+            </div>
+        </li>
+        {/foreach}
     </ul>
 </div>
 <div class="content" style="position:relative;width: 220px; float: left;">

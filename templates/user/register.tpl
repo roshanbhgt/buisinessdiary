@@ -43,7 +43,7 @@ function register(){
 			</tr>
 			<tr>
 				<td align="left" valign="top" width="120px;"><lable>First name<em>*</em></lable>&nbsp;</td>
-				<td><input type="text" name="firstname" value=""  /></td>
+				<td><input type="text" name="firstname" value="" class="input-text" /></td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><lable>Last name<em>*</em></lable>&nbsp;</td>
