@@ -1,7 +1,7 @@
 <div class="ads-promotion content">
 		<h2>Hurry, Promote your buisiness</h2>
 		<p>Get more buisiness online by promoting and advertising with us.
-		</br></br>For quick quote <a href="http://localhost/buisinessdiary/quikquote">clik here</a> or call <b style="color:#990134;">+91 844 657 6606</b>.</p>
+		</br></br>For quick quote <a href="{$FRONTEND}quikquote">clik here</a> or call <b style="color:#990134;">+91 844 657 6606</b>.</p>
 	</div>
 	<div class="quik-add-listing content">
 		<h2>Quick listing</h2>

@@ -89,7 +89,7 @@ if(isset($_COOKIE['recently_view'])){
 
 $smarty->assign('session', $_SESSION);
 $smarty->assign('FRONTEND', FRONTEND);
-$smarty->assign('GALLERYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/gallery');
-$smarty->assign('CATEGORYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/category');
-$smarty->assign('BUSINESSIMAGE','http://'.$_SERVER['HTTP_HOST'].'/buisinessdiary/media/business');
+$smarty->assign('GALLERYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/media/gallery');
+$smarty->assign('CATEGORYIMAGE','http://'.$_SERVER['HTTP_HOST'].'/media/category');
+$smarty->assign('BUSINESSIMAGE','http://'.$_SERVER['HTTP_HOST'].'/media/business');
 $smarty->assign('recentlyview', $recentlyviewed);

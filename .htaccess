@@ -1,4 +1,8 @@
-    ErrorDocument 404 /buisinessdiary/404.html
+##	DirectoryIndex index.html index.php
+
+###############################################
+
+    ErrorDocument 404 /404.html
 
 ############################################
 ## enable rewrites
